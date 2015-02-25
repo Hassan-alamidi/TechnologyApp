@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Stephen
+ * @author Stephen 
  */
 
 import java.util.*;

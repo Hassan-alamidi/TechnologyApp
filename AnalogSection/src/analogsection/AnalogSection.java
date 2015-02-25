@@ -22,10 +22,27 @@ public class AnalogSection {
        int correct, incorrect,choice;
        boolean chckRightorWrong;
        
-       
+        ApplicationMainScreen appGUI = new ApplicationMainScreen(); 
         Quiz playQuiz = new Quiz();
         HangmanAnalog playHangman = new HangmanAnalog();
         
+        //make the GUI visible
+        appGUI.setVisible(true);
+        
+        /*
+            * The code which is commented out is what is actually happing behind the buttons 
+            
+            * I have just left the code to show how i implemented the code behind the buttons
+            
+            * It also shows how to go frome one GUI to another by Action performed on the button
+        
+        
+        
+        
+        
+        */
+        
+        /*
         choice = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter 1... To take the Quiz" + "  "+" or 2.. to paly a game of hangman"));
                 
         if(choice == 1){      
@@ -68,9 +85,9 @@ public class AnalogSection {
                      
                    }
                     else if(chckRightorWrong == false){
-                      //this is where each time the user gusses the word wrong
-                      // a frame of the animation will be called in 
-                      // to simulate the the hanging of the man 
+                         //this is where each time the user gusses the word wrong
+                        // a frame of the animation will be called in 
+                       // to simulate the the hanging of the man 
                         
                         //error checker 
                         System.out.println("incorrect gusse");
@@ -80,6 +97,7 @@ public class AnalogSection {
             
      
         }
+             ------end of comment   */
        
     }
     
