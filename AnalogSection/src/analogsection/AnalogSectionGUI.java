@@ -39,8 +39,11 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
         HangmanBtn = new javax.swing.JButton();
         InformationBtn = new javax.swing.JButton();
         FormulasBtn = new javax.swing.JButton();
+        ResistorCalcLbl = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         QuizBtn.setBackground(new java.awt.Color(0, 204, 102));
         QuizBtn.setText("Quiz");
@@ -49,6 +52,8 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
                 QuizBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(QuizBtn);
+        QuizBtn.setBounds(180, 90, 166, 29);
 
         HangmanBtn.setBackground(new java.awt.Color(255, 255, 255));
         HangmanBtn.setText("Hangman");
@@ -57,41 +62,37 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
                 HangmanBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(HangmanBtn);
+        HangmanBtn.setBounds(260, 30, 156, 18);
 
         InformationBtn.setBackground(new java.awt.Color(255, 153, 0));
         InformationBtn.setText("Information");
+        InformationBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InformationBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InformationBtn);
+        InformationBtn.setBounds(140, 190, 166, 21);
 
         FormulasBtn.setBackground(new java.awt.Color(0, 153, 153));
-        FormulasBtn.setText("Formulas");
+        FormulasBtn.setText("Diganostic");
+        getContentPane().add(FormulasBtn);
+        FormulasBtn.setBounds(70, 280, 166, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(InformationBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                    .addComponent(QuizBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(HangmanBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                    .addComponent(FormulasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HangmanBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(QuizBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(InformationBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(FormulasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
+        ResistorCalcLbl.setText("Resistor calculator");
+        ResistorCalcLbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResistorCalcLblActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ResistorCalcLbl);
+        ResistorCalcLbl.setBounds(40, 340, 156, 29);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/Sean/Pictures/ramp.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(155, -80, 420, 530);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -142,7 +143,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
        for(int counter = 0; counter < 10; counter++){
         
            //playQuiz.dontChoseExistQuestion();
-           question = playQuiz.choseRandomQuestion();
+           question = playQuiz.choseRandomeQuestion();
            
            anwser = JOptionPane.showInputDialog(null,"The Question is:" + " "+ question + "Please enter your anwser");
            playQuiz.setAnwser(anwser);
@@ -156,6 +157,14 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
              
     }//GEN-LAST:event_QuizBtnActionPerformed
+
+    private void ResistorCalcLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResistorCalcLblActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResistorCalcLblActionPerformed
+
+    private void InformationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformationBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InformationBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +206,8 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
     private javax.swing.JButton HangmanBtn;
     private javax.swing.JButton InformationBtn;
     private javax.swing.JButton QuizBtn;
+    private javax.swing.JButton ResistorCalcLbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 }

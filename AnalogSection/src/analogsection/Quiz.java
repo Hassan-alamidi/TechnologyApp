@@ -27,7 +27,7 @@ public class Quiz {
         question = new String[]{"no","yes","maybe","2","£","4","6","7","8","9","10","11","12","13","14","9","1","2","3","6"};
         userAnwser = "";
         // this should be also filled with 20 anwsers
-       // also more correct anwser should be addedd to maxinmise the number of coorect anwser's
+       // also more correct anwser should be addedd to maxinmise the number of correct anwser's
         correctAnwser = new String[]{"nope","of course","perhaps"};
         correct = 0;
         incorrect = 0;
@@ -38,7 +38,7 @@ public class Quiz {
         
     }
     // Choses a random question from the array 
-    public String choseRandomQuestion(){
+    public String choseRandomeQuestion(){
         /*randQuestion = rand.nextInt(question.length);
         randomizedQuestion = question[randQuestion];
         //will have to put in a checker to make sure that a certing question isnt repeated 
@@ -49,15 +49,17 @@ public class Quiz {
         // question will not be reapeted 
         question[19] = randomizedQuestion;
         return randomizedQuestion;*/
-          for(int counter = 0; counter < 11; counter++){
+          for(int counter = 0; counter < 10; counter++){
             
             randQuestion = rand.nextInt(question.length-counter);
             randomizedQuestion = question[randQuestion];
             
             question[index] = randomizedQuestion;
-            index--;
+            
             break;
-            } // end of loop  
+            } // end of loop 
+          
+          index--;
         
         return randomizedQuestion;
         
