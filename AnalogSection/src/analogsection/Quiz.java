@@ -43,7 +43,7 @@ public class Quiz {
         randomizedQuestion = question[randQuestion];
         //will have to put in a checker to make sure that a certing question isnt repeated 
         //algoritim:
-        //chose random index with rquestion 
+        //chose random index with question 
         // store question in last index of the array
         // chose an random array in the index of aaray length -1
         // question will not be reapeted 

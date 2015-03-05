@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="ElectronicsBtn" min="-2" pref="202" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="MaterialBtn" pref="168" max="32767" attributes="0"/>
+              <Component id="MaterialBtn" pref="223" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -38,7 +38,7 @@
                   <Component id="ElectronicsBtn" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
                   <Component id="MaterialBtn" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

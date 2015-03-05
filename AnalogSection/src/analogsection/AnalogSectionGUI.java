@@ -53,9 +53,9 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuizBtn);
-        QuizBtn.setBounds(180, 90, 166, 29);
+        QuizBtn.setBounds(110, 110, 166, 29);
 
-        HangmanBtn.setBackground(new java.awt.Color(255, 255, 255));
+        HangmanBtn.setBackground(new java.awt.Color(0, 102, 255));
         HangmanBtn.setText("Hangman");
         HangmanBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HangmanBtn);
-        HangmanBtn.setBounds(260, 30, 156, 18);
+        HangmanBtn.setBounds(40, 40, 156, 18);
 
         InformationBtn.setBackground(new java.awt.Color(255, 153, 0));
         InformationBtn.setText("Information");
@@ -73,12 +73,12 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(InformationBtn);
-        InformationBtn.setBounds(140, 190, 166, 21);
+        InformationBtn.setBounds(160, 190, 166, 21);
 
         FormulasBtn.setBackground(new java.awt.Color(0, 153, 153));
         FormulasBtn.setText("Diganostic");
         getContentPane().add(FormulasBtn);
-        FormulasBtn.setBounds(70, 280, 166, 29);
+        FormulasBtn.setBounds(140, 280, 166, 29);
 
         ResistorCalcLbl.setText("Resistor calculator");
         ResistorCalcLbl.addActionListener(new java.awt.event.ActionListener() {
@@ -87,12 +87,11 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ResistorCalcLbl);
-        ResistorCalcLbl.setBounds(40, 340, 156, 29);
+        ResistorCalcLbl.setBounds(60, 380, 156, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/Sean/Pictures/ramp.png")); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/Sean/Pictures/AnalogGUI.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(155, -80, 420, 530);
+        jLabel1.setBounds(-5, -4, 410, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
