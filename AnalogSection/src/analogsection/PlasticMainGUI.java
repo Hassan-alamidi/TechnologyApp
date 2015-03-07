@@ -44,7 +44,7 @@ public class PlasticMainGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackBtn);
-        BackBtn.setBounds(120, 270, 160, 30);
+        BackBtn.setBounds(100, 270, 160, 30);
 
         ExitBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         ExitBtn.setText("Exit");
@@ -64,7 +64,7 @@ public class PlasticMainGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuizBtn);
-        QuizBtn.setBounds(120, 170, 160, 30);
+        QuizBtn.setBounds(110, 170, 160, 30);
 
         InfoBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         InfoBtn.setText("Information");

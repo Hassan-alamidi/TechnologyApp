@@ -35,10 +35,10 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         // All of the screens in the analog section 
         AnalogGUIPanel screen1Card = new AnalogGUIPanel();
         AnalogHangmanPanel screen2Card = new AnalogHangmanPanel ();
-        QuizGUIPanel screen3Card = new QuizGUIPanel();
-        InformationGUIPanel screen4Card  = new  InformationGUIPanel();
-        DiganosticGUIPanel screen5Card = new DiganosticGUIPanel();
-        ResistorCalcPanel screen6Card = new  ResistorCalcPanel();
+        AnalogQuizGUIPanel screen3Card = new AnalogQuizGUIPanel();
+        AnalogInformationGUIPanel screen4Card  = new  AnalogInformationGUIPanel();
+        AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
+        AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
         
         
         //creates a variable which is new Panel with cardlayout 

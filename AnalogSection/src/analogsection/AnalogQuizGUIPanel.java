@@ -11,12 +11,12 @@ import java.awt.LayoutManager;
  *
  * @author Stephen 
  */
-public class QuizGUIPanel extends javax.swing.JPanel {
+public class AnalogQuizGUIPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form QuizGUIPanel
      */
-    public QuizGUIPanel() {
+    public AnalogQuizGUIPanel() {
         initComponents();
     }
 

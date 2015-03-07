@@ -9,12 +9,12 @@ package analogsection;
  *
  * @author Stephen
  */
-public class DiganosticGUIPanel extends javax.swing.JPanel {
+public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DiganosticGUIPanel
      */
-    public DiganosticGUIPanel() {
+    public AnalogDiganosticGUIPanel() {
         initComponents();
     }
 
@@ -33,6 +33,8 @@ public class DiganosticGUIPanel extends javax.swing.JPanel {
         useLbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        nextBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -67,6 +69,10 @@ public class DiganosticGUIPanel extends javax.swing.JPanel {
         exitBtn.setText("Exit");
         add(exitBtn);
         exitBtn.setBounds(225, 399, 150, 40);
+        add(backBtn);
+        backBtn.setBounds(0, -1, 75, 40);
+        add(nextBtn);
+        nextBtn.setBounds(310, 0, 75, 40);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/DiganosticGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -76,10 +82,12 @@ public class DiganosticGUIPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel anwserLbl;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel nameLbl;
+    private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     private javax.swing.JLabel useLbl;
     // End of variables declaration//GEN-END:variables

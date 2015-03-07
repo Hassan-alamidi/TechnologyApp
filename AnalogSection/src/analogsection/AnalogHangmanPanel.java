@@ -32,6 +32,7 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         anwserTF = new javax.swing.JTextField();
         Submit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        exitBtn = new javax.swing.JButton();
         BackgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -42,11 +43,10 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         add(headingLbl);
         headingLbl.setBounds(10, 310, 280, 20);
 
-        sentanceLbl.setText("jLabel2");
+        sentanceLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        sentanceLbl.setText("Most hated first programming application is hello__ ");
         add(sentanceLbl);
         sentanceLbl.setBounds(10, 260, 370, 40);
-
-        anwserTF.setText("jTextField1");
         add(anwserTF);
         anwserTF.setBounds(20, 340, 310, 50);
 
@@ -60,6 +60,8 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         jLabel1.setText("Hangman Game");
         add(jLabel1);
         jLabel1.setBounds(140, 0, 170, 40);
+        add(exitBtn);
+        exitBtn.setBounds(0, 0, 75, 40);
 
         BackgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/HangmanGUI.png"))); // NOI18N
         add(BackgroundLbl);
@@ -71,6 +73,7 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
     private javax.swing.JLabel BackgroundLbl;
     private javax.swing.JButton Submit;
     private javax.swing.JTextField anwserTF;
+    private javax.swing.JButton exitBtn;
     private javax.swing.JLabel headingLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel sentanceLbl;

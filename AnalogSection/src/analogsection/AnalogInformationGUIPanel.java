@@ -9,12 +9,12 @@ package analogsection;
  *
  * @author Stephen
  */
-public class InformationGUIPanel extends javax.swing.JPanel {
+public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HangmanGUIPanel
      */
-    public InformationGUIPanel() {
+    public AnalogInformationGUIPanel() {
         initComponents();
     }
 
