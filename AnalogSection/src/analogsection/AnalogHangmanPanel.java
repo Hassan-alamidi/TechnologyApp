@@ -5,6 +5,8 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
  * @author Sean
@@ -16,6 +18,7 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
      */
     public AnalogHangmanPanel() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**
@@ -60,6 +63,15 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         jLabel1.setText("Hangman Game");
         add(jLabel1);
         jLabel1.setBounds(140, 0, 170, 40);
+
+        exitBtn .setOpaque(false);
+        exitBtn .setContentAreaFilled(false);
+        exitBtn .setBorderPainted(false);
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         add(exitBtn);
         exitBtn.setBounds(0, 0, 75, 40);
 
@@ -67,6 +79,15 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         add(BackgroundLbl);
         BackgroundLbl.setBounds(0, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
+    }//GEN-LAST:event_exitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

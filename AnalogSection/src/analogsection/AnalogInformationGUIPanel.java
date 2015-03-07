@@ -5,9 +5,11 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
- * @author Stephen
+ * @author Stephen 
  */
 public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 
@@ -16,6 +18,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
      */
     public AnalogInformationGUIPanel() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**
@@ -31,6 +34,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         infoLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
         titleLbl = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
+        nextBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -42,13 +47,18 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         add(detailsLbl);
         detailsLbl.setBounds(10, 190, 110, 30);
 
-        infoLbl.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        infoLbl.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
         infoLbl.setText("A capacitor (originally known as a condenser) is a passive two-terminal  ");
         add(infoLbl);
         infoLbl.setBounds(10, 210, 380, 130);
 
         exitBtn.setBackground(new java.awt.Color(0, 153, 255));
         exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         add(exitBtn);
         exitBtn.setBounds(220, 390, 150, 40);
 
@@ -57,17 +67,40 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         add(titleLbl);
         titleLbl.setBounds(140, 0, 150, 40);
 
+        backBtn .setOpaque(false);
+        backBtn .setContentAreaFilled(false);
+        backBtn.setBorderPainted(false);
+        add(backBtn);
+        backBtn.setBounds(0, -1, 75, 40);
+
+        nextBtn.setOpaque(false);
+        nextBtn.setContentAreaFilled(false);
+        nextBtn.setBorderPainted(false);
+        add(nextBtn);
+        nextBtn.setBounds(310, 0, 90, 40);
+
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(-2, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
+    }//GEN-LAST:event_exitBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JLabel detailsLbl;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel infoLbl;
+    private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }

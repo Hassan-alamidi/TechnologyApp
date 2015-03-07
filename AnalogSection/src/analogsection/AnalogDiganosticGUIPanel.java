@@ -5,9 +5,11 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
- * @author Stephen
+ * @author Stephen Kearns
  */
 public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
 
@@ -16,6 +18,7 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
      */
     public AnalogDiganosticGUIPanel() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**
@@ -67,10 +70,23 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         exitBtn.setBackground(new java.awt.Color(0, 102, 255));
         exitBtn.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         add(exitBtn);
         exitBtn.setBounds(225, 399, 150, 40);
+
+        backBtn .setOpaque(false);
+        backBtn .setContentAreaFilled(false);
+        backBtn.setBorderPainted(false);
         add(backBtn);
         backBtn.setBounds(0, -1, 75, 40);
+
+        nextBtn.setOpaque(false);
+        nextBtn.setContentAreaFilled(false);
+        nextBtn.setBorderPainted(false);
         add(nextBtn);
         nextBtn.setBounds(310, 0, 75, 40);
 
@@ -78,6 +94,15 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+         LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
+    }//GEN-LAST:event_exitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

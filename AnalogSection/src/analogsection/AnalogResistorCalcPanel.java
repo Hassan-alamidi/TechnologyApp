@@ -5,9 +5,11 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
- * @author Sean
+ * @author Stephen
  */
 public class AnalogResistorCalcPanel extends javax.swing.JPanel {
 
@@ -16,6 +18,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
      */
     public AnalogResistorCalcPanel() {
         initComponents();
+        this.setSize(550,450);
     }
 
     /**
@@ -89,6 +92,11 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         anwserLbl.setBounds(120, 360, 270, 40);
 
         ResetBtn.setText("Reset");
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
         add(ResetBtn);
         ResetBtn.setBounds(350, 410, 170, 30);
 
@@ -123,13 +131,34 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         exitBtn .setOpaque(false);
         exitBtn .setContentAreaFilled(false);
         exitBtn .setBorderPainted(false);
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         add(exitBtn);
-        exitBtn.setBounds(0, 0, 97, 30);
+        exitBtn.setBounds(-3, -10, 100, 40);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 550, 450);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        AnalogResistorCalcPanel reset = new AnalogResistorCalcPanel();
+        anwserLbl.setText("");
+        
+    }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+         LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
+    }//GEN-LAST:event_exitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

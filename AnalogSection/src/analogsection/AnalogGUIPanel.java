@@ -22,6 +22,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
  
     public AnalogGUIPanel() {
         initComponents();
+        this.setSize(400,450);
        
         
     }
@@ -40,14 +41,22 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         InfoBtn = new javax.swing.JButton();
         DiagnosticBtn = new javax.swing.JButton();
         CalcBtn = new javax.swing.JButton();
+        exitBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
 
+        HangmanBtn.setBackground(new java.awt.Color(0, 102, 204));
         HangmanBtn.setText("Hangman");
+        HangmanBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HangmanBtnActionPerformed(evt);
+            }
+        });
         add(HangmanBtn);
-        HangmanBtn.setBounds(40, 20, 190, 29);
+        HangmanBtn.setBounds(50, 20, 190, 29);
 
+        QuizBtn.setBackground(new java.awt.Color(0, 102, 204));
         QuizBtn.setText("Quiz");
         QuizBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,8 +64,9 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(QuizBtn);
-        QuizBtn.setBounds(100, 100, 170, 29);
+        QuizBtn.setBounds(120, 100, 170, 29);
 
+        InfoBtn.setBackground(new java.awt.Color(0, 102, 204));
         InfoBtn.setText("Information");
         InfoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,15 +74,31 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(InfoBtn);
-        InfoBtn.setBounds(160, 190, 150, 29);
+        InfoBtn.setBounds(170, 190, 150, 29);
 
-        DiagnosticBtn.setText("Diagnostic Tool");
+        DiagnosticBtn.setBackground(new java.awt.Color(0, 102, 204));
+        DiagnosticBtn.setText("Diagnostic Tools");
+        DiagnosticBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiagnosticBtnActionPerformed(evt);
+            }
+        });
         add(DiagnosticBtn);
-        DiagnosticBtn.setBounds(130, 290, 160, 29);
+        DiagnosticBtn.setBounds(140, 290, 160, 29);
 
-        CalcBtn.setText("Resistor calculate ");
+        CalcBtn.setBackground(new java.awt.Color(0, 102, 204));
+        CalcBtn.setText("Resistor value calculator");
+        CalcBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalcBtnActionPerformed(evt);
+            }
+        });
         add(CalcBtn);
-        CalcBtn.setBounds(40, 380, 180, 29);
+        CalcBtn.setBounds(70, 380, 190, 29);
+
+        exitBtn.setText("Exit");
+        add(exitBtn);
+        exitBtn.setBounds(340, 0, 70, 40);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -97,6 +123,33 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_InfoBtnActionPerformed
 
+    private void HangmanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HangmanBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogHangmanScreen");
+        }
+    }//GEN-LAST:event_HangmanBtnActionPerformed
+
+    private void DiagnosticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiagnosticBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogDiagnosticScreen");
+        }
+    }//GEN-LAST:event_DiagnosticBtnActionPerformed
+
+    private void CalcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogCalcScreen");
+        }
+    }//GEN-LAST:event_CalcBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CalcBtn;
@@ -105,5 +158,6 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
     private javax.swing.JButton InfoBtn;
     private javax.swing.JButton QuizBtn;
     private javax.swing.JLabel backgroundLbl;
+    private javax.swing.JButton exitBtn;
     // End of variables declaration//GEN-END:variables
 }

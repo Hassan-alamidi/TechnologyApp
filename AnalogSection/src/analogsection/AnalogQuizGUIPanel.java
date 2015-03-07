@@ -18,6 +18,7 @@ public class AnalogQuizGUIPanel extends javax.swing.JPanel {
      */
     public AnalogQuizGUIPanel() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**

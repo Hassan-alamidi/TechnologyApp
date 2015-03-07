@@ -17,10 +17,10 @@ package analogsection;
 public class ResistorCalc {
     //variables
     private String color1,color2,color3,toloerance, totalgusse;
-    private int value,tolerance;
+    private int value,tolerance,totalColorVaule,multi;
     
     
-    //mehods t set the variables
+    //mehods to set the variables
     
     public void setColor1(String color1){
         this.color1 = color1;
@@ -38,7 +38,7 @@ public class ResistorCalc {
         this.toloerance = toloerance;
     }
     
-    // assign a value to the different colors 
+    // assign a value for the different colors 
     public void setColorValues(){
         
         
@@ -87,7 +87,8 @@ public class ResistorCalc {
         
         totalgusse = totalgusse + value;
         
-        // to get the toloer
+       //multiply
+         totalColorVaule = (value* multi);
         
         
     }

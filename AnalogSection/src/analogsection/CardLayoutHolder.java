@@ -28,7 +28,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
          //declare and create objects
         
         //Welcome screen of the application goes here 
-        
+        //        welcomeCard = new 
         // Is the main screen of the application
         MainMenuGUI mainCard = new  MainMenuGUI();
         
@@ -43,6 +43,8 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         
         //creates a variable which is new Panel with cardlayout 
         cardsContainer = new JPanel(new CardLayout());
+        //add the welcom screen here
+        
         // adds the main screen to the container 
         cardsContainer.add(mainCard, "MAIN");
         
@@ -54,10 +56,18 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
         cardsContainer.add(screen6Card, "AnalogCalcScreen");
         
+        //adds all of the plastic cards to the container: 
+        
+        
+        
+        //adds all of the Digital cards(screens) to the contanier:
+        
+        
+        //adds all of the Wood cards(screens) to the contanier:
+        
         
         // add the cards container to the JFrame 
         this.setLayout(new FlowLayout());
-        this.setSize(400,450);
         this.add(cardsContainer);
         java.awt.CardLayout cardlayout = (java.awt.CardLayout)(cardsContainer.getLayout());
         cardlayout.show(cardsContainer, "MAIN");

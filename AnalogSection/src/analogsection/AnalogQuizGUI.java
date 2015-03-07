@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Ste
+ * @author Stepehn kearns
  */
 public class AnalogQuizGUI extends javax.swing.JFrame {
 
