@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Sean
+ * @author Stephen
  */
 public class DiganosticGUIPanel extends javax.swing.JPanel {
 

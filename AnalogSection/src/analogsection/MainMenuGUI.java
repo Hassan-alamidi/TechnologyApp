@@ -5,9 +5,11 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
- * @author Sean
+ * @author Stephen 
  */
 public class MainMenuGUI extends javax.swing.JPanel {
 
@@ -27,19 +29,135 @@ public class MainMenuGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        plasticLbl = new javax.swing.JLabel();
+        digitalLbl = new javax.swing.JLabel();
+        analogLbl = new javax.swing.JLabel();
+        woodLbl = new javax.swing.JLabel();
+        plasticBtn = new javax.swing.JButton();
+        digitalBtn = new javax.swing.JButton();
+        analogBtn = new javax.swing.JButton();
+        woodBtn = new javax.swing.JButton();
+        backgroundLbl = new javax.swing.JLabel();
+
+        plasticLbl.setText("                 Plastic section ");
+
+        digitalLbl.setText("Digital section");
+
+        analogLbl.setText("Analog section");
+
+        woodLbl.setText("                          Wood section");
+
+        plasticBtn.setOpaque(false);
+        plasticBtn .setContentAreaFilled(false);
+        plasticBtn .setBorderPainted(false);
+
+        digitalBtn.setOpaque(false);
+        digitalBtn .setContentAreaFilled(false);
+        digitalBtn .setBorderPainted(false);
+        digitalBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                digitalBtnActionPerformed(evt);
+            }
+        });
+
+        analogBtn.setOpaque(false);
+        analogBtn .setContentAreaFilled(false);
+        analogBtn .setBorderPainted(false);
+        analogBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analogBtnActionPerformed(evt);
+            }
+        });
+
+        woodBtn.setOpaque(false);
+        woodBtn .setContentAreaFilled(false);
+        woodBtn .setBorderPainted(false);
+
+        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/mainLayout2.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(plasticLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(digitalBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(digitalLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(analogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(woodLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(woodBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(analogLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(plasticBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(backgroundLbl)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(plasticLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(digitalBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(digitalLbl)))
+                .addGap(70, 70, 70)
+                .addComponent(analogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(woodLbl))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(370, 370, 370)
+                .addComponent(woodBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(analogLbl))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(plasticBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(backgroundLbl)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void digitalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_digitalBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_digitalBtnActionPerformed
+
+    private void analogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analogBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
+    }//GEN-LAST:event_analogBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton analogBtn;
+    private javax.swing.JLabel analogLbl;
+    private javax.swing.JLabel backgroundLbl;
+    private javax.swing.JButton digitalBtn;
+    private javax.swing.JLabel digitalLbl;
+    private javax.swing.JButton plasticBtn;
+    private javax.swing.JLabel plasticLbl;
+    private javax.swing.JButton woodBtn;
+    private javax.swing.JLabel woodLbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class AnalogSection {
        
         ApplicationMainScreen appGUI = new ApplicationMainScreen(); 
         Quiz playQuiz = new Quiz();
-        HangmanAnalog playHangman = new HangmanAnalog();
+        HangmanSuper playHangman = new HangmanSuper();
         
         //make the GUI visible
         appGUI.setVisible(true);

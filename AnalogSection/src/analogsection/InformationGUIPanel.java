@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Sean
+ * @author Stephen
  */
 public class InformationGUIPanel extends javax.swing.JPanel {
 

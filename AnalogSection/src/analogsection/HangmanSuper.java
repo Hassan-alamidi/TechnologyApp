@@ -11,7 +11,7 @@ package analogsection;
  */
 
 import java.util.*;
-public class HangmanAnalog {
+public class HangmanSuper {
     //variables 
     private String[] Sentance;
     private String anwser, userAns;
@@ -23,8 +23,8 @@ public class HangmanAnalog {
     
     
     
-    public HangmanAnalog(){
-        Sentance = new String[]{"This is a superclass which is_____","A subclass ____ a superclass","To call an ____ of the class instanceate the object in the app class","the first java program is usually hello___-","Is java open source___" };
+    public HangmanSuper(){
+        Sentance = new String[]{"This is a superclass which is _____ by subclasses","A subclass ____ a superclass","To call an ____ of the class instanceate the object in the app class","the first, most hated java program is hello____","Is java open source___" };
         anwser = "";
         userAns = "";
         rand =  new Random();

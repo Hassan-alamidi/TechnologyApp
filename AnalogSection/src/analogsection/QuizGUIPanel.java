@@ -5,6 +5,8 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager;
+
 /**
  *
  * @author Stephen 
@@ -93,6 +95,11 @@ public class QuizGUIPanel extends javax.swing.JPanel {
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
     }//GEN-LAST:event_exitBtnActionPerformed
 
 

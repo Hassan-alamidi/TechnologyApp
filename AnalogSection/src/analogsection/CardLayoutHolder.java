@@ -15,34 +15,39 @@ import javax.swing.JPanel;
  *
  * @author Stephen 
  */
-public class AnalogCardHolder extends javax.swing.JFrame {
-
+public class CardLayoutHolder extends javax.swing.JFrame {
+       JPanel cardsContainer;
     /**
      * Creates new form AnalogCardHolder
      */
-    JPanel cardsContainer;
-    public AnalogCardHolder() {
+  
+   
+    public CardLayoutHolder() {
         initComponents();
-        //declare and create objects 
-        AnalogGUIPanel mainCard = new AnalogGUIPanel();
+       
+         //declare and create objects 
+        MainMenuGUI mainCard = new  MainMenuGUI();
+        
+        AnalogGUIPanel screen1Card = new AnalogGUIPanel();
        // HangmanGUIPanel screen1Card = new HangmanGUIPanel();
         QuizGUIPanel screen2Card = new QuizGUIPanel();
         InformationGUIPanel screen3Card  = new  InformationGUIPanel();
         
+        
          
         cardsContainer = new JPanel(new CardLayout());
         cardsContainer.add(mainCard, "MAIN");
-        //cardsContainer.add(screen1Card,"SCREEN1");
-        cardsContainer.add(screen2Card, "SCREEN2");
-        cardsContainer.add(screen2Card, "SCREEN2");
-        cardsContainer.add(screen3Card, "SCREEN3");
+        cardsContainer.add(screen1Card,"AnalogMainScreen");
+        cardsContainer.add(screen2Card, "AnalogQuizScreen");
+        cardsContainer.add(screen3Card, "AnalogInfoScreen");
         
         
         // add the cards container to the JFrame 
         this.setLayout(new FlowLayout());
+        this.setSize(400,450);
         this.add(cardsContainer);
-        CardLayout cl = (CardLayout)(cardsContainer.getLayout());
-        cl.show(cardsContainer, "MAIN");
+        java.awt.CardLayout cardlayout = (java.awt.CardLayout)(cardsContainer.getLayout());
+        cardlayout.show(cardsContainer, "MAIN");
     }
 
     /**
@@ -87,20 +92,21 @@ public class AnalogCardHolder extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AnalogCardHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardLayoutHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AnalogCardHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardLayoutHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AnalogCardHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardLayoutHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AnalogCardHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardLayoutHolder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnalogCardHolder().setVisible(true);
+                new CardLayoutHolder().setVisible(true);
             }
         });
     }

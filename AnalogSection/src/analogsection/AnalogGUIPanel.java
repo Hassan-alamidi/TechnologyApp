@@ -7,6 +7,7 @@ package analogsection;
 
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
+import java.awt.LayoutManager;
 import javax.swing.JPanel;
 
 /**
@@ -18,9 +19,10 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
     /**
      * Creates new form AnalogGUI
      */
-    JPanel cardsContainer;
+ 
     public AnalogGUIPanel() {
         initComponents();
+       
         
     }
 
@@ -33,47 +35,75 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        HangmanBtn = new javax.swing.JButton();
+        QuizBtn = new javax.swing.JButton();
+        InfoBtn = new javax.swing.JButton();
+        DiagnosticBtn = new javax.swing.JButton();
+        CalcBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jButton1.setText("Hangman");
-        add(jButton1);
-        jButton1.setBounds(20, 20, 190, 29);
+        HangmanBtn.setText("Hangman");
+        add(HangmanBtn);
+        HangmanBtn.setBounds(40, 20, 190, 29);
 
-        jButton2.setText("Quiz");
-        add(jButton2);
-        jButton2.setBounds(100, 100, 170, 29);
+        QuizBtn.setText("Quiz");
+        QuizBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuizBtnActionPerformed(evt);
+            }
+        });
+        add(QuizBtn);
+        QuizBtn.setBounds(100, 100, 170, 29);
 
-        jButton3.setText("Information");
-        add(jButton3);
-        jButton3.setBounds(160, 190, 150, 29);
+        InfoBtn.setText("Information");
+        InfoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InfoBtnActionPerformed(evt);
+            }
+        });
+        add(InfoBtn);
+        InfoBtn.setBounds(160, 190, 150, 29);
 
-        jButton4.setText("Diagnostic Tool");
-        add(jButton4);
-        jButton4.setBounds(130, 290, 160, 29);
+        DiagnosticBtn.setText("Diagnostic Tool");
+        add(DiagnosticBtn);
+        DiagnosticBtn.setBounds(130, 290, 160, 29);
 
-        jButton5.setText("Resistor calculate ");
-        add(jButton5);
-        jButton5.setBounds(40, 380, 180, 29);
+        CalcBtn.setText("Resistor calculate ");
+        add(CalcBtn);
+        CalcBtn.setBounds(40, 380, 180, 29);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 410, 430);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogQuizScreen");
+        }
+    }//GEN-LAST:event_QuizBtnActionPerformed
+
+    private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogInfoScreen");
+        }
+    }//GEN-LAST:event_InfoBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CalcBtn;
+    private javax.swing.JButton DiagnosticBtn;
+    private javax.swing.JButton HangmanBtn;
+    private javax.swing.JButton InfoBtn;
+    private javax.swing.JButton QuizBtn;
     private javax.swing.JLabel backgroundLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
 }

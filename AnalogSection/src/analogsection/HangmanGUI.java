@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Sean
+ * @author Stephen
  */
 public class HangmanGUI extends javax.swing.JFrame {
 
