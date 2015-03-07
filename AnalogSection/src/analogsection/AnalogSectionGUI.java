@@ -5,7 +5,11 @@
  */
 package analogsection;
 
+import java.awt.CardLayout;
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,6 +20,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
     private String anwser, question, userAns, sentance; 
     private  int correct, incorrect;
     private  boolean chckRightorWrong;
+    JPanel cardsContainer;
     
      
     /**
@@ -23,6 +28,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
      */
     public AnalogSectionGUI() {
         initComponents();
+        
     }
 
     /**
@@ -53,7 +59,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(QuizBtn);
-        QuizBtn.setBounds(110, 110, 166, 29);
+        QuizBtn.setBounds(130, 110, 166, 29);
 
         HangmanBtn.setBackground(new java.awt.Color(0, 102, 255));
         HangmanBtn.setText("Hangman");
@@ -63,7 +69,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HangmanBtn);
-        HangmanBtn.setBounds(40, 40, 156, 18);
+        HangmanBtn.setBounds(70, 40, 156, 18);
 
         InformationBtn.setBackground(new java.awt.Color(255, 153, 0));
         InformationBtn.setText("Information");
@@ -73,12 +79,12 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(InformationBtn);
-        InformationBtn.setBounds(160, 190, 166, 21);
+        InformationBtn.setBounds(180, 200, 166, 21);
 
         FormulasBtn.setBackground(new java.awt.Color(0, 153, 153));
         FormulasBtn.setText("Diganostic");
         getContentPane().add(FormulasBtn);
-        FormulasBtn.setBounds(140, 280, 166, 29);
+        FormulasBtn.setBounds(160, 290, 166, 29);
 
         ResistorCalcLbl.setText("Resistor calculator");
         ResistorCalcLbl.addActionListener(new java.awt.event.ActionListener() {
@@ -87,20 +93,24 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ResistorCalcLbl);
-        ResistorCalcLbl.setBounds(60, 380, 156, 29);
+        ResistorCalcLbl.setBounds(80, 380, 156, 29);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/Users/Sean/Pictures/AnalogGUI.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-5, -4, 410, 460);
+        jLabel1.setBounds(0, -30, 410, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void HangmanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HangmanBtnActionPerformed
         // TODO add your handling code here:
-        
+       LayoutManager layout = getParent().getLayout();
+//        if (layout instanceof CardLayout) {
+//            CardLayout cl = (CardLayout)layout;
+//            cl.show(getParent(), "SCREEN1"); 
+//        } 
         //instan the object
-         HangmanAnalog playHangman = new HangmanAnalog();
+       /*  HangmanAnalog playHangman = new HangmanAnalog();
          
           sentance = playHangman.ChoseRandSentance();
             
@@ -129,7 +139,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
                     }
                 
                 }
-         
+         */
     }//GEN-LAST:event_HangmanBtnActionPerformed
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
@@ -154,7 +164,7 @@ public class AnalogSectionGUI extends javax.swing.JFrame {
        incorrect = playQuiz.getIncorrect();
        
        JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
-             
+          
     }//GEN-LAST:event_QuizBtnActionPerformed
 
     private void ResistorCalcLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResistorCalcLblActionPerformed

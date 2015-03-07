@@ -7,7 +7,7 @@ package analogsection;
 
 /**
  *
- * @author Stephen
+ * @author Stephen kearns
  */
 import java.util.Set;
 import javax.swing.*;
@@ -34,7 +34,7 @@ public class AnalogSection {
             
             * I have just left the code to show how i implemented the code behind the buttons
             
-            * It also shows how to go from one GUI to another by Action performed on the button
+            * It also shows how to go from one GUI to another by an Action performed on the button
         
         
         
