@@ -25,21 +25,34 @@ public class CardLayoutHolder extends javax.swing.JFrame {
     public CardLayoutHolder() {
         initComponents();
        
-         //declare and create objects 
+         //declare and create objects
+        
+        //Welcome screen of the application goes here 
+        
+        // Is the main screen of the application
         MainMenuGUI mainCard = new  MainMenuGUI();
         
+        // All of the screens in the analog section 
         AnalogGUIPanel screen1Card = new AnalogGUIPanel();
-       // HangmanGUIPanel screen1Card = new HangmanGUIPanel();
-        QuizGUIPanel screen2Card = new QuizGUIPanel();
-        InformationGUIPanel screen3Card  = new  InformationGUIPanel();
+        AnalogHangmanPanel screen2Card = new AnalogHangmanPanel ();
+        QuizGUIPanel screen3Card = new QuizGUIPanel();
+        InformationGUIPanel screen4Card  = new  InformationGUIPanel();
+        DiganosticGUIPanel screen5Card = new DiganosticGUIPanel();
+        ResistorCalcPanel screen6Card = new  ResistorCalcPanel();
         
         
-         
+        //creates a variable which is new Panel with cardlayout 
         cardsContainer = new JPanel(new CardLayout());
+        // adds the main screen to the container 
         cardsContainer.add(mainCard, "MAIN");
+        
+        //adds all of the analog cards(screens) to the contanier 
         cardsContainer.add(screen1Card,"AnalogMainScreen");
-        cardsContainer.add(screen2Card, "AnalogQuizScreen");
-        cardsContainer.add(screen3Card, "AnalogInfoScreen");
+        cardsContainer.add(screen2Card, "AnalogHangmanScreen");
+        cardsContainer.add(screen3Card, "AnalogQuizScreen");
+        cardsContainer.add(screen4Card, "AnalogInfoScreen");
+        cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
+        cardsContainer.add(screen6Card, "AnalogCalcScreen");
         
         
         // add the cards container to the JFrame 
