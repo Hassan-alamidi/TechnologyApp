@@ -31,42 +31,54 @@ public class WoodMainPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jProgressBar1 = new javax.swing.JProgressBar();
-        TitleLbl = new javax.swing.JLabel();
         InfoLbl = new javax.swing.JLabel();
         QuizLbl = new javax.swing.JLabel();
         WhatsLbl = new javax.swing.JLabel();
-        BackgroundLbl = new javax.swing.JLabel();
-        WhatsBtn = new javax.swing.JButton();
+        ExitBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         QuizBtn = new javax.swing.JButton();
+        WhatsBtn = new javax.swing.JButton();
+        HomeBtn = new javax.swing.JButton();
+        BackgroundLbl = new javax.swing.JLabel();
         InfoBtn = new javax.swing.JButton();
 
         setLayout(null);
 
-        TitleLbl.setBackground(new java.awt.Color(255, 255, 255));
-        TitleLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
-        TitleLbl.setText("This is the Wood Sections main screen");
-        add(TitleLbl);
-        TitleLbl.setBounds(60, 20, 320, 30);
-
         InfoLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_1rsz_1imageedit_4_4600978165.png")); // NOI18N
-        InfoLbl.setText("jLabel3");
         add(InfoLbl);
-        InfoLbl.setBounds(70, 150, 140, 70);
+        InfoLbl.setBounds(110, 100, 140, 70);
 
         QuizLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_1rsz_1rsz_quiz.jpg")); // NOI18N
-        QuizLbl.setText("jLabel4");
         add(QuizLbl);
-        QuizLbl.setBounds(240, 140, 140, 60);
+        QuizLbl.setBounds(120, 180, 140, 60);
 
         WhatsLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_title859716636.png")); // NOI18N
-        WhatsLbl.setText("jLabel6");
         add(WhatsLbl);
-        WhatsLbl.setBounds(130, 230, 160, 70);
+        WhatsLbl.setBounds(120, 250, 160, 70);
 
-        BackgroundLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\Wood-Background-Texture-452x336.jpg")); // NOI18N
-        add(BackgroundLbl);
-        BackgroundLbl.setBounds(0, -10, 450, 350);
+        ExitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
+        ExitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitBtnActionPerformed(evt);
+            }
+        });
+        add(ExitBtn);
+        ExitBtn.setBounds(330, 10, 40, 41);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_mainmenu2.gif")); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(90, 340, 160, 30);
+
+        QuizBtn.setBackground(new java.awt.Color(255, 255, 255));
+        QuizBtn.setText("To image Quiz");
+        QuizBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuizBtnActionPerformed(evt);
+            }
+        });
+        add(QuizBtn);
+        QuizBtn.setBounds(120, 180, 140, 60);
 
         WhatsBtn.setBackground(new java.awt.Color(255, 255, 255));
         WhatsBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -77,17 +89,21 @@ public class WoodMainPanel extends javax.swing.JPanel {
             }
         });
         add(WhatsBtn);
-        WhatsBtn.setBounds(130, 230, 160, 70);
+        WhatsBtn.setBounds(120, 250, 160, 70);
 
-        QuizBtn.setBackground(new java.awt.Color(255, 255, 255));
-        QuizBtn.setText("To image Quiz");
-        QuizBtn.addActionListener(new java.awt.event.ActionListener() {
+        HomeBtn.setBackground(new java.awt.Color(0, 102, 204));
+        HomeBtn.setText("Previous Menu");
+        HomeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QuizBtnActionPerformed(evt);
+                HomeBtnActionPerformed(evt);
             }
         });
-        add(QuizBtn);
-        QuizBtn.setBounds(240, 140, 140, 60);
+        add(HomeBtn);
+        HomeBtn.setBounds(100, 340, 150, 30);
+
+        BackgroundLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\paddysimg.jpg.jpg")); // NOI18N
+        add(BackgroundLbl);
+        BackgroundLbl.setBounds(0, 0, 400, 440);
 
         InfoBtn.setBackground(new java.awt.Color(255, 255, 255));
         InfoBtn.setText("To Wood Info");
@@ -97,7 +113,7 @@ public class WoodMainPanel extends javax.swing.JPanel {
             }
         });
         add(InfoBtn);
-        InfoBtn.setBounds(70, 150, 120, 50);
+        InfoBtn.setBounds(110, 100, 120, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
@@ -132,16 +148,32 @@ public class WoodMainPanel extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_WhatsBtnActionPerformed
 
+    private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_ExitBtnActionPerformed
+
+    private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "MAIN");
+        }
+    }//GEN-LAST:event_HomeBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundLbl;
+    private javax.swing.JButton ExitBtn;
+    private javax.swing.JButton HomeBtn;
     private javax.swing.JButton InfoBtn;
     private javax.swing.JLabel InfoLbl;
     private javax.swing.JButton QuizBtn;
     private javax.swing.JLabel QuizLbl;
-    private javax.swing.JLabel TitleLbl;
     private javax.swing.JButton WhatsBtn;
     private javax.swing.JLabel WhatsLbl;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 

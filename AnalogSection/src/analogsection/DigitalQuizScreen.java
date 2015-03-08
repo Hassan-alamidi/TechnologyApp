@@ -39,7 +39,6 @@ public class DigitalQuizScreen extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         titleLbl = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        exitbtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -110,15 +109,6 @@ public class DigitalQuizScreen extends javax.swing.JPanel {
         add(jButton2);
         jButton2.setBounds(20, 400, 150, 40);
 
-        exitbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
-            }
-        });
-        add(exitbtn);
-        exitbtn.setBounds(340, 20, 40, 30);
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/FEATURE-BRAIN-CIRCUITS-ISTOCK-HiRes.jpg"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(4, 4, 390, 450);
@@ -142,14 +132,8 @@ public class DigitalQuizScreen extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitbtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitbtn;
     private javax.swing.JLabel headingLbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

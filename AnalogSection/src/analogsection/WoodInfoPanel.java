@@ -31,8 +31,13 @@ public class WoodInfoPanel extends javax.swing.JPanel {
 
         TitleLbl = new javax.swing.JLabel();
         BackNextLbl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         BackgroundLbl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         MenuBtn = new javax.swing.JButton();
+        backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -40,17 +45,33 @@ public class WoodInfoPanel extends javax.swing.JPanel {
         TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
         TitleLbl.setText("This is the section for the wood info");
         add(TitleLbl);
-        TitleLbl.setBounds(80, 20, 300, 22);
+        TitleLbl.setBounds(60, 50, 300, 22);
 
         BackNextLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\resize.png")); // NOI18N
-        BackNextLbl.setText("jLabel4");
         add(BackNextLbl);
-        BackNextLbl.setBounds(250, 230, 120, 80);
+        BackNextLbl.setBounds(260, 320, 120, 90);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\download (3).jpg")); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(100, 80, 230, 220);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Oak Tree:");
+        add(jLabel3);
+        jLabel3.setBounds(60, 330, 60, 17);
+
+        jTextField1.setText("Strong, Resistent and hard");
+        add(jTextField1);
+        jTextField1.setBounds(120, 330, 160, 30);
 
         BackgroundLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\Wood-Background-Texture-452x336.jpg")); // NOI18N
-        BackgroundLbl.setText("jLabel2");
         add(BackgroundLbl);
-        BackgroundLbl.setBounds(0, 0, 450, 336);
+        BackgroundLbl.setBounds(0, 40, 400, 300);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\Wood-Background-Texture-452x336.jpg")); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(0, 340, 400, 100);
 
         MenuBtn.setText("Main Menu");
         MenuBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +80,11 @@ public class WoodInfoPanel extends javax.swing.JPanel {
             }
         });
         add(MenuBtn);
-        MenuBtn.setBounds(270, 260, 110, 30);
+        MenuBtn.setBounds(270, 350, 110, 30);
+
+        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
+        add(backgroundLbl);
+        backgroundLbl.setBounds(0, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBtnActionPerformed
@@ -79,5 +104,10 @@ public class WoodInfoPanel extends javax.swing.JPanel {
     private javax.swing.JLabel BackgroundLbl;
     private javax.swing.JButton MenuBtn;
     private javax.swing.JLabel TitleLbl;
+    private javax.swing.JLabel backgroundLbl;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

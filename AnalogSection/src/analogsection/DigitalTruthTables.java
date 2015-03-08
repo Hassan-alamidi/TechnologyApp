@@ -35,7 +35,6 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         titleLbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
-        exitbtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -78,15 +77,6 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         add(nextBtn);
         nextBtn.setBounds(300, 0, 90, 50);
 
-        exitbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
-            }
-        });
-        add(exitbtn);
-        exitbtn.setBounds(350, 70, 40, 30);
-
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/TruthTable.jpg"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(-2, 0, 400, 450);
@@ -111,17 +101,11 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitbtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JButton exitbtn;
     private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables

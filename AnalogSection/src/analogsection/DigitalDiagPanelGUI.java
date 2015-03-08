@@ -44,7 +44,6 @@ public class DigitalDiagPanelGUI extends javax.swing.JPanel {
         imageChangeLbl = new javax.swing.JLabel();
         changeTextLbl = new javax.swing.JLabel();
         changeInfoLbl = new javax.swing.JLabel();
-        exitbtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -111,15 +110,6 @@ public class DigitalDiagPanelGUI extends javax.swing.JPanel {
         add(changeInfoLbl);
         changeInfoLbl.setBounds(10, 360, 370, 14);
 
-        exitbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
-            }
-        });
-        add(exitbtn);
-        exitbtn.setBounds(20, 410, 40, 30);
-
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/DiganosticGUI.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 400, 450);
@@ -152,11 +142,6 @@ public class DigitalDiagPanelGUI extends javax.swing.JPanel {
         
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitbtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
@@ -164,7 +149,6 @@ public class DigitalDiagPanelGUI extends javax.swing.JPanel {
     private javax.swing.JLabel changeInfoLbl;
     private javax.swing.JLabel changeTextLbl;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JButton exitbtn;
     private javax.swing.JLabel imageChangeLbl;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JButton nextBtn;
