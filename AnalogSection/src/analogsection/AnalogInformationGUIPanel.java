@@ -119,12 +119,14 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         imageChangeLbl.setVisible(true);
         infochangeLbl.setVisible(true);
+        infoLbl.setVisible(false);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         imageChangeLbl.setVisible(false);
         infochangeLbl.setVisible(false);
+        infoLbl.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
 
 

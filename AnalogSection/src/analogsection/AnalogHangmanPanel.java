@@ -60,6 +60,7 @@ public class AnalogHangmanPanel extends javax.swing.JPanel {
         Submit.setBounds(100, 400, 170, 30);
 
         jLabel1.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Hangman Game");
         add(jLabel1);
         jLabel1.setBounds(140, 0, 170, 40);

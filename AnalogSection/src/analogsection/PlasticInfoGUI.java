@@ -5,6 +5,8 @@
  */
 package analogsection;
 
+import java.awt.LayoutManager; 
+
 /**
  *
  * @author magui_000
@@ -16,6 +18,7 @@ public class PlasticInfoGUI extends javax.swing.JPanel {
      */
     public PlasticInfoGUI() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**
@@ -27,24 +30,13 @@ public class PlasticInfoGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BackBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
-        CatagoriesBtn = new javax.swing.JButton();
-        ExamplesBtn = new javax.swing.JButton();
-        WhatMadeBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        InfoLbl = new javax.swing.JLabel();
+        TitleLbl = new javax.swing.JLabel();
+        PictureLbl = new javax.swing.JLabel();
+        BackgroungLbl = new javax.swing.JLabel();
 
         setLayout(null);
-
-        BackBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        BackBtn.setText("Back to Materials");
-        BackBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackBtnActionPerformed(evt);
-            }
-        });
-        add(BackBtn);
-        BackBtn.setBounds(120, 283, 150, 30);
 
         ExitBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         ExitBtn.setText("Exit");
@@ -54,71 +46,36 @@ public class PlasticInfoGUI extends javax.swing.JPanel {
             }
         });
         add(ExitBtn);
-        ExitBtn.setBounds(110, 330, 150, 30);
+        ExitBtn.setBounds(230, 370, 120, 40);
 
-        CatagoriesBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        CatagoriesBtn.setText("Catagories");
-        CatagoriesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CatagoriesBtnActionPerformed(evt);
-            }
-        });
-        add(CatagoriesBtn);
-        CatagoriesBtn.setBounds(110, 110, 150, 30);
+        InfoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/plastic info.PNG"))); // NOI18N
+        add(InfoLbl);
+        InfoLbl.setBounds(30, 274, 340, 40);
 
-        ExamplesBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        ExamplesBtn.setText("Examples");
-        ExamplesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExamplesBtnActionPerformed(evt);
-            }
-        });
-        add(ExamplesBtn);
-        ExamplesBtn.setBounds(120, 160, 150, 30);
+        TitleLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        TitleLbl.setText("Information");
+        add(TitleLbl);
+        TitleLbl.setBounds(140, 10, 110, 22);
 
-        WhatMadeBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        WhatMadeBtn.setText("What is it Made of");
-        WhatMadeBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WhatMadeBtnActionPerformed(evt);
-            }
-        });
-        add(WhatMadeBtn);
-        WhatMadeBtn.setBounds(120, 210, 150, 30);
+        PictureLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/Plastics_Industry_in_the_Middle_East.jpg"))); // NOI18N
+        PictureLbl.setText("jLabel1");
+        add(PictureLbl);
+        PictureLbl.setBounds(50, 50, 290, 200);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/OOP Picture.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        add(jLabel2);
-        jLabel2.setBounds(0, 0, 400, 440);
+        BackgroungLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
+        BackgroungLbl.setText("jLabel2");
+        add(BackgroungLbl);
+        BackgroungLbl.setBounds(0, 0, 400, 440);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CatagoriesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CatagoriesBtnActionPerformed
-        // TODO add your handling code here:
-        PlasticCatagoriesGUI myPCat = new PlasticCatagoriesGUI();
-        myPCat.setVisible(true);
-    }//GEN-LAST:event_CatagoriesBtnActionPerformed
-
-    private void ExamplesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExamplesBtnActionPerformed
-        // TODO add your handling code here:
-        PlasticExampleGUI myPExample = new PlasticExampleGUI();
-        myPExample.setVisible(true);
-    }//GEN-LAST:event_ExamplesBtnActionPerformed
-
-    private void WhatMadeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WhatMadeBtnActionPerformed
-        // TODO add your handling code here:
-        PlasticMadeOfGUI myPMade = new PlasticMadeOfGUI();
-        myPMade.setVisible(true);
-    }//GEN-LAST:event_WhatMadeBtnActionPerformed
-
-    private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackBtnActionPerformed
 
     private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+         LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticMainScreen");
     }//GEN-LAST:event_ExitBtnActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
@@ -156,11 +113,10 @@ public class PlasticInfoGUI extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackBtn;
-    private javax.swing.JButton CatagoriesBtn;
-    private javax.swing.JButton ExamplesBtn;
+    private javax.swing.JLabel BackgroungLbl;
     private javax.swing.JButton ExitBtn;
-    private javax.swing.JButton WhatMadeBtn;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel InfoLbl;
+    private javax.swing.JLabel PictureLbl;
+    private javax.swing.JLabel TitleLbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,12 +22,12 @@ public class AnalogSection {
        int correct, incorrect,choice;
        boolean chckRightorWrong;
        
-        ApplicationMainScreen appGUI = new ApplicationMainScreen(); 
+        //ApplicationMainScreen appGUI = new ApplicationMainScreen(); 
         Quiz playQuiz = new Quiz();
         HangmanSuper playHangman = new HangmanSuper();
         
         //make the GUI visible
-        appGUI.setVisible(true);
+       // appGUI.setVisible(true);
         
         /*
             * The code which is commented out is what is actually happing behind the buttons 

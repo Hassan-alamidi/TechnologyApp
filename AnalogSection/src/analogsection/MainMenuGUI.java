@@ -18,6 +18,7 @@ public class MainMenuGUI extends javax.swing.JPanel {
      */
     public MainMenuGUI() {
         initComponents();
+        this.setSize(400,450);
     }
 
     /**
@@ -50,6 +51,11 @@ public class MainMenuGUI extends javax.swing.JPanel {
         plasticBtn.setOpaque(false);
         plasticBtn .setContentAreaFilled(false);
         plasticBtn .setBorderPainted(false);
+        plasticBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plasticBtnActionPerformed(evt);
+            }
+        });
 
         digitalBtn.setOpaque(false);
         digitalBtn .setContentAreaFilled(false);
@@ -161,6 +167,15 @@ public class MainMenuGUI extends javax.swing.JPanel {
             cl.show(getParent(), "WoodMainScreen");
         }
     }//GEN-LAST:event_woodBtnActionPerformed
+
+    private void plasticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plasticBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticMainScreen");
+        }
+    }//GEN-LAST:event_plasticBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

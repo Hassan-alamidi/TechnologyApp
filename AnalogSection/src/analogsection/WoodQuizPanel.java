@@ -63,7 +63,7 @@ public class WoodQuizPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBtnActionPerformed
-      LayoutManager layout = getParent().getLayout();
+           LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "WoodMainScreen");

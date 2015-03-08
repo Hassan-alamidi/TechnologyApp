@@ -49,7 +49,7 @@ public class WhatsItMadeOfPanel extends javax.swing.JPanel {
 
         BackgroundLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\Wood-Background-Texture-452x336.jpg")); // NOI18N
         add(BackgroundLbl);
-        BackgroundLbl.setBounds(0, 0, 460, 330);
+        BackgroundLbl.setBounds(0, 0, 450, 330);
 
         MenuBtn.setText("Main menu");
         MenuBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -79,4 +79,4 @@ public class WhatsItMadeOfPanel extends javax.swing.JPanel {
     private javax.swing.JLabel TitleLbl;
     // End of variables declaration//GEN-END:variables
 
-} // fixed was missing bracket
+} // fixed error Stephen 

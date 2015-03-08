@@ -42,11 +42,12 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         DiagnosticBtn = new javax.swing.JButton();
         CalcBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
 
-        HangmanBtn.setBackground(new java.awt.Color(0, 102, 204));
+        HangmanBtn.setBackground(new java.awt.Color(0, 153, 255));
         HangmanBtn.setText("Hangman");
         HangmanBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +57,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         add(HangmanBtn);
         HangmanBtn.setBounds(80, 50, 190, 29);
 
-        QuizBtn.setBackground(new java.awt.Color(0, 102, 204));
+        QuizBtn.setBackground(new java.awt.Color(0, 153, 255));
         QuizBtn.setText("Quiz");
         QuizBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +67,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         add(QuizBtn);
         QuizBtn.setBounds(160, 140, 170, 30);
 
-        InfoBtn.setBackground(new java.awt.Color(0, 102, 204));
+        InfoBtn.setBackground(new java.awt.Color(0, 153, 255));
         InfoBtn.setText("Information");
         InfoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +77,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         add(InfoBtn);
         InfoBtn.setBounds(190, 210, 150, 29);
 
-        DiagnosticBtn.setBackground(new java.awt.Color(0, 102, 204));
+        DiagnosticBtn.setBackground(new java.awt.Color(0, 153, 255));
         DiagnosticBtn.setText("Diagnostic Tools");
         DiagnosticBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +87,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         add(DiagnosticBtn);
         DiagnosticBtn.setBounds(170, 300, 160, 29);
 
-        CalcBtn.setBackground(new java.awt.Color(0, 102, 204));
+        CalcBtn.setBackground(new java.awt.Color(0, 153, 255));
         CalcBtn.setText("Resistor value calculator");
         CalcBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +105,16 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         });
         add(exitBtn);
         exitBtn.setBounds(360, 0, 40, 40);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/hom.png"))); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(0, 0, 50, 50);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI2.png"))); // NOI18N
         add(backgroundLbl);
@@ -160,6 +171,15 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "MAIN");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CalcBtn;
@@ -169,5 +189,6 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
     private javax.swing.JButton QuizBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

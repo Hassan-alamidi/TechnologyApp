@@ -31,16 +31,42 @@ public class WoodMainPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jProgressBar1 = new javax.swing.JProgressBar();
-        WhatsBtn = new javax.swing.JButton();
-        QuizBtn = new javax.swing.JButton();
-        InfoBtn = new javax.swing.JButton();
         TitleLbl = new javax.swing.JLabel();
         InfoLbl = new javax.swing.JLabel();
         QuizLbl = new javax.swing.JLabel();
         WhatsLbl = new javax.swing.JLabel();
         BackgroundLbl = new javax.swing.JLabel();
+        WhatsBtn = new javax.swing.JButton();
+        QuizBtn = new javax.swing.JButton();
+        InfoBtn = new javax.swing.JButton();
 
         setLayout(null);
+
+        TitleLbl.setBackground(new java.awt.Color(255, 255, 255));
+        TitleLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
+        TitleLbl.setText("This is the Wood Sections main screen");
+        add(TitleLbl);
+        TitleLbl.setBounds(60, 20, 320, 30);
+
+        InfoLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_1rsz_1imageedit_4_4600978165.png")); // NOI18N
+        InfoLbl.setText("jLabel3");
+        add(InfoLbl);
+        InfoLbl.setBounds(70, 150, 140, 70);
+
+        QuizLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_1rsz_1rsz_quiz.jpg")); // NOI18N
+        QuizLbl.setText("jLabel4");
+        add(QuizLbl);
+        QuizLbl.setBounds(240, 140, 140, 60);
+
+        WhatsLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\rsz_title859716636.png")); // NOI18N
+        WhatsLbl.setText("jLabel6");
+        add(WhatsLbl);
+        WhatsLbl.setBounds(130, 230, 160, 70);
+
+        BackgroundLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\John\\Desktop\\Wood-Background-Texture-452x336.jpg")); // NOI18N
+        add(BackgroundLbl);
+        BackgroundLbl.setBounds(0, -10, 450, 350);
 
         WhatsBtn.setBackground(new java.awt.Color(255, 255, 255));
         WhatsBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -72,31 +98,10 @@ public class WoodMainPanel extends javax.swing.JPanel {
         });
         add(InfoBtn);
         InfoBtn.setBounds(70, 150, 120, 50);
-
-        TitleLbl.setBackground(new java.awt.Color(255, 255, 255));
-        TitleLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
-        TitleLbl.setText("This is the Wood Sections main screen");
-        add(TitleLbl);
-        TitleLbl.setBounds(60, 20, 320, 30);
-
-        InfoLbl.setText("jLabel3");
-        add(InfoLbl);
-        InfoLbl.setBounds(70, 150, 140, 70);
-
-        QuizLbl.setText("jLabel4");
-        add(QuizLbl);
-        QuizLbl.setBounds(240, 140, 140, 60);
-
-        WhatsLbl.setText("jLabel6");
-        add(WhatsLbl);
-        WhatsLbl.setBounds(130, 230, 160, 70);
-        add(BackgroundLbl);
-        BackgroundLbl.setBounds(0, -10, 450, 350);
     }// </editor-fold>//GEN-END:initComponents
 
     private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
-         LayoutManager layout = getParent().getLayout();
+           LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "WoodInfoScreen");
@@ -105,13 +110,13 @@ public class WoodMainPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_InfoBtnActionPerformed
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
-        
-           LayoutManager layout = getParent().getLayout();
+            LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "WoodQuizScreen");
         }
-         
+          
+          
 
 
 // TODO add your handling code here:

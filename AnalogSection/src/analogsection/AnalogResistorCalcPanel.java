@@ -47,6 +47,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         ToloeranceCB = new javax.swing.JComboBox();
         TitleLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
+        typesCB = new javax.swing.JComboBox();
         backgroundLbl = new javax.swing.JLabel();
 
         jMenu1.setText("File");
@@ -130,7 +131,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
         TitleLbl.setText("Resistor value calculator ");
         add(TitleLbl);
-        TitleLbl.setBounds(110, 0, 340, 30);
+        TitleLbl.setBounds(80, 0, 310, 30);
 
         exitBtn .setOpaque(false);
         exitBtn .setContentAreaFilled(false);
@@ -141,7 +142,16 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
             }
         });
         add(exitBtn);
-        exitBtn.setBounds(-3, -10, 100, 40);
+        exitBtn.setBounds(-3, -10, 80, 40);
+
+        typesCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "4 Band", "5 Band", "6 Band" }));
+        typesCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                typesCBItemStateChanged(evt);
+            }
+        });
+        add(typesCB);
+        typesCB.setBounds(290, 0, 110, 30);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI2.png"))); // NOI18N
         add(backgroundLbl);
@@ -164,6 +174,39 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
+    private void typesCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_typesCBItemStateChanged
+        // TODO add your handling code here:
+
+        String selectedValue;
+        selectedValue = typesCB.getSelectedItem().toString();
+
+        if (selectedValue.equals("4 Band")) {
+            //display 4 band screen
+
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+                java.awt.CardLayout cl = (java.awt.CardLayout) layout;
+                cl.show(getParent(), "AnalogCalcScreen");
+            }
+        } else if (selectedValue.equals("5 Band")) {
+            //display 5 band screen
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+                java.awt.CardLayout cl = (java.awt.CardLayout) layout;
+                cl.show(getParent(), "Analog5bandCalcScreen");
+            }
+        } else {
+            //display 6 band screen
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+                java.awt.CardLayout cl = (java.awt.CardLayout) layout;
+                cl.show(getParent(), "Analog6bandCalcScreen");
+            }
+        }
+    
+               
+    }//GEN-LAST:event_typesCBItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Color1CB;
@@ -184,5 +227,6 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     private javax.swing.JLabel secondcolorLbl;
     private javax.swing.JLabel thridcolorLbl;
     private javax.swing.JLabel toloeranceLbl;
+    private javax.swing.JComboBox typesCB;
     // End of variables declaration//GEN-END:variables
 }

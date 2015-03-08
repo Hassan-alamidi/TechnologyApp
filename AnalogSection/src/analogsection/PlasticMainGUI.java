@@ -5,17 +5,22 @@
  */
 package analogsection;
 
+import java.awt.CardLayout;
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
+import javax.swing.JPanel;
 /**
  *
  * @author magui_000
  */
-public class PlasticMainGUI extends javax.swing.JFrame {
+public class PlasticMainGUI extends javax.swing.JPanel {
 
     /**
      * Creates new form PlasticMainGUI
      */
     public PlasticMainGUI() {
         initComponents();
+         this.setSize(400,450);
     }
 
     /**
@@ -27,80 +32,80 @@ public class PlasticMainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BackBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
-        QuizBtn = new javax.swing.JButton();
         InfoBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        QuizBtn = new javax.swing.JButton();
+        BackBtn = new javax.swing.JButton();
+        BackgroundLbl = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setLayout(null);
 
-        BackBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        BackBtn.setText("Back to Materials");
-        BackBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BackBtn);
-        BackBtn.setBounds(100, 270, 160, 30);
-
-        ExitBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        ExitBtn.setText("Exit");
+        ExitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
         ExitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(ExitBtn);
-        ExitBtn.setBounds(100, 320, 160, 30);
+        add(ExitBtn);
+        ExitBtn.setBounds(330, 0, 40, 45);
 
-        QuizBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        QuizBtn.setText("Quiz");
-        QuizBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QuizBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(QuizBtn);
-        QuizBtn.setBounds(110, 170, 160, 30);
-
-        InfoBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         InfoBtn.setText("Information");
         InfoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InfoBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(InfoBtn);
-        InfoBtn.setBounds(110, 110, 160, 30);
+        add(InfoBtn);
+        InfoBtn.setBounds(120, 133, 120, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/OOP Picture.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 400, 440);
+        QuizBtn.setText("Quiz");
+        QuizBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuizBtnActionPerformed(evt);
+            }
+        });
+        add(QuizBtn);
+        QuizBtn.setBounds(130, 210, 120, 30);
 
-        pack();
+        BackBtn.setText("Back to main");
+        BackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackBtnActionPerformed(evt);
+            }
+        });
+        add(BackBtn);
+        BackBtn.setBounds(120, 283, 130, 30);
+
+        BackgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/OOP Picture.jpg"))); // NOI18N
+        add(BackgroundLbl);
+        BackgroundLbl.setBounds(0, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
 
     private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
         // TODO add your handling code here:
-        PlasticInfoGUI myInfo = new PlasticInfoGUI();
-        myInfo.setVisible(true);
-       
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticInfoScreen");
+        }
     }//GEN-LAST:event_InfoBtnActionPerformed
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
         // TODO add your handling code here:
-        PlasticQuizGUI myQuiz = new PlasticQuizGUI();
-        myQuiz.setVisible(true);
-       
+         LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticQuizScreen");
+        }
     }//GEN-LAST:event_QuizBtnActionPerformed
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
-        
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "MAIN");
+        }
     }//GEN-LAST:event_BackBtnActionPerformed
 
     private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
@@ -108,46 +113,12 @@ public class PlasticMainGUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ExitBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PlasticMainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PlasticMainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PlasticMainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PlasticMainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PlasticMainGUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
+    private javax.swing.JLabel BackgroundLbl;
     private javax.swing.JButton ExitBtn;
     private javax.swing.JButton InfoBtn;
     private javax.swing.JButton QuizBtn;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
