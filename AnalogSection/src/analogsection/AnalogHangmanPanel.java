@@ -9,7 +9,7 @@ import java.awt.LayoutManager;
 
 /**
  *
- * @author Sean
+ * @author Stephen kearns, 
  */
 public class AnalogHangmanPanel extends javax.swing.JPanel {
 

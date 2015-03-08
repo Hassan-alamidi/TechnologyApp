@@ -72,6 +72,11 @@ public class MainMenuGUI extends javax.swing.JPanel {
         woodBtn.setOpaque(false);
         woodBtn .setContentAreaFilled(false);
         woodBtn .setBorderPainted(false);
+        woodBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                woodBtnActionPerformed(evt);
+            }
+        });
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/mainLayout2.png"))); // NOI18N
 
@@ -147,6 +152,15 @@ public class MainMenuGUI extends javax.swing.JPanel {
             cl.show(getParent(), "AnalogMainScreen");
         }
     }//GEN-LAST:event_analogBtnActionPerformed
+
+    private void woodBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_woodBtnActionPerformed
+        // TODO add your handling code here:
+        LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "WoodMainScreen");
+        }
+    }//GEN-LAST:event_woodBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

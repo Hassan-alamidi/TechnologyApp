@@ -40,6 +40,16 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
         AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
         
+        // All of the cards(screens) in the Wood section 
+        WoodMainPanel WoodMainScreen = new WoodMainPanel();
+        WoodInfoPanel WoodinfoCard = new WoodInfoPanel();
+        WoodQuizPanel WoodquizCard = new WoodQuizPanel();
+        WhatsItMadeOfPanel WoodwhatsCard = new WhatsItMadeOfPanel();
+        
+        // All of the cards(Screens) in the plastic section 
+        
+        //All of the cards(Screens) in the digital section 
+        
         
         //creates a variable which is new Panel with cardlayout 
         cardsContainer = new JPanel(new CardLayout());
@@ -56,19 +66,27 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
         cardsContainer.add(screen6Card, "AnalogCalcScreen");
         
+        //adds all of the Wood cards(screens) to the contanier:
+      
+
         //adds all of the plastic cards to the container: 
         
-        
+        //adds all of the Wood cards(screens) to the contanier:
+        cardsContainer.add(WoodMainScreen,"WoodMainScreen");
+        cardsContainer.add(WoodinfoCard, "WoodInfoScreen");
+        cardsContainer.add(WoodquizCard, "WoodQuizScreen");
+        cardsContainer.add(WoodwhatsCard, "WoodWhatsScreen");
         
         //adds all of the Digital cards(screens) to the contanier:
         
         
-        //adds all of the Wood cards(screens) to the contanier:
-        
+      
+      
         
         // add the cards container to the JFrame 
         this.setLayout(new FlowLayout());
         this.add(cardsContainer);
+        this.setSize(400,450);
         java.awt.CardLayout cardlayout = (java.awt.CardLayout)(cardsContainer.getLayout());
         cardlayout.show(cardsContainer, "MAIN");
     }
