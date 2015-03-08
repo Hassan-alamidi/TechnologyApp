@@ -135,7 +135,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogInfoScreen");
+            cl.show(getParent(), "AnalogInfoMainScreen");
         }
     }//GEN-LAST:event_InfoBtnActionPerformed
 

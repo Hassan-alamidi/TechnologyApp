@@ -39,13 +39,18 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         AnalogInformationGUIPanel screen4Card  = new  AnalogInformationGUIPanel();
         AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
         AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
-        AnalogResistor5bandCalc screen7Card = new AnalogResistor5bandCalc();
+        AnalogResistorCalc5band screen7Card = new  AnalogResistorCalc5band();
         AnalogResistorCalc6band screen8Card = new AnalogResistorCalc6band();
+        AnalogComponentsPanel screenCompCard = new AnalogComponentsPanel();
+        AnalogInfoMainScreen screenInfoCard = new  AnalogInfoMainScreen();
+        AnalogWavesScreen screenWavesCard = new AnalogWavesScreen();
+        
         // All of the cards(screens) in the Wood section 
         WoodMainPanel WoodMainScreen = new WoodMainPanel();
         WoodInfoPanel WoodinfoCard = new WoodInfoPanel();
         WoodQuizPanel WoodquizCard = new WoodQuizPanel();
         WhatsItMadeOfPanel WoodwhatsCard = new WhatsItMadeOfPanel();
+        
         
         // All of the cards(Screens) in the plastic section 
         PlasticInfoGUI screen9Card = new PlasticInfoGUI();
@@ -78,6 +83,9 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(screen6Card, "AnalogCalcScreen");
         cardsContainer.add(screen7Card, "Analog5bandCalcScreen");
         cardsContainer.add(screen8Card, "Analog6bandCalcScreen");
+        cardsContainer.add(screenCompCard, "AnalogCompScreen");
+        cardsContainer.add(screenInfoCard, "AnalogInfoMainScreen");
+        cardsContainer.add(screenWavesCard, "AnalogWavesScreen"); 
         
         //adds all of the Digital cards(screens) to the contanier:
       

@@ -114,7 +114,7 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
 
         value5Lbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         value5Lbl.setForeground(new java.awt.Color(255, 255, 255));
-        value5Lbl.setText("Sixth Value:");
+        value5Lbl.setText("Fifth Value:");
         add(value5Lbl);
         value5Lbl.setBounds(150, 290, 80, 16);
 

@@ -9,18 +9,18 @@ import java.awt.LayoutManager;
 
 /**
  *
- * @author Stephen 
+ * @author Stephen
  */
-public class AnalogInformationGUIPanel extends javax.swing.JPanel {
+public class AnalogComponentsPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form HangmanGUIPanel
+     * Creates new form AnalogComponentsPanel
      */
-    public AnalogInformationGUIPanel() {
+    public AnalogComponentsPanel() {
         initComponents();
         this.setSize(400,450);
-        imageChangeLbl.setVisible(false);
         infochangeLbl.setVisible(false);
+        imageChangeLbl.setVisible(false);
     }
 
     /**
@@ -34,12 +34,11 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 
         detailsLbl = new javax.swing.JLabel();
         infoLbl = new javax.swing.JLabel();
+        infochangeLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
-        titleLbl = new javax.swing.JLabel();
+        imageChangeLbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
-        imageChangeLbl = new javax.swing.JLabel();
-        infochangeLbl = new javax.swing.JLabel();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -49,12 +48,16 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         detailsLbl.setForeground(new java.awt.Color(51, 153, 255));
         detailsLbl.setText("Details:");
         add(detailsLbl);
-        detailsLbl.setBounds(10, 190, 110, 30);
+        detailsLbl.setBounds(10, 220, 110, 30);
 
         infoLbl.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
         infoLbl.setText("A capacitor (originally known as a condenser) is a passive two-terminal  ");
         add(infoLbl);
         infoLbl.setBounds(10, 210, 380, 130);
+
+        infochangeLbl.setText("is a semiconductor device used to amplify signals ");
+        add(infochangeLbl);
+        infochangeLbl.setBounds(10, 266, 380, 20);
 
         exitBtn.setBackground(new java.awt.Color(0, 153, 255));
         exitBtn.setText("Exit");
@@ -66,10 +69,9 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         add(exitBtn);
         exitBtn.setBounds(220, 390, 150, 40);
 
-        titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
-        titleLbl.setText("Information");
-        add(titleLbl);
-        titleLbl.setBounds(140, 0, 150, 40);
+        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/transistor.gif"))); // NOI18N
+        add(imageChangeLbl);
+        imageChangeLbl.setBounds(90, 50, 280, 140);
 
         backBtn .setOpaque(false);
         backBtn .setContentAreaFilled(false);
@@ -93,14 +95,6 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
 
-        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/transistor.gif"))); // NOI18N
-        add(imageChangeLbl);
-        imageChangeLbl.setBounds(90, 50, 280, 140);
-
-        infochangeLbl.setText("is a semiconductor device used to amplify signals ");
-        add(infochangeLbl);
-        infochangeLbl.setBounds(10, 266, 380, 20);
-
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(-2, 0, 400, 450);
@@ -115,19 +109,19 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
-    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-        // TODO add your handling code here:
-        imageChangeLbl.setVisible(true);
-        infochangeLbl.setVisible(true);
-        infoLbl.setVisible(false);
-    }//GEN-LAST:event_nextBtnActionPerformed
-
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         imageChangeLbl.setVisible(false);
         infochangeLbl.setVisible(false);
         infoLbl.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+        imageChangeLbl.setVisible(true);
+        infochangeLbl.setVisible(true);
+        infoLbl.setVisible(false);
+    }//GEN-LAST:event_nextBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -139,6 +133,5 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     private javax.swing.JLabel infoLbl;
     private javax.swing.JLabel infochangeLbl;
     private javax.swing.JButton nextBtn;
-    private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }
