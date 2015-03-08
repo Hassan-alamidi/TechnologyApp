@@ -148,6 +148,11 @@ public class MainMenuGUI extends javax.swing.JPanel {
 
     private void digitalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_digitalBtnActionPerformed
         // TODO add your handling code here:
+         LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "DigitalSectionScreen");
+        }
     }//GEN-LAST:event_digitalBtnActionPerformed
 
     private void analogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analogBtnActionPerformed

@@ -28,7 +28,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
          //declare and create objects
         
         //Welcome screen of the application goes here 
-        //        welcomeCard = new 
+        StartMenu start = new StartMenu();
         // Is the main screen of the application
         MainMenuGUI mainCard = new  MainMenuGUI();
         
@@ -52,12 +52,20 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         PlasticMainGUI screen10Card = new PlasticMainGUI();
         PlasticQuizGUI screen11Card = new PlasticQuizGUI();
         //All of the cards(Screens) in the digital section 
-        
+        DigitalSectionGUI screen12Card = new DigitalSectionGUI();
+        DigitalInformationGUI screen13Card = new DigitalInformationGUI();
+        DigitalDiagPanelGUI screen14Card = new DigitalDiagPanelGUI();
+        DigitalQuizScreen screen15Card = new DigitalQuizScreen();
+        DigitalHangMan screen16Card = new DigitalHangMan();
+        DigitalCompnents screen17Card = new DigitalCompnents();
+        DigitalTruthTables screen18Card = new DigitalTruthTables();
+        DigitalGeneralInformation screen19Card = new DigitalGeneralInformation();
         
         //creates a variable which is new Panel with cardlayout 
         cardsContainer = new JPanel(new CardLayout());
-        //add the welcom screen here
         
+         //add the welcom screen here
+        cardsContainer.add(start, "welcome");
         // adds the main screen to the container 
         cardsContainer.add(mainCard, "MAIN");
         
@@ -85,7 +93,14 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(WoodwhatsCard, "WoodWhatsScreen");
         
         //adds all of the Digital cards(screens) to the contanier:
-        
+         cardsContainer.add(screen12Card, "DigitalSectionScreen");
+        cardsContainer.add(screen13Card, "DigitalInformationScreen");
+        cardsContainer.add(screen14Card, "DigitalDiagScreen");
+        cardsContainer.add(screen15Card, "DigitalQuiz");
+        cardsContainer.add(screen16Card, "DigitalHangMan");
+        cardsContainer.add(screen17Card, "DigitalComponents");
+        cardsContainer.add(screen18Card, "DigitalTruthTables");
+        cardsContainer.add(screen19Card, "DigitalGen");
         
       
       
@@ -95,7 +110,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         this.add(cardsContainer);
         this.setSize(400,450);
         java.awt.CardLayout cardlayout = (java.awt.CardLayout)(cardsContainer.getLayout());
-        cardlayout.show(cardsContainer, "MAIN");
+         cardlayout.show(cardsContainer, "welcome");
     }
 
     /**
