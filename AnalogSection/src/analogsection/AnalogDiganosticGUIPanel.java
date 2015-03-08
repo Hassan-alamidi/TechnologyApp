@@ -19,6 +19,11 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
     public AnalogDiganosticGUIPanel() {
         initComponents();
         this.setSize(400,450);
+        
+        //hide the next content
+        imageChangeLbl.setVisible(false);
+        changeTextLbl.setVisible(false);
+        changeInfoLbl.setVisible(false);
     }
 
     /**
@@ -34,10 +39,13 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         nameLbl = new javax.swing.JLabel();
         anwserLbl = new javax.swing.JLabel();
         useLbl = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        infoLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
+        imageChangeLbl = new javax.swing.JLabel();
+        changeTextLbl = new javax.swing.JLabel();
+        changeInfoLbl = new javax.swing.JLabel();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -63,9 +71,9 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         add(useLbl);
         useLbl.setBounds(10, 310, 70, 20);
 
-        jLabel2.setText("To observe the change of an electrical signal over time.");
-        add(jLabel2);
-        jLabel2.setBounds(20, 330, 370, 70);
+        infoLbl.setText("To observe the change of an electrical signal over time.");
+        add(infoLbl);
+        infoLbl.setBounds(20, 330, 370, 70);
 
         exitBtn.setBackground(new java.awt.Color(0, 102, 255));
         exitBtn.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -81,14 +89,36 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         backBtn .setOpaque(false);
         backBtn .setContentAreaFilled(false);
         backBtn.setBorderPainted(false);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
         add(backBtn);
         backBtn.setBounds(0, -1, 75, 40);
 
         nextBtn.setOpaque(false);
         nextBtn.setContentAreaFilled(false);
         nextBtn.setBorderPainted(false);
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
         add(nextBtn);
         nextBtn.setBounds(310, 0, 75, 40);
+
+        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/multimeter.jpeg"))); // NOI18N
+        add(imageChangeLbl);
+        imageChangeLbl.setBounds(80, 70, 440, 150);
+
+        changeTextLbl.setText("Multimeter");
+        add(changeTextLbl);
+        changeTextLbl.setBounds(70, 260, 100, 20);
+
+        changeInfoLbl.setText("used to troubleshoot electrical problems");
+        add(changeInfoLbl);
+        changeInfoLbl.setBounds(10, 360, 370, 16);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/DiganosticGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -104,13 +134,36 @@ public class AnalogDiganosticGUIPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+        anwserLbl.setVisible(false);
+        infoLbl.setVisible(false);
+        imageChangeLbl.setVisible(true);
+        changeTextLbl.setVisible(true);
+        changeInfoLbl.setVisible(true);
+        
+        
+    }//GEN-LAST:event_nextBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        imageChangeLbl.setVisible(false);
+        changeTextLbl.setVisible(false);
+         changeInfoLbl.setVisible(false);
+        anwserLbl.setVisible(true);
+        infoLbl.setVisible(true);
+    }//GEN-LAST:event_backBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel anwserLbl;
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
+    private javax.swing.JLabel changeInfoLbl;
+    private javax.swing.JLabel changeTextLbl;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel imageChangeLbl;
+    private javax.swing.JLabel infoLbl;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;

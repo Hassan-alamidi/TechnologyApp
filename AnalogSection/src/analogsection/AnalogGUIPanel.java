@@ -54,7 +54,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(HangmanBtn);
-        HangmanBtn.setBounds(50, 20, 190, 29);
+        HangmanBtn.setBounds(80, 50, 190, 29);
 
         QuizBtn.setBackground(new java.awt.Color(0, 102, 204));
         QuizBtn.setText("Quiz");
@@ -64,7 +64,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(QuizBtn);
-        QuizBtn.setBounds(120, 100, 170, 29);
+        QuizBtn.setBounds(160, 140, 170, 29);
 
         InfoBtn.setBackground(new java.awt.Color(0, 102, 204));
         InfoBtn.setText("Information");
@@ -74,7 +74,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(InfoBtn);
-        InfoBtn.setBounds(170, 190, 150, 29);
+        InfoBtn.setBounds(190, 210, 150, 29);
 
         DiagnosticBtn.setBackground(new java.awt.Color(0, 102, 204));
         DiagnosticBtn.setText("Diagnostic Tools");
@@ -84,7 +84,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(DiagnosticBtn);
-        DiagnosticBtn.setBounds(140, 290, 160, 29);
+        DiagnosticBtn.setBounds(170, 300, 160, 29);
 
         CalcBtn.setBackground(new java.awt.Color(0, 102, 204));
         CalcBtn.setText("Resistor value calculator");
@@ -94,13 +94,18 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(CalcBtn);
-        CalcBtn.setBounds(70, 380, 190, 29);
+        CalcBtn.setBounds(100, 380, 190, 29);
 
-        exitBtn.setText("Exit");
+        exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/exit.png"))); // NOI18N
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         add(exitBtn);
-        exitBtn.setBounds(340, 0, 70, 40);
+        exitBtn.setBounds(370, 0, 40, 40);
 
-        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI.png"))); // NOI18N
+        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI2.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 410, 430);
     }// </editor-fold>//GEN-END:initComponents
@@ -149,6 +154,11 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             cl.show(getParent(), "AnalogCalcScreen");
         }
     }//GEN-LAST:event_CalcBtnActionPerformed
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

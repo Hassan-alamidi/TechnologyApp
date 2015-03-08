@@ -141,7 +141,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI.png"))); // NOI18N
         add(backgroundLbl);
-        backgroundLbl.setBounds(0, 0, 550, 450);
+        backgroundLbl.setBounds(0, 0, 610, 450);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
