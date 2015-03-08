@@ -64,7 +64,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(QuizBtn);
-        QuizBtn.setBounds(160, 140, 170, 29);
+        QuizBtn.setBounds(160, 140, 170, 30);
 
         InfoBtn.setBackground(new java.awt.Color(0, 102, 204));
         InfoBtn.setText("Information");
@@ -103,7 +103,7 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
             }
         });
         add(exitBtn);
-        exitBtn.setBounds(370, 0, 40, 40);
+        exitBtn.setBounds(360, 0, 40, 40);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/AnalogGUI2.png"))); // NOI18N
         add(backgroundLbl);

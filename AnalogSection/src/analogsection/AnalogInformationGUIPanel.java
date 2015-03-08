@@ -19,6 +19,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     public AnalogInformationGUIPanel() {
         initComponents();
         this.setSize(400,450);
+        imageChangeLbl.setVisible(false);
+        infochangeLbl.setVisible(false);
     }
 
     /**
@@ -36,6 +38,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         titleLbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
+        imageChangeLbl = new javax.swing.JLabel();
+        infochangeLbl = new javax.swing.JLabel();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -70,14 +74,32 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         backBtn .setOpaque(false);
         backBtn .setContentAreaFilled(false);
         backBtn.setBorderPainted(false);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
         add(backBtn);
         backBtn.setBounds(0, -1, 75, 40);
 
         nextBtn.setOpaque(false);
         nextBtn.setContentAreaFilled(false);
         nextBtn.setBorderPainted(false);
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
+
+        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/transistor.gif"))); // NOI18N
+        add(imageChangeLbl);
+        imageChangeLbl.setBounds(90, 50, 280, 140);
+
+        infochangeLbl.setText("is a semiconductor device used to amplify signals ");
+        add(infochangeLbl);
+        infochangeLbl.setBounds(10, 266, 380, 20);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -93,13 +115,27 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+        imageChangeLbl.setVisible(true);
+        infochangeLbl.setVisible(true);
+    }//GEN-LAST:event_nextBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        imageChangeLbl.setVisible(false);
+        infochangeLbl.setVisible(false);
+    }//GEN-LAST:event_backBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JLabel detailsLbl;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JLabel imageChangeLbl;
     private javax.swing.JLabel infoLbl;
+    private javax.swing.JLabel infochangeLbl;
     private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables

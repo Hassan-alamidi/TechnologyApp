@@ -18,7 +18,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
      */
     public AnalogResistorCalcPanel() {
         initComponents();
-        this.setSize(550,450);
+        this.setSize(400,450);
     }
 
     /**
@@ -61,26 +61,28 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         frstnumLbl.setForeground(new java.awt.Color(255, 255, 255));
         frstnumLbl.setText("First color:");
         add(frstnumLbl);
-        frstnumLbl.setBounds(20, 270, 90, 20);
+        frstnumLbl.setBounds(50, 250, 90, 30);
 
         secondcolorLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         secondcolorLbl.setForeground(new java.awt.Color(255, 255, 255));
         secondcolorLbl.setText("Second color:");
         add(secondcolorLbl);
-        secondcolorLbl.setBounds(140, 260, 90, 30);
+        secondcolorLbl.setBounds(50, 290, 90, 40);
 
         thridcolorLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         thridcolorLbl.setForeground(new java.awt.Color(255, 255, 255));
         thridcolorLbl.setText("Third color:");
         add(thridcolorLbl);
-        thridcolorLbl.setBounds(280, 260, 90, 30);
+        thridcolorLbl.setBounds(260, 250, 90, 30);
 
         toloeranceLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         toloeranceLbl.setForeground(new java.awt.Color(255, 255, 255));
         toloeranceLbl.setText("Toloerance:");
         add(toloeranceLbl);
-        toloeranceLbl.setBounds(430, 260, 80, 30);
+        toloeranceLbl.setBounds(260, 290, 80, 40);
 
+        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        addBtn.setForeground(new java.awt.Color(0, 102, 255));
         addBtn.setText("Calculate");
         add(addBtn);
         addBtn.setBounds(20, 410, 180, 30);
@@ -91,6 +93,8 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         add(anwserLbl);
         anwserLbl.setBounds(120, 360, 270, 40);
 
+        ResetBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        ResetBtn.setForeground(new java.awt.Color(0, 102, 255));
         ResetBtn.setText("Reset");
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,35 +102,35 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
             }
         });
         add(ResetBtn);
-        ResetBtn.setBounds(350, 410, 170, 30);
+        ResetBtn.setBounds(220, 410, 170, 30);
 
         headingLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         headingLbl.setForeground(new java.awt.Color(255, 255, 255));
         headingLbl.setText("Resistor Value:");
         add(headingLbl);
-        headingLbl.setBounds(10, 320, 130, 30);
+        headingLbl.setBounds(10, 340, 130, 30);
 
         Color1CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White" }));
         add(Color1CB);
-        Color1CB.setBounds(10, 290, 101, 27);
+        Color1CB.setBounds(40, 270, 101, 30);
 
         Color2CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White" }));
         add(Color2CB);
-        Color2CB.setBounds(140, 290, 101, 27);
+        Color2CB.setBounds(40, 320, 101, 27);
 
         Color3CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White" }));
         add(Color3CB);
-        Color3CB.setBounds(270, 290, 101, 27);
+        Color3CB.setBounds(250, 270, 101, 27);
 
         ToloeranceCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Brown", "Red", "Green", "Blue", "Violet", "Grey", "Gold", "Silver", "None" }));
         add(ToloeranceCB);
-        ToloeranceCB.setBounds(420, 290, 94, 27);
+        ToloeranceCB.setBounds(250, 320, 94, 27);
 
-        TitleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
+        TitleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 19)); // NOI18N
         TitleLbl.setForeground(new java.awt.Color(255, 255, 255));
         TitleLbl.setText("Resistor value calculator ");
         add(TitleLbl);
-        TitleLbl.setBounds(160, 0, 340, 30);
+        TitleLbl.setBounds(110, 0, 340, 30);
 
         exitBtn .setOpaque(false);
         exitBtn .setContentAreaFilled(false);
@@ -139,7 +143,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         add(exitBtn);
         exitBtn.setBounds(-3, -10, 100, 40);
 
-        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI.png"))); // NOI18N
+        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI2.png"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(0, 0, 610, 450);
     }// </editor-fold>//GEN-END:initComponents
