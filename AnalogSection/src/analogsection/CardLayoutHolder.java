@@ -39,7 +39,8 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         AnalogInformationGUIPanel screen4Card  = new  AnalogInformationGUIPanel();
         AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
         AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
-        
+        AnalogResistor5bandCalc screen7Card = new AnalogResistor5bandCalc();
+        AnalogResistorCalc6band screen8Card = new AnalogResistorCalc6band();
         // All of the cards(screens) in the Wood section 
         WoodMainPanel WoodMainScreen = new WoodMainPanel();
         WoodInfoPanel WoodinfoCard = new WoodInfoPanel();
@@ -65,6 +66,8 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(screen4Card, "AnalogInfoScreen");
         cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
         cardsContainer.add(screen6Card, "AnalogCalcScreen");
+        cardsContainer.add(screen7Card, "Analog5bandCalcScreen");
+        cardsContainer.add(screen8Card, "Analog6bandCalcScreen");
         
         //adds all of the Wood cards(screens) to the contanier:
       
