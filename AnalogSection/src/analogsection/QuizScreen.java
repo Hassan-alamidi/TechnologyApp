@@ -197,7 +197,11 @@ public class QuizScreen extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
            }
+           
            counter++;
+           if(counter >= 9){
+           jButton1.setText("get results");
+           }
            }
            else{
        playQuiz.setAnswer(userAnswer);
@@ -205,7 +209,11 @@ public class QuizScreen extends javax.swing.JPanel {
        playQuiz.checkAnwsers();
        correct = playQuiz.getcorrect();
        incorrect = playQuiz.getIncorrect();
-       JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
+       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
+        jRadioButton3.setText("");
+        jRadioButton2.setText("");
+        jRadioButton1.setText("");
+       //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
            }
         
     }//GEN-LAST:event_jButton1ActionPerformed
