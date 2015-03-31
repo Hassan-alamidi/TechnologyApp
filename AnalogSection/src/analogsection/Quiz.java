@@ -12,32 +12,35 @@ package analogsection;
 import javax.swing.*;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 
 public class Quiz {
-    protected String [] question;
-    protected String [] randomizedQuestion;
-    protected String anwser,temp, temp2;
+    
+    public String [] randomizedQuestion;
+    protected String anwser,tempst, temp2;
     private String [] userAnswer;
-    protected String[] correctAnswer;
     protected int correct, incorrect,randQuestion,index,temp1;
     protected int chosenquestions[];
     protected Random rand;
     //set as integer because integer is different to int as it may contain null where as int cannot
-    private Integer a;
+   
      //only used in the process of checking if the chosen random question has already been asked
     //i am using this value for checking because the process requires the array to be rearranged their for making my validation process invalid
-     private int[] binarysort;
+     public QuestionObj obj;
+     public ArrayList <QuestionObj> objArr;
+     public static ArrayList <QuestionObj> statObjArr;
     
     public Quiz(){
         //question should be filled with 20 questions to maxmise the scope corvered and also to not repeat the same questions
-        question = new String[]{"b","yes","maybe","n","v","a","sdf","sd","sg","hgf","ko","ui","nmxc","oid","hf","skdj","sr","df","cv","hj"};
+        obj = new QuestionObj();
+        objArr = new ArrayList<>();
+        statObjArr = new ArrayList<>();
         userAnswer = new String[10];
         // this should be also filled with 20 anwsers
        // also more correct anwser should be addedd to maxinmise the number of coorect anwser's
-        correctAnswer = new String[]{"b","yes","maybe","n","v","a","sdf","sd","sg","hgf","ko","ui","nmxc","oid","hf","skdj","sr","df","cv","hj"};
         correct = 0;
-        temp = "";
+        tempst = "";
         temp2 = "";
         incorrect = 0;
         rand = new Random();
@@ -46,12 +49,9 @@ public class Quiz {
         anwser = "";
         //index = 18;
         index = 19;
-        a = null;
-        binarysort = new int[10];
-        
     }
     // Choses a random question from the array 
-    public String[] choseRandomQuestion(){
+/*    public String[] choseRandomQuestion(){
        
           for(int counter = 0; counter < 10; counter++){
             //saves the values of the question going to be asked
@@ -121,7 +121,7 @@ public class Quiz {
             //returns value to ask user questions
         return randomizedQuestion;
         
-    }
+    }*/
 
     public void setAnswer(String[] userAnswer) {
         //sets userAnswer to check if they were correct or incorrect
@@ -137,17 +137,17 @@ public class Quiz {
         //loop checks all 10 questions
         for(int counter = 0; counter < 10; counter++){
             //stores user answer in temp
-            temp = userAnswer[counter];
+            tempst = userAnswer[counter];
             //stores question related to answer in temp1 used to find what index of correctanswer the answer is in
-            temp1 = chosenquestions[counter];
+            //temp1 = chosenquestions[counter];
             //stores the correct answer in temp2
-            temp2 = correctAnswer[temp1];
-            JOptionPane.showMessageDialog(null,"test temp 2 = " + temp2+ " temp =" + temp + " userans = " + userAnswer[counter] + "chosenquestion =" + chosenquestions[counter]);
+            temp2 = statObjArr.get(counter).getrad();
+            JOptionPane.showMessageDialog(null,"test temp 2 = " + temp2+ " temp =" + tempst + " userans = " + userAnswer[counter] + "chosenquestion =" + chosenquestions[counter]);
         //if temp is equal to temp2 then the value of correct will be increased by one if they are not equal then the value in incorrect will increase by one
-        if(temp.equalsIgnoreCase(temp2)){
+        if(tempst.equalsIgnoreCase(temp2)){
         correct++;
         }
-        else if(!temp.equalsIgnoreCase(temp2)){
+        else if(!tempst.equalsIgnoreCase(temp2)){
         incorrect++;
         }
         else{
@@ -164,6 +164,9 @@ public class Quiz {
      public int getIncorrect(){
      return incorrect;
      
+     }
+     public void setobj(ArrayList <QuestionObj> objArr){
+         Quiz.statObjArr = objArr;  
      }
     
 }

@@ -126,12 +126,14 @@ public class WoodMainPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_InfoBtnActionPerformed
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
-            LayoutManager layout = getParent().getLayout();
+       WoodQuiz wood = new WoodQuiz();
+  
+        wood.choseRandomQuestion();
+        LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "WoodQuizScreen");
+            cl.show(getParent(), "QuizScreen");
         }
-          
           
 
 

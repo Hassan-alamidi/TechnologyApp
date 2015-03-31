@@ -92,10 +92,13 @@ public class PlasticMainGUI extends javax.swing.JPanel {
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
         // TODO add your handling code here:
-         LayoutManager layout = getParent().getLayout();
+       PlasticQuiz plastic = new PlasticQuiz();
+  
+        plastic.choseRandomQuestion();
+        LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "PlasticQuizScreen");
+            cl.show(getParent(), "QuizScreen");
         }
     }//GEN-LAST:event_QuizBtnActionPerformed
 

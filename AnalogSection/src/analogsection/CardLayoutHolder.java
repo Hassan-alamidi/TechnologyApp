@@ -35,7 +35,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         // All of the screens in the analog section 
         AnalogGUIPanel screen1Card = new AnalogGUIPanel();
         AnalogHangmanPanel screen2Card = new AnalogHangmanPanel ();
-        AnalogQuizGUIPanel screen3Card = new AnalogQuizGUIPanel();
+        QuizScreen screen3Card = new QuizScreen();
         AnalogInformationGUIPanel screen4Card  = new  AnalogInformationGUIPanel();
         AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
         AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
@@ -77,7 +77,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         //adds all of the analog cards(screens) to the contanier 
         cardsContainer.add(screen1Card,"AnalogMainScreen");
         cardsContainer.add(screen2Card, "AnalogHangmanScreen");
-        cardsContainer.add(screen3Card, "AnalogQuizScreen");
+        cardsContainer.add(screen3Card, "QuizScreen");
         cardsContainer.add(screen4Card, "AnalogInfoScreen");
         cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
         cardsContainer.add(screen6Card, "AnalogCalcScreen");

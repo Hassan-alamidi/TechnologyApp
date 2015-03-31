@@ -123,10 +123,13 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
         // TODO add your handling code here:
+        AnalogQuiz anal = new AnalogQuiz();
+  
+        anal.choseRandomQuestion();
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogQuizScreen");
+            cl.show(getParent(), "QuizScreen");
         }
     }//GEN-LAST:event_QuizBtnActionPerformed
 

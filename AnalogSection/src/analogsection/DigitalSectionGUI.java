@@ -102,10 +102,13 @@ public class DigitalSectionGUI extends javax.swing.JPanel {
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
         // TODO add your handling code here:
+        
+        DigitalQuiz dig = new DigitalQuiz();
+        dig.choseRandomQuestion();
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "DigitalQuiz");
+            cl.show(getParent(), "QuizScreen");
         }
     }//GEN-LAST:event_QuizBtnActionPerformed
 
@@ -120,6 +123,8 @@ public class DigitalSectionGUI extends javax.swing.JPanel {
 
     private void HangmanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HangmanBtnActionPerformed
         // TODO add your handling code here:
+        DigitalQuiz dig = new DigitalQuiz();
+        dig.choseRandomQuestion();
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
