@@ -8,6 +8,8 @@ package analogsection;
 
 import java.awt.Image;
 import java.awt.LayoutManager;
+import java.awt.List;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 
@@ -39,11 +41,12 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     Information analogInfo;
     Information digitalInfo;
     Information plasticInfo;
-     Information woodInfo;
+    Information woodInfo;
     private String infoDisplayed;
     private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,i ;
     protected static int infoSelected;
-    private String[] arrayTest, info;
+    private String[] arrayTest;
+    private ArrayList <String> info;
   //  private Image displayedImg;
     private ImageIcon ImgDisplayedLbl;
     public AnalogInformationGUIPanel() {
@@ -183,7 +186,32 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
-            info = new String[]{"A capacitor stores and releases charge", "Electrons are used in batteries", "There are many different electronic signals", "ADC are used to convert analog signals to digital repersentation", "Resistors are like shiedls", "Resistors are measured in ohms", "breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+           // * anonymous inner class, to set the info.
+           // * anonymous inner class creates an extra class file, which can slow the programs startup,
+           // * anonymous inner class extends the class of object being constructed and has a "This." 
+           // * referance to the instance of the object constructed
+           
+            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            
+
+              ArrayList <String> info = new ArrayList<String>() {{
+                        add("A capacitor stores and releases charge");
+                        add("Electrons are used in batteries");
+                        add("There are many different electronic signals");
+                        add("ADC are used to convert analog signals to digital repersentation");
+                        add("Resistors are like shiedls");
+                        add("Resistors are measured in ohms");
+                        add("breadbords are used for creating circuits");
+                        add("fgtd");
+                        add("ggffg");
+                        add("gfddrf");
+                  }};
+
+//info = new String[]{"A capacitor stores and releases charge", 
+              //"Electrons are used in batteries", "There are many different electronic signals",
+              //"ADC are used to convert analog signals to digital repersentation", 
+              //"Resistors are like shiedls", "Resistors are measured in ohms",
+              //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
             analogInfo.setInfo(info);
             
             if (count < 10 && imgSelector < 10) {
@@ -205,8 +233,21 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                  //digital part
             //working 
             
-            //add information here 
-            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+             //add information here 
+            // anonymous inner class, to set the info
+              ArrayList <String> info = new ArrayList<String>() {{
+                        add("D");
+                        add("I");
+                        add("G");
+                        add("I");
+                        add("T");
+                        add("A");
+                        add("L");
+                        add("wo");
+                        add("rk");
+                        add("ing");
+                  }};
+           
             digitalInfo.setInfo(info);
              //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
@@ -228,7 +269,19 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         } else if (infoSelected == 3) {
              //plastic part
             //set info here 
-            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+             ArrayList <String> info = new ArrayList<String>() {{
+                        add("D");
+                        add("I");
+                        add("G");
+                        add("I");
+                        add("T");
+                        add("A");
+                        add("L");
+                        add("wo");
+                        add("rk");
+                        add("ing");
+                  }};           
+ 
             plasticInfo.setInfo(info);
              //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
@@ -249,7 +302,18 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         } else {
              //wood part
             //add info here 
-            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+           ArrayList <String> info = new ArrayList<String>() {{
+                        add("D");
+                        add("I");
+                        add("G");
+                        add("I");
+                        add("T");
+                        add("A");
+                        add("L");
+                        add("wo");
+                        add("rk");
+                        add("ing");
+                  }};
             woodInfo.setInfo(info);
              //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();

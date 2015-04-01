@@ -17,19 +17,21 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Stephen, Hassan, Sean, Paddy
+ * @author Stephen
  */
 
 public class Information {
     //variables
     private static String infoDisplayed;
-    protected String info[];
+    protected ArrayList <String> info;
    // private array;
-    private String  urls;  
+    //private String  urls;
+    private ArrayList <String> urls;
     //private URL fileList;
     private String fileList;
     private ImageIcon selectedImg;
     private int imgSelector;
+    private String imgSelectString;
     private static String statArray[];
    
    
@@ -42,7 +44,9 @@ public class Information {
      i = 0;
      imgSelector = 0;
      statArray = new String[10];
-     imgSelector =0;
+     imgSelector = 0;
+     urls = new ArrayList <String>();
+     info = new ArrayList <String>();
      
      }
     
@@ -56,13 +60,18 @@ public class Information {
     
     public void setUrls(){
         //going to use an array to store the file urls
-        urls = "/resources/" + imgSelector + ".jpg";
+         
+       imgSelectString = Integer.toString(imgSelector);
+       urls.add("/resources/" + imgSelectString + ".jpg");
+      
+
+    //urls = "/resources/" + imgSelector + ".jpg";
             
     }
     
     public ImageIcon AddImageUsingURLS(){
     
-      System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
+      //System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
         
         
         BufferedImage Img = null;
@@ -81,12 +90,15 @@ public class Information {
 //        
         
         
-           //System.out.println(getClass().getResource(urls));
+           System.out.println(getClass().getResource(urls.get(imgSelector)));
             
         
           
 //         // returns null if no resource is found --- which is happing 
-             URL url = getClass().getResource(urls);
+           // use's count which is sent from the panel to select the image
+           //your from an arraylist of strings
+           
+             URL url = getClass().getResource(urls.get(imgSelector));
 //        
 //           
 //            //Img = new ImageIcon(getClass().getResource(urls));
@@ -122,7 +134,7 @@ public class Information {
     // methods to add info to the arraylist 
 
    
-  public void setInfo(String [] info){
+  public void setInfo(ArrayList <String> info){
           this.info = info;
     
     }
@@ -140,7 +152,7 @@ public class Information {
     
     public String DisplayInfo() {
        
-       infoDisplayed = info[i];
+       infoDisplayed = info.get(i);
 
        return infoDisplayed;
     }
