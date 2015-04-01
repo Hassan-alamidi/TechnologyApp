@@ -5,22 +5,67 @@
  */
 package analogsection;
 
+
+import java.awt.Image;
 import java.awt.LayoutManager;
+import javax.swing.ImageIcon;
+
 
 /**
  *
  * @author Stephen 
  */
+
+/*
+
+* When chosing different panels the infolbl has to be reset and the info counter has to be reset so the first slide of info is reset 
+
+
+                                                  ***  What to do ***
+
+* Just add your information into the info array in the next button, which will then send the info to the information class 
+
+* You will get an NullPointerException error when trying to run your section, without the images added to the resource folder
+
+* Also The info text and image in the labels are not being reset when panels are changed, this will have to be fixed. 
+
+
+*/
 public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HangmanGUIPanel
      */
+    Information analogInfo;
+    Information digitalInfo;
+    Information plasticInfo;
+     Information woodInfo;
+    private String infoDisplayed;
+    private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,i ;
+    protected static int infoSelected;
+    private String[] arrayTest, info;
+  //  private Image displayedImg;
+    private ImageIcon ImgDisplayedLbl;
     public AnalogInformationGUIPanel() {
         initComponents();
         this.setSize(400,450);
         imageChangeLbl.setVisible(false);
-        infochangeLbl.setVisible(false);
+        analogInfo = new Information();
+        digitalInfo = new Information();
+        plasticInfo = new Information();
+        woodInfo = new Information();
+        infoDisplayed = "";
+        count =0;
+        imgSelector = 0;
+        infoLbl.setText("");
+        imgSelectorDigital = 10;
+        imgSelectorPlastic = 21;
+        imgSelectorWood = 31;
+        
+    
+        
+        
+        
     }
 
     /**
@@ -33,13 +78,12 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         detailsLbl = new javax.swing.JLabel();
-        infoLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
         titleLbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
         imageChangeLbl = new javax.swing.JLabel();
-        infochangeLbl = new javax.swing.JLabel();
+        infoLbl = new javax.swing.JLabel();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -50,11 +94,6 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         detailsLbl.setText("Details:");
         add(detailsLbl);
         detailsLbl.setBounds(10, 190, 110, 30);
-
-        infoLbl.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
-        infoLbl.setText("A capacitor (originally known as a condenser) is a passive two-terminal  ");
-        add(infoLbl);
-        infoLbl.setBounds(10, 210, 380, 130);
 
         exitBtn.setBackground(new java.awt.Color(0, 153, 255));
         exitBtn.setText("Exit");
@@ -92,14 +131,10 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         });
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
-
-        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/transistor.gif"))); // NOI18N
         add(imageChangeLbl);
         imageChangeLbl.setBounds(90, 50, 280, 140);
-
-        infochangeLbl.setText("is a semiconductor device used to amplify signals ");
-        add(infochangeLbl);
-        infochangeLbl.setBounds(10, 266, 380, 20);
+        add(infoLbl);
+        infoLbl.setBounds(10, 266, 380, 120);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -107,26 +142,253 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-        // TODO add your handling code here:
-        LayoutManager layout = getParent().getLayout();
+//        * A series of if statements checking on
+//        * The imgSelector variable will determine which
+//        * Screen to terevers back to.
+        if (Information.getInfoType() == 1) {
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+                java.awt.CardLayout cl = (java.awt.CardLayout) layout;
+                cl.show(getParent(), "AnalogInfoMainScreen");
+            }
+        }//end of condition
+        else if (Information.getInfoType() == 2) {
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+                java.awt.CardLayout cl = (java.awt.CardLayout) layout;
+                cl.show(getParent(), "DigitalTruthTables");
+            }
+        }
+        else if(Information.getInfoType() == 3){
+          LayoutManager layout = getParent().getLayout();
+          if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticInfoScreen");
+           }
+      }else{
+            LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogInfoMainScreen");
+            cl.show(getParent(), "WoodInfoScreen");
         }
+        }
+       
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-        // TODO add your handling code here:
+
+     
         imageChangeLbl.setVisible(true);
-        infochangeLbl.setVisible(true);
-        infoLbl.setVisible(false);
+        infoSelected = Information.getInfoType();
+        //error check 
+        System.out.println(infoSelected);
+        if (infoSelected == 1) {
+            info = new String[]{"A capacitor stores and releases charge", "Electrons are used in batteries", "There are many different electronic signals", "ADC are used to convert analog signals to digital repersentation", "Resistors are like shiedls", "Resistors are measured in ohms", "breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+            analogInfo.setInfo(info);
+            
+            if (count < 10 && imgSelector < 10) {
+                //imgSelector = 0;
+                analogInfo.setImageUsed(imgSelector);
+                analogInfo.setUrls();
+                ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
+                imgSelector++;
+                //Information.setCount(count = 0);
+                analogInfo.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = analogInfo.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+            }
+
+        } else if (infoSelected == 2) {
+                 //digital part
+            //working 
+            
+            //add information here 
+            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+            digitalInfo.setInfo(info);
+             //Information.setCount(count = 0);
+            // infoDisplayed = Information.DisplayInfo();
+            if (count < 10 && imgSelectorDigital < 21) {
+                digitalInfo.setImageUsed(imgSelectorDigital);
+                digitalInfo.setUrls();
+                ImgDisplayedLbl = digitalInfo.AddImageUsingURLS();
+                imgSelectorDigital++;
+                //Information.setCount(count = 0);
+                digitalInfo.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = digitalInfo.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+                // break;
+            }
+
+        } else if (infoSelected == 3) {
+             //plastic part
+            //set info here 
+            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+            plasticInfo.setInfo(info);
+             //Information.setCount(count = 0);
+            // infoDisplayed = Information.DisplayInfo();
+            if (count < 10 && imgSelectorPlastic < 31) {
+                plasticInfo.setImageUsed(imgSelectorPlastic);
+                plasticInfo.setUrls();
+                ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
+                imgSelectorPlastic++;
+                //Information.setCount(count = 0);
+                plasticInfo.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = plasticInfo.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+            }
+
+        } else {
+             //wood part
+            //add info here 
+            info = new String[]{"D", "I", "G", "I", "T", "A", "L", "wo", "rk", "ing"};
+            woodInfo.setInfo(info);
+             //Information.setCount(count = 0);
+            // infoDisplayed = Information.DisplayInfo();
+            if (count < 10 && imgSelectorWood < 40) {
+                woodInfo.setImageUsed(imgSelectorWood);
+                woodInfo.setUrls();
+                ImgDisplayedLbl = woodInfo.AddImageUsingURLS();
+                imgSelectorWood++;
+                //Information.setCount(count = 0);
+                woodInfo.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = woodInfo.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+            }
+        }
+                
+                arrayTest = Information.getArray();
+               // checker to see if the array has been filled with digital   
+                if(arrayTest == null){
+                    System.out.println("The array is empty: Values havent been taken");
+                }
+             //throwing processException error due to the info selector always being == 0
+             // so the data is never sent to the array for processing 
+//                if (count < 9) {
+//                    count++;
+//                    Information.setCount(count);
+//                    infoDisplayed = Information.DisplayInfo();
+//                    infoLbl.setText(infoDisplayed);
+//                }
+//                
+//                //image selection routine
+//              if(imgSelector < 9){
+//                  imgSelector++;
+//                  analogInfo.setImageUsed(imgSelector);
+//                  analogInfo.setUrls();
+//                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
+//                  imageChangeLbl.setIcon(ImgDisplayedLbl);
+//                
+//                  
+//                  }
+                
+//            } 
+//       else if (infoSelected == 3) {
+//        //Wood part
+//       // analogInfo
+//
+//        if (count < 9) {
+//            count++;
+//            Information.setCount(count);
+//            infoDisplayed = Information.DisplayInfo();
+//            infoLbl.setText(infoDisplayed);
+//        }
+//    } else {
+//        //plastic info part
+//        //analogInfo
+//
+//        if (count < 9) {
+//            count++;
+//            Information.setCount(count);
+//            infoDisplayed = Information.DisplayInfo();
+//            infoLbl.setText(infoDisplayed);
+//        }
+//    }
+
+   //     }// end of outter if
+      
+       System.out.println("index:"+count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        imageChangeLbl.setVisible(false);
-        infochangeLbl.setVisible(false);
-        infoLbl.setVisible(true);
+        
+        if (infoSelected == 1) {
+            if (count > 0 && imgSelector > 0) {
+                count--;
+                imgSelector--;
+                analogInfo.setCount(count);
+                analogInfo.setImageUsed(imgSelector);
+                analogInfo.setUrls();
+                infoDisplayed = analogInfo.DisplayInfo();
+                ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+
+//        if(imgSelector > 0){
+//                  imgSelector--;
+//                  analogInfo.setImageUsed(imgSelector);
+//                  analogInfo.setUrls();
+//                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
+//                  imageChangeLbl.setIcon(ImgDisplayedLbl);
+//                
+//                  
+//                  }
+        } else if (infoSelected == 2) {
+            if (count > 0 && imgSelectorDigital > 9) {
+                count--;
+                imgSelectorDigital--;
+                digitalInfo.setCount(count);
+                digitalInfo.setImageUsed(imgSelectorDigital);
+                digitalInfo.setUrls();
+                infoDisplayed = digitalInfo.DisplayInfo();
+                ImgDisplayedLbl = digitalInfo.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+        }//end of else if 
+        else if (infoSelected == 3) {
+            if (count > 0 && imgSelectorPlastic > 20) {
+                count--;
+                imgSelectorPlastic--;
+                plasticInfo.setCount(count);
+                plasticInfo.setImageUsed(imgSelectorPlastic);
+                plasticInfo.setUrls();
+                infoDisplayed = plasticInfo.DisplayInfo();
+                ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+        } else if (infoSelected == 4) {
+            if (count > 0 && imgSelectorWood > 30) {
+                count--;
+                imgSelectorWood--;
+                woodInfo.setCount(count);
+                woodInfo.setImageUsed(imgSelectorWood);
+                woodInfo.setUrls();
+                infoDisplayed = woodInfo.DisplayInfo();
+                ImgDisplayedLbl = woodInfo.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+        }
+         
+          
+
+        System.out.println("index:"+count + "Message:" + infoDisplayed);
+        
+        
     }//GEN-LAST:event_backBtnActionPerformed
 
 
@@ -137,7 +399,6 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel imageChangeLbl;
     private javax.swing.JLabel infoLbl;
-    private javax.swing.JLabel infochangeLbl;
     private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables

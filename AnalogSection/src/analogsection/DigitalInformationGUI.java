@@ -5,6 +5,8 @@
  */
 package analogsection;
 
+
+import static analogsection.Information.infoType;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
@@ -131,10 +133,20 @@ public class DigitalInformationGUI extends javax.swing.JPanel {
 
     private void InfobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfobtnActionPerformed
         // TODO add your handling code here:
+       
+         infoType = 2;
+         int count;
+         count = 0;
+         //it retrives an array from the information class
+        //and populates it with analog general questions
+      
+        Information.InfoType(infoType);
+      //  Information.setCount(count);
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "DigitalGen");
+            //cl.show(getParent(), "DigitalGen");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_InfobtnActionPerformed
 

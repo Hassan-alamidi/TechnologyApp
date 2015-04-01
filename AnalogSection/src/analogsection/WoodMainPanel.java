@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package analogsection;
+import static analogsection.Information.infoType;
 import java.awt.CardLayout;
 import java.awt.LayoutManager;
 
@@ -117,7 +118,10 @@ public class WoodMainPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
-           LayoutManager layout = getParent().getLayout();
+        //sends what type of information it is to the infopanel to process  
+        infoType = 4;
+        Information.InfoType(infoType);
+        LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "WoodInfoScreen");
@@ -126,14 +130,12 @@ public class WoodMainPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_InfoBtnActionPerformed
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
-       WoodQuiz wood = new WoodQuiz();
-  
-        wood.choseRandomQuestion();
-        LayoutManager layout = getParent().getLayout();
+            LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "QuizScreen");
+            cl.show(getParent(), "WoodQuizScreen");
         }
+          
           
 
 
