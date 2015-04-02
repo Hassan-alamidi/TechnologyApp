@@ -148,7 +148,11 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 //        * A series of if statements checking on
 //        * The imgSelector variable will determine which
 //        * Screen to terevers back to.
-        imageChangeLbl.setText("");
+        
+        //Resets the image holder label to have no imageIco when reset
+        imageChangeLbl.setIcon(null);
+        
+        //resets the text to nothing when the information is exited
         infoLbl.setText("");
         if (Information.getInfoType() == 1) {
             LayoutManager layout = getParent().getLayout();
