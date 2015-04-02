@@ -148,6 +148,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 //        * A series of if statements checking on
 //        * The imgSelector variable will determine which
 //        * Screen to terevers back to.
+        imageChangeLbl.setText("");
+        infoLbl.setText("");
         if (Information.getInfoType() == 1) {
             LayoutManager layout = getParent().getLayout();
             if (layout instanceof java.awt.CardLayout) {
@@ -187,8 +189,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         System.out.println(infoSelected);
         if (infoSelected == 1) {
            // * anonymous inner class, to set the info.
-           // * anonymous inner class creates an extra class file, which can slow the programs startup,
-           // * anonymous inner class extends the class of object being constructed and has a "This." 
+           // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
+           // * anonymous inner class extends the class of the object being constructed and has a "This." 
            // * referance to the instance of the object constructed
            
             // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
@@ -446,7 +448,10 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
+        }else{
+            System.out.print("An error occourd");
         }
+        
          
           
 

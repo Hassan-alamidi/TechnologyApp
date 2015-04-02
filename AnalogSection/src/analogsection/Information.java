@@ -96,7 +96,7 @@ public class Information {
           
 //         // returns null if no resource is found --- which is happing 
            // use's count which is sent from the panel to select the image
-           //your from an arraylist of strings
+           // from an arraylist of strings
            
              URL url = getClass().getResource(urls.get(imgSelector));
 //        

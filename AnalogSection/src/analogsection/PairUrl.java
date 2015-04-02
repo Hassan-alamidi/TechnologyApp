@@ -12,7 +12,7 @@ package analogsection;
 
 /*
 
-* Plain Old Java Object class
+* Plain Old Java Object 
 
 *
 
@@ -27,10 +27,6 @@ public class PairUrl {
         this.key = key;
         this.value = value;
         this.key2 = key2;
-    }
-
-    PairUrl(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getKey() {
