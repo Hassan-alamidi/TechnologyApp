@@ -6,9 +6,8 @@
 package analogsection;
 
 
-import java.awt.Image;
+
 import java.awt.LayoutManager;
-import java.awt.List;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -38,6 +37,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     /**
      * Creates new form HangmanGUIPanel
      */
+    
+    // variables
     Information analogInfo;
     Information digitalInfo;
     Information plasticInfo;
@@ -145,7 +146,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-//        * A series of if statements checking on
+//        * A series of if statements checking which panel to go back to,
 //        * The imgSelector variable will determine which
 //        * Screen to terevers back to.
         
@@ -165,20 +166,20 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             LayoutManager layout = getParent().getLayout();
             if (layout instanceof java.awt.CardLayout) {
                 java.awt.CardLayout cl = (java.awt.CardLayout) layout;
-                cl.show(getParent(), "DigitalTruthTables");
+                cl.show(getParent(), "DigitalSectionGUI");
             }
         }
         else if(Information.getInfoType() == 3){
           LayoutManager layout = getParent().getLayout();
           if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "PlasticInfoScreen");
+            cl.show(getParent(), "PlasticMainGUI");
            }
       }else{
             LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "WoodInfoScreen");
+            cl.show(getParent(), "WoodMainPanel");
         }
         }
        
@@ -309,21 +310,21 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
              //wood part
             //add info here 
            ArrayList <String> info = new ArrayList<String>() {{
+                        add("W");
+                        add("O");
+                        add("O");
                         add("D");
-                        add("I");
                         add("G");
-                        add("I");
-                        add("T");
-                        add("A");
-                        add("L");
-                        add("wo");
-                        add("rk");
-                        add("ing");
+                        add("o");
+                        add("E");
+                        add("s");
+                        add("here");
+                        add("!1!!!!");
                   }};
             woodInfo.setInfo(info);
              //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
-            if (count < 10 && imgSelectorWood < 40) {
+            if (count < 10 && imgSelectorWood < 41) {
                 woodInfo.setImageUsed(imgSelectorWood);
                 woodInfo.setUrls();
                 ImgDisplayedLbl = woodInfo.AddImageUsingURLS();

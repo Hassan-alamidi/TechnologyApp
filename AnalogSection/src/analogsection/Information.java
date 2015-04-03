@@ -3,6 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*
+
+
+* images added to resources as the folowing:
+   
+* Analog 0-9
+
+* Digital 10 - 20
+
+* Plastic 21 - 31 
+
+8 Wood 31 - 41 
+*/
 package analogsection;
 
 import java.awt.Image;
@@ -30,7 +45,7 @@ public class Information {
     //private URL fileList;
     private String fileList;
     private ImageIcon selectedImg;
-    private int imgSelector;
+    private int imgSelector, imgSelectorDigital;
     private String imgSelectString;
     private static String statArray[];
    
@@ -42,7 +57,8 @@ public class Information {
     public Information(){
      infoDisplayed = "";
      i = 0;
-     imgSelector = 0;
+     imgSelector = 42;
+     imgSelectorDigital = 53;
      statArray = new String[10];
      imgSelector = 0;
      urls = new ArrayList <String>();
