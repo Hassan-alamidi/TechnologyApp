@@ -17,8 +17,11 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     /**
      * Creates new form ResistorCalcPanel
      */
-    private String selectedValue,band1,band2,band3,band4, valueResistor,maxValue,minValue;
-    private ArrayList <String> values;
+    private String selectedValue,band1,band2,band3,band4,valueTotal,minResistorValue, maxResistorValue;
+    protected String  conversion, substrK, substrH, convertkilohm, resistorDigits;
+    protected int digit1, digit2, percent, resistorColorVals;
+    protected double  toloerance, tolrancPercent, multiplier,valueResistor,maxValue,minValue;
+
     
     public AnalogResistorCalcPanel() {
         initComponents();
@@ -27,7 +30,8 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         band1 ="";
         band2 ="";
         band4 = "";
-        values = new ArrayList <String>();
+        percent = 100;
+       
     }
 
     /**
@@ -194,7 +198,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         
         selectedValue = typesCB.getSelectedItem().toString();
 
-        if (selectedValue.equals("4 Band")) {
+        if(selectedValue.equals("4 Band")) {
             //display 4 band screen
 
             LayoutManager layout = getParent().getLayout();
@@ -225,7 +229,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          //selectedValue = typesCB.getSelectedItem().toString();
          // new instances of resistor4bandcalc 
-         ResistorCalc4band calc = new ResistorCalc4band();
+         ResistorCalc4band calc = new ResistorCalc4band(band1, band2, band3, band4);
          
          //clears label
          anwserLbl.setText("");
@@ -272,13 +276,13 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
          calc.convertToKilohm();
          
          //retrive the calculations 
-         valueResistor = calc.getValueResistor();
+         valueTotal = calc.getValueResistor();
          
-         maxValue = calc.getMaxValue();
+         maxResistorValue = calc.getMaxValue();
          
-         minValue = calc.getMinValue();
+         minResistorValue = calc.getMinValue();
          
-         anwserLbl.setText(valueResistor);
+         anwserLbl.setText(valueTotal);
          
          System.out.println("Maximum Resistance Value:"+ " "+ maxValue + "\n Minimum Resistance Value:"+ " "+ minValue);
     }//GEN-LAST:event_addBtnActionPerformed
