@@ -3,30 +3,208 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*
+
+
+* images added to resources as the folowing:
+   
+* Analog 0-9
+
+* Digital 10 - 20
+
+* Plastic 21 - 31 
+
+8 Wood 31 - 41 
+*/
 package analogsection;
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Stephen
  */
+
 public class Information {
     //variables
-    private String Info[];
-    private String infoDisplayed;
-    public Information(){
-        Info = new String[]{"Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented,[11] and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA),[12] meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.[13] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, "
-                            ,"use, particularly for client-server web applications, with a reported 9 million developers.[14][15] Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them."
-                            ,"The original and reference implementation Java compilers, virtual machines, and class libraries were originally released by Sun under proprietary licences. As of May 2007, in compliance with the specifications of the Java Community Process, Sun "
-                            ,"relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java (bytecode compiler), GNU Classpath"
-                            ,"James Gosling, Mike Sheridan, and Patrick Naughton initiated the Java language project in June 1991.[16] Java was originally designed for interactive television, but it was too advanced for the digital cable television industry at the time.[17]"
-                            ,"The language was initially called Oak after an oak tree that stood outside Gosling's office. Later the project went by the name Green and was finally renamed Java, from Java coffee.[18] Gosling designed Java with a C/C++-style syntax that system and application programmers would find familiar.[19]"};
+    private static String infoDisplayed;
+    protected ArrayList <String> info;
+   // private array;
+    //private String  urls;
+    private ArrayList <String> urls;
+    //private URL fileList;
+    private String fileList;
+    private ImageIcon selectedImg;
+    private int imgSelector, imgSelectorDigital;
+    private String imgSelectString;
+    private static String statArray[];
+   
+   
+    protected static int infoType;
+    private int i;
     
-        infoDisplayed = "";
+    
+    public Information(){
+     infoDisplayed = "";
+     i = 0;
+     imgSelector = 42;
+     imgSelectorDigital = 53;
+     statArray = new String[10];
+     imgSelector = 0;
+     urls = new ArrayList <String>();
+     info = new ArrayList <String>();
+     
+     }
+    
+    public static void InfoType(int infoType){
+       Information.infoType = infoType;
     }
     
-    public void NextInfo(){
-        for(int counter = 0; counter < Info.length;counter++){
+    public void setImageUsed(int imgSelector){
+        this.imgSelector = imgSelector;
+    }
+    
+    public void setUrls(){
+        //going to use an array to store the file urls
+         
+       imgSelectString = Integer.toString(imgSelector);
+       urls.add("/resources/" + imgSelectString + ".jpg");
+      
+
+    //urls = "/resources/" + imgSelector + ".jpg";
+            
+    }
+    
+    public ImageIcon AddImageUsingURLS(){
+    
+      //System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
+        
+        
+        BufferedImage Img = null;
+     
+
+       try{
+//         Image imgIcon = new ImageIcon(getClass().getResource("/resources/" + imgSelector + ".jpg")).getImage();
+//        
+//         URL url = getClass().getResource(urls);
+//         if (url == null){
+//             System.out.println( "Could not find image!" );
+//            }
+//          else{
+//            imgIcon = (new ImageIcon(url).getImage());
+//             } 
+//        
+        
+        
+           System.out.println(getClass().getResource(urls.get(imgSelector)));
+            
+        
+          
+//         // returns null if no resource is found --- which is happing 
+           // use's count which is sent from the panel to select the image
+           // from an arraylist of strings
+           
+             URL url = getClass().getResource(urls.get(imgSelector));
+//        
+//           
+//            //Img = new ImageIcon(getClass().getResource(urls));
+//            
+//          //  imgSelector is going to be externally modified by the InfoPanel
+             Img = ImageIO.read(url);
+//
+           }//end of try
+      catch (IOException e) {
+           // Exception is due to the image not being found 
+            System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
+            System.out.println("An error occoured");
+            System.out.print(e);
             
         }
+       selectedImg = new ImageIcon(Img);
+      //  will return the image chosen 
+       return selectedImg ;
     }
+//    public void PopulateImageArray(){
+//        for(int y = 0; y < fileList.size(); y++) {
+//            String path = fileList.get(y);
+//            array[y] = path;
+//        }
+//    }
+    
+//    public ImageIcon getImage(){
+//        
+//        selectedImg = new ImageIcon(array);
+//        return selectedImg;
+//    }
+    
+    // methods to add info to the arraylist 
+
+   
+  public void setInfo(ArrayList <String> info){
+          this.info = info;
+    
+    }
+   
+     
+//    public void addArrayToStaticArray(){
+//     
+//        for(int j = 0; j < info.length; j++ ){
+//             statArray[j] = info[j];        
+//          }   
+//    }
+    public void setCount(int count){
+        i = count;
+    }
+    
+    public String DisplayInfo() {
+       
+       infoDisplayed = info.get(i);
+
+       return infoDisplayed;
+    }
+  // not working yet but this is where
+//    public void compute(){
+//           if (i < 9) {
+//                    i++;
+////                    Information.setCount(count);
+////                    infoDisplayed = Information.DisplayInfo();
+////                    infoLbl.setText(infoDisplayed);
+//                }
+//                
+//                //image selection routine
+//              if(imgSelector < 9){
+//                  imgSelector++;
+////                  analogInfo.setImageUsed(imgSelector);
+////                  analogInfo.setUrls();
+////                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
+////                  imageChangeLbl.setIcon(ImgDisplayedLbl);
+//                
+//                  
+//                  }
+//    }
+    
+    public static int getInfoType(){
+        return infoType;
+    }
+    public int getCounter(){
+        return i;
+    }
+    
+    // test method to return the array to check if the values are beeing set
+    public static String[] getArray(){
+        return statArray;
+    }
+            
+    
+   
 }

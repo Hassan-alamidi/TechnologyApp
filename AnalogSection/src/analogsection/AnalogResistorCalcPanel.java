@@ -6,6 +6,7 @@
 package analogsection;
 
 import java.awt.LayoutManager;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,9 +17,21 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     /**
      * Creates new form ResistorCalcPanel
      */
+    private String selectedValue,band1,band2,band3,band4,valueTotal,minResistorValue, maxResistorValue;
+    protected String  conversion, substrK, substrH, convertkilohm, resistorDigits;
+    protected int digit1, digit2, percent, resistorColorVals;
+    protected double  toloerance, tolrancPercent, multiplier,valueResistor,maxValue,minValue;
+
+    
     public AnalogResistorCalcPanel() {
         initComponents();
         this.setSize(400,450);
+        selectedValue = "";
+        band1 ="";
+        band2 ="";
+        band4 = "";
+        percent = 100;
+       
     }
 
     /**
@@ -85,6 +98,11 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         addBtn.setForeground(new java.awt.Color(0, 102, 255));
         addBtn.setText("Calculate");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
         add(addBtn);
         addBtn.setBounds(20, 410, 180, 30);
 
@@ -177,10 +195,10 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     private void typesCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_typesCBItemStateChanged
         // TODO add your handling code here:
 
-        String selectedValue;
+        
         selectedValue = typesCB.getSelectedItem().toString();
 
-        if (selectedValue.equals("4 Band")) {
+        if(selectedValue.equals("4 Band")) {
             //display 4 band screen
 
             LayoutManager layout = getParent().getLayout();
@@ -206,6 +224,68 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     
                
     }//GEN-LAST:event_typesCBItemStateChanged
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+         //selectedValue = typesCB.getSelectedItem().toString();
+         // new instances of resistor4bandcalc 
+         ResistorCalc4band calc = new ResistorCalc4band(band1, band2, band3, band4);
+         
+         //clears label
+         anwserLbl.setText("");
+         
+         //get the values selected in the GUI
+         band1 = Color1CB.getSelectedItem().toString().toLowerCase();
+         band2 = Color2CB.getSelectedItem().toString().toLowerCase();
+         band3 = Color3CB.getSelectedItem().toString().toLowerCase();
+         band4 = ToloeranceCB.getSelectedItem().toString().toLowerCase();
+         //set the values to the instance of the class for proceesing 
+         calc.setBand1(band1);
+         calc.setBand2(band2);
+         calc.setBand3(band3);
+         calc.setBand4(band4);
+         
+//         //add values to arraylist 
+//         values.add(band1);
+//         values.add(band2);
+//         values.add(band3);
+//         values.add(band4);
+//         
+//         //send the arraylist to the instaibale class 
+//         calc.setValues(values);
+         
+         //Assign's the color codes a value
+         calc.AssignValues();
+         calc.AssignBand2Values();
+         calc.assignMulitiplier();
+         calc.assignToloerance();
+         
+         //calculate the resistors values
+         calc.compute();
+         
+        
+         calc.CalcToloerance();
+        
+         //get the max resistor value 
+         calc.getMaxValue();
+         
+         //get the min rsistor value
+         
+         
+         //converts the values to kiloohmz
+         calc.convertToKilohm();
+         
+         //retrive the calculations 
+         valueTotal = calc.getValueResistor();
+         
+         maxResistorValue = calc.getMaxValue();
+         
+         minResistorValue = calc.getMinValue();
+         
+         anwserLbl.setText(valueTotal);
+         
+         System.out.println("Maximum Resistance Value:"+ " "+ maxValue + "\n Minimum Resistance Value:"+ " "+ minValue);
+    }//GEN-LAST:event_addBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
