@@ -6,21 +6,28 @@
 package analogsection;
 
 import java.awt.LayoutManager;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Stephen 
  */
 public class DigitalCompnents extends javax.swing.JPanel {
+    private ImageIcon icon;
 
+    
+    private int btncounter;
     /**
      * Creates new form HangmanGUIPanel
      */
     public DigitalCompnents() {
         initComponents();
         this.setSize(400,450);
-        imageChangeLbl.setVisible(false);
-        infochangeLbl.setVisible(false);
+        btncounter = 0;
+        icon = new ImageIcon();
+        Imagelbl = new JLabel(icon);
     }
 
     /**
@@ -34,12 +41,16 @@ public class DigitalCompnents extends javax.swing.JPanel {
 
         detailsLbl = new javax.swing.JLabel();
         infoLbl = new javax.swing.JLabel();
+        infoLbl2 = new javax.swing.JLabel();
+        infoLbl3 = new javax.swing.JLabel();
+        infoLbl4 = new javax.swing.JLabel();
+        infoLbl5 = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
         titleLbl = new javax.swing.JLabel();
+        Imagelbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
-        imageChangeLbl = new javax.swing.JLabel();
-        infochangeLbl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -51,10 +62,40 @@ public class DigitalCompnents extends javax.swing.JPanel {
         add(detailsLbl);
         detailsLbl.setBounds(10, 190, 110, 30);
 
-        infoLbl.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
-        infoLbl.setText("A capacitor (originally known as a condenser) is a passive two-terminal  ");
+        infoLbl.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        infoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        infoLbl.setText("Here we will be giving a brief explaination of");
+        infoLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         add(infoLbl);
-        infoLbl.setBounds(10, 210, 380, 130);
+        infoLbl.setBounds(10, 220, 380, 20);
+
+        infoLbl2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        infoLbl2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLbl2.setText("some components used in digital electronics. ");
+        infoLbl2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        add(infoLbl2);
+        infoLbl2.setBounds(10, 240, 380, 20);
+
+        infoLbl3.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        infoLbl3.setForeground(new java.awt.Color(255, 255, 255));
+        infoLbl3.setText("To continue please press the arrow in the top");
+        infoLbl3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        add(infoLbl3);
+        infoLbl3.setBounds(10, 260, 380, 20);
+
+        infoLbl4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        infoLbl4.setForeground(new java.awt.Color(255, 255, 255));
+        infoLbl4.setText("right corner to move return to the previouse page.");
+        infoLbl4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        add(infoLbl4);
+        infoLbl4.setBounds(10, 280, 380, 20);
+
+        infoLbl5.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        infoLbl5.setForeground(new java.awt.Color(255, 255, 255));
+        infoLbl5.setText("To return to the previous menu press exit.");
+        infoLbl5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        add(infoLbl5);
+        infoLbl5.setBounds(10, 300, 380, 20);
 
         exitBtn.setBackground(new java.awt.Color(0, 153, 255));
         exitBtn.setText("Exit");
@@ -67,9 +108,16 @@ public class DigitalCompnents extends javax.swing.JPanel {
         exitBtn.setBounds(220, 390, 150, 40);
 
         titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
+        titleLbl.setForeground(new java.awt.Color(255, 255, 255));
         titleLbl.setText("Components");
         add(titleLbl);
         titleLbl.setBounds(140, 0, 150, 40);
+
+        Imagelbl.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        Imagelbl.setForeground(new java.awt.Color(255, 255, 255));
+        Imagelbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(Imagelbl);
+        Imagelbl.setBounds(30, 50, 350, 140);
 
         backBtn .setOpaque(false);
         backBtn .setContentAreaFilled(false);
@@ -80,7 +128,7 @@ public class DigitalCompnents extends javax.swing.JPanel {
             }
         });
         add(backBtn);
-        backBtn.setBounds(0, -1, 70, 40);
+        backBtn.setBounds(0, -1, 90, 40);
 
         nextBtn.setOpaque(false);
         nextBtn.setContentAreaFilled(false);
@@ -93,15 +141,11 @@ public class DigitalCompnents extends javax.swing.JPanel {
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
 
-        imageChangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/transistor.gif"))); // NOI18N
-        add(imageChangeLbl);
-        imageChangeLbl.setBounds(90, 50, 280, 140);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/componentsbanner.png"))); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 400, 40);
 
-        infochangeLbl.setText("is a semiconductor device used to amplify signals ");
-        add(infochangeLbl);
-        infochangeLbl.setBounds(10, 266, 380, 20);
-
-        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
+        backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/FEATURE-BRAIN-CIRCUITS-ISTOCK-HiRes.jpg"))); // NOI18N
         add(backgroundLbl);
         backgroundLbl.setBounds(-2, 0, 400, 450);
     }// </editor-fold>//GEN-END:initComponents
@@ -117,25 +161,42 @@ public class DigitalCompnents extends javax.swing.JPanel {
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
         // TODO add your handling code here:
-        imageChangeLbl.setVisible(true);
-        infochangeLbl.setVisible(true);
+        
+        if(btncounter == 0){
+           icon = new ImageIcon("led.png");
+           Imagelbl.setIcon(icon);
+           JOptionPane.showMessageDialog(null,"if works");
+        }
+        else if(btncounter == 1){
+            icon = new ImageIcon();
+        }
+        else if(btncounter == 2){
+            icon = new ImageIcon();
+        }
+        else if(btncounter == 3){
+            icon = new ImageIcon();
+        }
+        btncounter++;
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        imageChangeLbl.setVisible(false);
-        infochangeLbl.setVisible(false);
+       
     }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Imagelbl;
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.JLabel detailsLbl;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel imageChangeLbl;
     private javax.swing.JLabel infoLbl;
-    private javax.swing.JLabel infochangeLbl;
+    private javax.swing.JLabel infoLbl2;
+    private javax.swing.JLabel infoLbl3;
+    private javax.swing.JLabel infoLbl4;
+    private javax.swing.JLabel infoLbl5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton nextBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables

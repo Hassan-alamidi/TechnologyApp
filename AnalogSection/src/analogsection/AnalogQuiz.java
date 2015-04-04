@@ -139,7 +139,8 @@ public class AnalogQuiz extends Quiz {
         // for(int j = 0 ; j < 10; j++){
          //objArr.remove(j);
          //}
-         
+         //objArr.clear();
+         //JOptionPane.showMessageDialog(null,"array size after clearing" + objArr.size());
     }
  
     

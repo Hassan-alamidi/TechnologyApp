@@ -64,7 +64,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
             }
         });
         add(backBtn);
-        backBtn.setBounds(0, -1, 90, 50);
+        backBtn.setBounds(0, 0, 90, 50);
 
         nextBtn.setOpaque(false);
         nextBtn.setContentAreaFilled(false);

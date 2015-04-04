@@ -213,6 +213,9 @@ public class QuizScreen extends javax.swing.JPanel {
         jRadioButton3.setText("");
         jRadioButton2.setText("");
         jRadioButton1.setText("");
+        objArr.clear();
+        counter = 0;
+         JOptionPane.showMessageDialog(null,"array size after clearing" + objArr.size());
        //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
            }
         
