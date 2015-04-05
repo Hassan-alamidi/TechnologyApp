@@ -47,8 +47,13 @@ public class InformationGUI extends javax.swing.JFrame {
 
         exitBtn.setBackground(new java.awt.Color(0, 102, 255));
         exitBtn.setText("Exit ");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(exitBtn);
-        exitBtn.setBounds(200, 400, 190, 29);
+        exitBtn.setBounds(200, 400, 190, 23);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 150, 0, 0);
 
@@ -72,7 +77,7 @@ public class InformationGUI extends javax.swing.JFrame {
         backBtn .setContentAreaFilled(false);
         backBtn .setBorderPainted(false);
         getContentPane().add(backBtn);
-        backBtn.setBounds(0, -1, 75, 40);
+        backBtn.setBounds(0, -1, 33, 40);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         getContentPane().add(backgroundLbl);
@@ -80,6 +85,10 @@ public class InformationGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitBtnActionPerformed
 
     /**
      * @param args the command line arguments

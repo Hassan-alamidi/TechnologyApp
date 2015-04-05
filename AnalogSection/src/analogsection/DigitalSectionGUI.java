@@ -116,16 +116,10 @@ public class DigitalSectionGUI extends javax.swing.JPanel {
     private void InfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoBtnActionPerformed
         // TODO add your handling code here:
         
-         infoType = 2;
-        //it retrives an array from the information class
-        //and populates it with analog general questions
-//        info = new String[]{"A capacitor stores and releases charge","Electrons are used in batteries","There are many different electronic signals","ADC are used to convert analog signals to digital repersentation","Resistors are like shiedls","Resistors are measured in ohms","breadbords are used for creating circuits","fgtd","ggffg","gfddrf"};
-//        Information.setInfo(info);
-        Information.InfoType(infoType);
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogInfoScreen");
+            cl.show(getParent(), "DigitalInformationScreen");
         }
     }//GEN-LAST:event_InfoBtnActionPerformed
 

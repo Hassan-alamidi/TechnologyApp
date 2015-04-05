@@ -123,7 +123,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             }
         });
         add(backBtn);
-        backBtn.setBounds(0, -1, 75, 40);
+        backBtn.setBounds(0, -1, 70, 40);
 
         nextBtn.setOpaque(false);
         nextBtn.setContentAreaFilled(false);
