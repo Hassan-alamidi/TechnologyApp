@@ -490,7 +490,7 @@ public class ResistorCalc6band{
 
     public String getTempco() {
         final String degrees = "\u00b0";
-        return "Temperature Coefficient Value:" + tempco + "ppm/" + degrees;
+        return "Temperature Coefficient Value:" + tempco + "ppm/" + degrees +"C";
     }
 
 }

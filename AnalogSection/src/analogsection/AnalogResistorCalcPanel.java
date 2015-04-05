@@ -140,7 +140,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         add(Color3CB);
         Color3CB.setBounds(250, 270, 101, 27);
 
-        ToloeranceCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Brown", "Red", "Green", "Blue", "Violet", "Grey", "Gold", "Silver", "None" }));
+        ToloeranceCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Brown", "Red", "Green", "Blue", "Violet", "Gold", "Silver", "None" }));
         add(ToloeranceCB);
         ToloeranceCB.setBounds(250, 320, 94, 27);
 

@@ -166,6 +166,18 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         
         //resets the text to nothing when the information is exited
         infoLbl.setText("");
+        
+         //resets the info slide counter to 0
+         count = 0;
+         // resets each of yhe sections counters
+         analogInfo.setCount(count);
+         digitalInfo.setCount(count);
+         plasticInfo.setCount(count);
+         woodInfo.setCount(count);
+         analogComp.setCount(count);
+         analogSignals.setCount(count);
+         analogDiag.setCount(count);
+        
         if (Information.getInfoType() == 1) {
             LayoutManager layout = getParent().getLayout();
             if (layout instanceof java.awt.CardLayout) {
@@ -222,12 +234,12 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
-           // * anonymous inner class, to set the info.
+            // * anonymous inner class, to set the info.
             // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
             // * anonymous inner class extends the class of the object being constructed and has a "This." 
             // * referance to the instance of the object constructed
 
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            // * Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("A capacitor stores and releases charge");
@@ -439,7 +451,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             analogSignals.setInfo(info);
             //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
-            if (count < 10 && imgSelectorAnaSignals < 65) {
+            if(count < 10 && imgSelectorAnaSignals < 65) {
                 analogSignals.setImageUsed(imgSelectorAnaSignals);
                 analogSignals.setUrls();
                 ImgDisplayedLbl = analogSignals.AddImageUsingURLS();
@@ -455,7 +467,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             }
 
         }//end of slector if
-        else if (infoSelected == 7) {
+         else if (infoSelected == 7) {
                  //digital part
             //working 
 
@@ -636,7 +648,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
            }else if (infoSelected == 7) {
-            if (count > 0 && imgSelectorDiagTools > 63) {
+            if (count > 0 && imgSelectorDiagTools > 64) {
                 count--;
                 imgSelectorDiagTools--;
                 analogDiag.setCount(count);
