@@ -134,27 +134,27 @@ public class AnalogInfoMainScreen extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         
-        infoType = 1;
-        //it retrives an array from the information class
-        //and populates it with analog general questions
-//        info = new String[]{"A capacitor stores and releases charge","Electrons are used in batteries","There are many different electronic signals","ADC are used to convert analog signals to digital repersentation","Resistors are like shiedls","Resistors are measured in ohms","breadbords are used for creating circuits","fgtd","ggffg","gfddrf"};
-//        Information.setInfo(info);
+        infoType = 5;
+    
         Information.InfoType(infoType);
+      
         
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogCompScreen");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+         infoType = 6;
+    
+        Information.InfoType(infoType);
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogWavesScreen");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

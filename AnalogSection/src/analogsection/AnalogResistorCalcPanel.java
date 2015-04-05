@@ -7,6 +7,7 @@ package analogsection;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,9 +19,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
      * Creates new form ResistorCalcPanel
      */
     private String selectedValue,band1,band2,band3,band4,valueTotal,minResistorValue, maxResistorValue;
-    protected String  conversion, substrK, substrH, convertkilohm, resistorDigits;
-    protected int digit1, digit2, percent, resistorColorVals;
-    protected double  toloerance, tolrancPercent, multiplier,valueResistor,maxValue,minValue;
+    
 
     
     public AnalogResistorCalcPanel() {
@@ -30,7 +29,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         band1 ="";
         band2 ="";
         band4 = "";
-        percent = 100;
+       
        
     }
 
@@ -137,7 +136,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         add(Color2CB);
         Color2CB.setBounds(40, 320, 101, 27);
 
-        Color3CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White" }));
+        Color3CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "Gold", "Silver" }));
         add(Color3CB);
         Color3CB.setBounds(250, 270, 101, 27);
 
@@ -229,7 +228,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          //selectedValue = typesCB.getSelectedItem().toString();
          // new instances of resistor4bandcalc 
-         ResistorCalc4band calc = new ResistorCalc4band(band1, band2, band3, band4);
+         ResistorCalc4band calc = new ResistorCalc4band();
          
          //clears label
          anwserLbl.setText("");
@@ -284,7 +283,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
          
          anwserLbl.setText(valueTotal);
          
-         System.out.println("Maximum Resistance Value:"+ " "+ maxValue + "\n Minimum Resistance Value:"+ " "+ minValue);
+         JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+ maxResistorValue + "\n Minimum Resistance Value:"+ " "+  minResistorValue);
     }//GEN-LAST:event_addBtnActionPerformed
 
 

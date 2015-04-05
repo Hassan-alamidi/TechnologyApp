@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package analogsection;
 
 import java.awt.LayoutManager;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +13,7 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
     /**
      * Creates new form AnalogResistorCalc6band
      */
+    private String selectedValue,band1,band2,band3,band4,band5,band6,valueTotal,minResistorValue, maxResistorValue,tempco;
     public AnalogResistorCalc6band() {
         initComponents();
         this.setSize(400,450);
@@ -88,7 +86,7 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
         add(Value3);
         Value3.setBounds(270, 240, 90, 20);
 
-        Value4CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White" }));
+        Value4CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "Gold ", "Silver" }));
         add(Value4CB);
         Value4CB.setBounds(10, 310, 101, 27);
 
@@ -98,15 +96,15 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(20, 290, 100, 16);
 
-        Value5CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White", " " }));
+        Value5CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Brown", "Red", "Green", "Blue", "Violet", "Grey", "Gold", "Silver", "None", " " }));
         add(Value5CB);
-        Value5CB.setBounds(140, 310, 101, 27);
+        Value5CB.setBounds(140, 310, 94, 27);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tolorence:");
         add(jLabel2);
-        jLabel2.setBounds(280, 290, 80, 16);
+        jLabel2.setBounds(150, 290, 80, 16);
 
         Value6CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Brown", "Red", "Green", "Blue", "Violet", "Grey", "Gold", "Silver", "None", " " }));
         add(Value6CB);
@@ -116,7 +114,7 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
         value5Lbl.setForeground(new java.awt.Color(255, 255, 255));
         value5Lbl.setText("Fifth Value:");
         add(value5Lbl);
-        value5Lbl.setBounds(150, 290, 80, 16);
+        value5Lbl.setBounds(280, 290, 80, 16);
 
         headingLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         headingLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,6 +131,11 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
         claculateBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         claculateBtn.setForeground(new java.awt.Color(0, 102, 255));
         claculateBtn.setText("Calulate");
+        claculateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                claculateBtnActionPerformed(evt);
+            }
+        });
         add(claculateBtn);
         claculateBtn.setBounds(10, 400, 110, 40);
 
@@ -228,6 +231,72 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
         AnalogResistorCalcPanel reset = new AnalogResistorCalcPanel();
         anwserLbl.setText("");
     }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void claculateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claculateBtnActionPerformed
+        // TODO add your handling code here:
+          // new instances of resistor4bandcalc 
+         ResistorCalc6band calc = new ResistorCalc6band();
+         
+         //clears label
+         anwserLbl.setText("");
+         
+         //get the values selected in the GUI
+         band1 = value1CB.getSelectedItem().toString().toLowerCase();
+         band2 = Value2CB.getSelectedItem().toString().toLowerCase();
+         band3 = Value3CB.getSelectedItem().toString().toLowerCase();
+         band4 = Value4CB.getSelectedItem().toString().toLowerCase();
+         band5 = Value5CB.getSelectedItem().toString().toLowerCase();
+         band6 = Value6CB.getSelectedItem().toString().toLowerCase();
+         //set the values to the instance of the class for proceesing 
+         calc.setBand1(band1);
+         calc.setBand2(band2);
+         calc.setBand3(band3);
+         calc.setBand4(band4);
+         calc.setBand5(band5);
+         calc.setBand6(band6);
+         
+//         //add values to arraylist 
+//         values.add(band1);
+//         values.add(band2);
+//         values.add(band3);
+//         values.add(band4);
+//         
+//         //send the arraylist to the instaibale class 
+//         calc.setValues(values);
+         
+         //Assign's the color codes a value
+         calc.AssignValues();
+         calc.AssignBand2Values();
+         calc.assignMulitiplier();
+         calc.assignToloerance();
+         calc.assignTempcoValue();
+         
+         //calculate the resistors values
+         calc.compute();
+         
+        
+         calc.CalcToloerance();
+        
+         //get the max resistor value 
+         calc.getMaxValue();
+         
+         //get the min rsistor value
+         
+         
+         //converts the values to kiloohmz
+         calc.convertToKilohm();
+         
+         //retrive the calculations 
+         valueTotal = calc.getValueResistor();
+         
+         maxResistorValue = calc.getMaxValue();
+         
+         minResistorValue = calc.getMinValue();
+         tempco = calc.getTempco();
+         anwserLbl.setText(valueTotal);
+         
+         JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+ maxResistorValue + "\n Minimum Resistance Value:"+ " "+  minResistorValue +"\n"+tempco);
+    }//GEN-LAST:event_claculateBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

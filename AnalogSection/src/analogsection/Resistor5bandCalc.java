@@ -5,6 +5,10 @@
  */
 package analogsection;
 
+/**
+ *
+ * @author Stephen 
+ */
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -12,20 +16,24 @@ import java.util.ArrayList;
  *
  * @author Stephen 
  */
-
-public class ResistorCalc4band {
+public class Resistor5bandCalc {
 
     //variables 
 
-    protected String band1, band2, band3, band4, resistorDigits, conversion, substrK, substrH, convertkilohm,maxConverKilohm,minConverKilohm;
-    private int digit1, digit2, percent, resistorColorVals;
-    protected double maxValue, minValue, toloerance, tolrancPercent, multiplier;
-    protected double valueResistor;
+    private String band1, band2, band3, band4,band5, resistorDigits, conversion, substrK, substrH, convertkilohm,maxConverKilohm,minConverKilohm;
+    private int digit1, digit2,digit3, percent, resistorColorVals;
+    private double maxValue, minValue, toloerance, tolrancPercent, multiplier;
+    private double valueResistor;
 
 //    protected ArrayList <String> values;
 //    
-     public ResistorCalc4band(){
-         resistorDigits = "";
+     public Resistor5bandCalc(){
+        band1 = "";
+        band3 = "";
+        band3 = "";
+        band4 = "";
+        band5 = "";
+        resistorDigits = "";
         conversion = "";
         substrK = "";
         substrH = "";
@@ -40,20 +48,9 @@ public class ResistorCalc4band {
         tolrancPercent = 0.0;
         multiplier = 0.0;
         valueResistor = 0.0; 
-        band1 = "";
-        band2 = "";
-        band3 = "";
-        band4 = "";
+        
      }
-//    public ResistorCalc4band(String band1,String band2,String band3,String band4){
-//        this.band1 = band1;
-//        this.band2 = band2;
-//        this.band3 = band3;
-//        this.band4 = band4;
-//       
-//        
-//
-//    }
+   
 
     
 
@@ -75,6 +72,11 @@ public class ResistorCalc4band {
     public void setBand4(String band4) {
         this.band4 = band4;
     }
+
+    public void setBand5(String band5) {
+        this.band5 = band5;
+    }
+    
 
     public void AssignValues() {
 
@@ -114,44 +116,32 @@ public class ResistorCalc4band {
     }
 
     public void AssignBand2Values() {
-        if (band2.equals("black")) {
+        if(band2.equals("black")) {
             digit2 = 0;
-//            multiplier = 1;
+
         } else if (band2.equals("brown")) {
-
             digit2 = 1;
-//        multiplier = 10;
-//        toloerance = 1;
+
         } else if (band2.equals("red")) {
-
             digit2 = 2;
-//            multiplier = 100;
+
         } else if (band2.equals("orange")) {
-
             digit2 = 3;
-//            multiplier = 1000;
-        } else if (band2.equals("yellow")) {
 
+        } else if (band2.equals("yellow")) {
             digit2 = 4;
-//            multiplier = 10000;
+
 
         } else if (band2.equals("green")) {
-
             digit2 = 5;
-//            multiplier = 100000;
-//            toloerance = 0.5;
+
         } else if (band2.equals("blue")) {
-
             digit2 = 6;
-//            multiplier = 1000000;
-//            toloerance = 0.25;
+
         } else if (band2.equals("violet")) {
-
             digit2 = 7;
-//            multiplier = 10000000;
-//            toloerance = 0.25;
-        } else if (band1.equals("grey")) {
 
+        } else if (band1.equals("grey")) {
             digit2 = 8;
 
         } else if (band1.equals("white")) {
@@ -159,9 +149,45 @@ public class ResistorCalc4band {
             digit2 = 9;
         }
     }
+     public void Assignband3Values() {
+
+        switch (band3) {
+            case "black":
+                digit3 = 0;
+                break;
+            case "brown":
+                digit3 = 1;
+                break;
+            case "red":
+                digit3 = 2;
+                break;
+            case "orange":
+                digit3 = 3;
+                break;
+            case "yellow":
+                digit3 = 4;
+                break;
+            case "green":
+                digit3 = 5;
+                break;
+            case "blue":
+                digit3 = 6;
+                break;
+            case "violet":
+                digit3 = 7;
+                break;
+            case "grey":
+                digit3 = 8;
+                break;
+            case "white":
+                digit3 = 9;
+                break;
+        }
+
+    }
 
     public void assignMulitiplier() {
-        switch (band3) {
+        switch (band4) {
             case "black":
                 multiplier = 1;
                 break;
@@ -203,7 +229,7 @@ public class ResistorCalc4band {
 
     public void assignToloerance() {
 
-        switch (band4) {
+        switch (band5) {
             case "brown":
                 toloerance = 1;
                 break;
@@ -217,7 +243,7 @@ public class ResistorCalc4band {
                 toloerance = 0.25;
                 break;
             case "violet":
-                toloerance = 0.1;
+                toloerance = 0.25;
                 break;
             case "gold":
                 toloerance = 5;
@@ -238,7 +264,7 @@ public class ResistorCalc4band {
 
         //resistorDigits = Integer.toString(digit1+digit2);
         //resistorColorVals = Integer.parseInt(resistorDigits);
-        resistorColorVals = Integer.valueOf(String.valueOf(digit1) + String.valueOf(digit2));
+        resistorColorVals = Integer.valueOf(String.valueOf(digit1) + String.valueOf(digit2)+ String.valueOf(digit3));
 
         //error checker 
         System.out.println(resistorColorVals);
@@ -315,7 +341,7 @@ public class ResistorCalc4band {
         }
 
         // converts maximun resistor value to kilohmz
-         if(maxValue < 100){
+        if(maxValue < 100){
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(4, 5);
@@ -325,7 +351,7 @@ public class ResistorCalc4band {
             substrK = conversion.substring(0, 1);
             substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "" + "ohms";
-        } else if (maxValue > 999 && maxValue < 10000) {
+        }else if (maxValue > 999 && maxValue < 10000) {
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 1);
             substrH = conversion.substring(1, 2);
@@ -341,7 +367,7 @@ public class ResistorCalc4band {
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 3);
             substrH = conversion.substring(4, 6);
-            maxConverKilohm = substrK + "." + substrH + "K" + "ohms";
+           maxConverKilohm = substrK + "." + substrH + "K" + "ohms";
 
         } else if (maxValue > 999999 && maxValue < 10000000) {
             conversion = String.valueOf(maxValue);
@@ -359,11 +385,11 @@ public class ResistorCalc4band {
 
         } else if (maxValue >= 100000000) {
             long number;
-            number = Long.parseLong(String.format("%.0f",maxValue));
+            number = Long.parseLong(String.format("%.0f", maxValue));
             conversion = String.valueOf(number);
             substrK = conversion.substring(0, 3);
             substrH = conversion.substring(4, 6);
-            maxConverKilohm= substrK + "." + substrH + "M" + "ohms";
+            maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
         }
 
@@ -378,11 +404,11 @@ public class ResistorCalc4band {
             substrK = conversion.substring(0, 1);
             substrH = conversion.substring(1, 3);
             minConverKilohm = substrK + "." + substrH + "" + "ohms";
-        } else if (minValue > 999 && minValue < 10000) {
+        }else if (minValue > 999 && minValue < 10000) {
             conversion = String.valueOf(minValue);
             substrK = conversion.substring(0, 1);
             substrH = conversion.substring(1, 2);
-            minConverKilohm = substrK + "." + substrH + "K" + "ohms";
+           minConverKilohm = substrK + "." + substrH + "K" + "ohms";
 
         } else if (minValue > 9999 && minValue < 100000) {
             conversion = String.valueOf(minValue);
@@ -427,7 +453,7 @@ public class ResistorCalc4band {
     }
 
     public String getMaxValue() {
-        return maxConverKilohm;
+        return  maxConverKilohm;
     }
 
     public String getMinValue() {
@@ -438,3 +464,4 @@ public class ResistorCalc4band {
     
     
 }
+

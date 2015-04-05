@@ -221,7 +221,7 @@
     <Component class="javax.swing.JComboBox" name="Color3CB">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="10">
+          <StringArray count="11">
             <StringItem index="0" value="Black"/>
             <StringItem index="1" value="Brown"/>
             <StringItem index="2" value="Red"/>
@@ -231,7 +231,8 @@
             <StringItem index="6" value="Blue"/>
             <StringItem index="7" value="Violet"/>
             <StringItem index="8" value="Grey"/>
-            <StringItem index="9" value="White"/>
+            <StringItem index="9" value="Gold"/>
+            <StringItem index="10" value="Silver"/>
           </StringArray>
         </Property>
       </Properties>
