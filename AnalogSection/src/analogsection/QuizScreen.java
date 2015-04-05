@@ -67,7 +67,6 @@ public class QuizScreen extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         headingLbl = new javax.swing.JLabel();
-        difficultyCB = new javax.swing.JComboBox();
         jTextField1 = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -77,48 +76,34 @@ public class QuizScreen extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         titleLbl = new javax.swing.JLabel();
+        levelCB = new javax.swing.JComboBox();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
 
         headingLbl.setText("Question:");
         add(headingLbl);
-        headingLbl.setBounds(10, 120, 80, 14);
-
-        difficultyCB.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        difficultyCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Easy", "Medium", "Hard" }));
-        difficultyCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                difficultyCBActionPerformed(evt);
-            }
-        });
-        add(difficultyCB);
-        difficultyCB.setBounds(310, 10, 70, 30);
+        headingLbl.setBounds(10, 120, 80, 16);
 
         jTextField1.setText("please press start to begin");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         add(jTextField1);
         jTextField1.setBounds(10, 140, 380, 60);
 
         buttonGroup1.add(jRadioButton1);
         add(jRadioButton1);
-        jRadioButton1.setBounds(140, 240, 170, 21);
+        jRadioButton1.setBounds(140, 240, 170, 23);
 
         buttonGroup1.add(jRadioButton2);
         add(jRadioButton2);
-        jRadioButton2.setBounds(140, 290, 180, 21);
+        jRadioButton2.setBounds(140, 290, 180, 23);
 
         buttonGroup1.add(jRadioButton3);
         add(jRadioButton3);
-        jRadioButton3.setBounds(140, 340, 180, 21);
+        jRadioButton3.setBounds(140, 340, 180, 23);
 
         jLabel1.setText("Chose one of the following anwser's then press next to submit:");
         add(jLabel1);
-        jLabel1.setBounds(20, 210, 320, 14);
+        jLabel1.setBounds(20, 210, 320, 16);
 
         jButton2.setText("Start");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +112,7 @@ public class QuizScreen extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(110, 390, 150, 40);
+        jButton2.setBounds(110, 380, 150, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 102, 255));
         jButton1.setText("submit");
@@ -155,6 +140,10 @@ public class QuizScreen extends javax.swing.JPanel {
         titleLbl.setText("Analog Quiz");
         add(titleLbl);
         titleLbl.setBounds(140, 0, 200, 40);
+
+        levelCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Easy", "Medium", "Hard" }));
+        add(levelCB);
+        levelCB.setBounds(290, -3, 110, 50);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/QuizGUI3.png"))); // NOI18N
         add(backgroundLbl);
@@ -234,22 +223,25 @@ public class QuizScreen extends javax.swing.JPanel {
        correct = playQuiz.getcorrect();
        incorrect = playQuiz.getIncorrect();
        message = myAILogic.getMessage();
-       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect + "and " + message);
-        jRadioButton3.setText("");
+      
+       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect + "and " );
+        JOptionPane.showMessageDialog(null,message);
+       jRadioButton3.setText("");
         jRadioButton2.setText("");
         jRadioButton1.setText("");
        //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
            
-         if(CompPlays == 1){
-            gamemode = difficultyCB.getSelectedItem().toString().toLowerCase();
+        
+        
+           }
+            if(CompPlays == 1){
+            gamemode = levelCB.getSelectedItem().toString().toLowerCase();
             myAILogic.setGamemode(gamemode);
             myAILogic.calRight();
             myAILogic.whatQuestions();
             CompPlays ++;
            }
          
-        
-           }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -276,7 +268,7 @@ public class QuizScreen extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
         
-       
+        
             
         
         
@@ -297,7 +289,6 @@ public class QuizScreen extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox difficultyCB;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel headingLbl;
     private javax.swing.JButton jButton1;
@@ -307,6 +298,7 @@ public class QuizScreen extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox levelCB;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -80,9 +80,7 @@ public class Information {
        imgSelectString = Integer.toString(imgSelector);
        urls.add("/resources/" + imgSelectString + ".jpg");
       
-        for (String url : urls) {
-            System.out.println(url);
-        }
+        
         //urls = "/resources/" + imgSelector + ".jpg";
             
     }
