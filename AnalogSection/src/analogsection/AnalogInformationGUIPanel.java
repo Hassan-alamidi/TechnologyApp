@@ -43,8 +43,11 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     Information digitalInfo;
     Information plasticInfo;
     Information woodInfo;
+    Information analogComp;
+    Information analogSignals;
+    Information analogDiag;
     private String infoDisplayed;
-    private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,i ;
+    private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,imgSelectorAnaComp,imgSelectorAnaSignals,imgSelectorDiagTools ,imgSelectorDigit,i ;
     protected static int infoSelected;
     private String[] arrayTest;
     private ArrayList <String> info;
@@ -58,19 +61,27 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         digitalInfo = new Information();
         plasticInfo = new Information();
         woodInfo = new Information();
+        analogComp = new Information();
+        analogDiag = new Information();
+        analogSignals = new Information(); 
         infoDisplayed = "";
-        count =0;
+        count = 0;
         imgSelector = 0;
         infoLbl.setText("");
         imgSelectorDigital = 10;
         imgSelectorPlastic = 21;
-        imgSelectorWood = 31;
+        imgSelectorWood = 32;
+        imgSelectorAnaComp = 43;
+        imgSelectorAnaSignals = 54;
+        imgSelectorDiagTools = 65;
+        imgSelectorDigit = 87;
+        
         
     
         
         
         
-    }
+ }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,6 +166,18 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         
         //resets the text to nothing when the information is exited
         infoLbl.setText("");
+        
+         //resets the info slide counter to 0
+         count = 0;
+         // resets each of yhe sections counters
+         analogInfo.setCount(count);
+         digitalInfo.setCount(count);
+         plasticInfo.setCount(count);
+         woodInfo.setCount(count);
+         analogComp.setCount(count);
+         analogSignals.setCount(count);
+         analogDiag.setCount(count);
+        
         if (Information.getInfoType() == 1) {
             LayoutManager layout = getParent().getLayout();
             if (layout instanceof java.awt.CardLayout) {
@@ -175,13 +198,31 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "PlasticMainGUI");
            }
-      }else{
+      }else if(Information.getInfoType() == 4){
             LayoutManager layout = getParent().getLayout();
-        if (layout instanceof java.awt.CardLayout) {
+         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "WoodMainPanel");
+           }
+      }else if(Information.getInfoType() == 5){
+            LayoutManager layout = getParent().getLayout();
+         if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogInfoMainScreen");
+           }
+      }else if(Information.getInfoType() == 6){
+            LayoutManager layout = getParent().getLayout();
+         if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogInfoMainScreen");
+           }
+      }else if(Information.getInfoType() == 7){
+           LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
         }
-        }
+      }
        
     }//GEN-LAST:event_exitBtnActionPerformed
 
@@ -193,34 +234,34 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
-           // * anonymous inner class, to set the info.
-           // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-           // * anonymous inner class extends the class of the object being constructed and has a "This." 
-           // * referance to the instance of the object constructed
-           
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
-            
+            // * anonymous inner class, to set the info.
+            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
+            // * anonymous inner class extends the class of the object being constructed and has a "This." 
+            // * referance to the instance of the object constructed
 
-              ArrayList <String> info = new ArrayList<String>() {{
-                        add("A capacitor stores and releases charge");
-                        add("Electrons are used in batteries");
-                        add("There are many different electronic signals");
-                        add("ADC are used to convert analog signals to digital repersentation");
-                        add("Resistors are like shiedls");
-                        add("Resistors are measured in ohms");
-                        add("breadbords are used for creating circuits");
-                        add("fgtd");
-                        add("ggffg");
-                        add("gfddrf");
-                  }};
+            // * Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("fgtd");
+                    add("ggffg");
+                    add("gfddrf");
+                }
+            };
 
 //info = new String[]{"A capacitor stores and releases charge", 
-              //"Electrons are used in batteries", "There are many different electronic signals",
-              //"ADC are used to convert analog signals to digital repersentation", 
-              //"Resistors are like shiedls", "Resistors are measured in ohms",
-              //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+            //"Electrons are used in batteries", "There are many different electronic signals",
+            //"ADC are used to convert analog signals to digital repersentation", 
+            //"Resistors are like shiedls", "Resistors are measured in ohms",
+            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
             analogInfo.setInfo(info);
-            
+
             if (count < 10 && imgSelector < 10) {
                 //imgSelector = 0;
                 analogInfo.setImageUsed(imgSelector);
@@ -239,24 +280,26 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         } else if (infoSelected == 2) {
                  //digital part
             //working 
-            
-             //add information here 
+
+            //add information here 
             // anonymous inner class, to set the info
-              ArrayList <String> info = new ArrayList<String>() {{
-                        add("D");
-                        add("I");
-                        add("G");
-                        add("I");
-                        add("T");
-                        add("A");
-                        add("L");
-                        add("wo");
-                        add("rk");
-                        add("ing");
-                  }};
-           
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("D");
+                    add("I");
+                    add("G");
+                    add("I");
+                    add("T");
+                    add("A");
+                    add("L");
+                    add("wo");
+                    add("rk");
+                    add("ing");
+                }
+            };
+
             digitalInfo.setInfo(info);
-             //Information.setCount(count = 0);
+            //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
             if (count < 10 && imgSelectorDigital < 21) {
                 digitalInfo.setImageUsed(imgSelectorDigital);
@@ -274,25 +317,27 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 3) {
-             //plastic part
+            //plastic part
             //set info here 
-             ArrayList <String> info = new ArrayList<String>() {{
-                        add("D");
-                        add("I");
-                        add("G");
-                        add("I");
-                        add("T");
-                        add("A");
-                        add("L");
-                        add("wo");
-                        add("rk");
-                        add("ing");
-                  }};           
- 
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("D");
+                    add("I");
+                    add("G");
+                    add("I");
+                    add("T");
+                    add("A");
+                    add("L");
+                    add("wo");
+                    add("rk");
+                    add("ing");
+                }
+            };
+
             plasticInfo.setInfo(info);
-             //Information.setCount(count = 0);
+            //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
-            if (count < 10 && imgSelectorPlastic < 31) {
+            if (count < 10 && imgSelectorPlastic < 32) {
                 plasticInfo.setImageUsed(imgSelectorPlastic);
                 plasticInfo.setUrls();
                 ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
@@ -306,25 +351,27 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 
             }
 
-        } else {
-             //wood part
+        } else if (infoSelected == 4) {
+            //wood part
             //add info here 
-           ArrayList <String> info = new ArrayList<String>() {{
-                        add("W");
-                        add("O");
-                        add("O");
-                        add("D");
-                        add("G");
-                        add("o");
-                        add("E");
-                        add("s");
-                        add("here");
-                        add("!1!!!!");
-                  }};
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("O");
+                    add("D");
+                    add("G");
+                    add("o");
+                    add("E");
+                    add("s");
+                    add("here");
+                    add("!1!!!!");
+                }
+            };
             woodInfo.setInfo(info);
-             //Information.setCount(count = 0);
+            //Information.setCount(count = 0);
             // infoDisplayed = Information.DisplayInfo();
-            if (count < 10 && imgSelectorWood < 41) {
+            if (count < 10 && imgSelectorWood < 43) {
                 woodInfo.setImageUsed(imgSelectorWood);
                 woodInfo.setUrls();
                 ImgDisplayedLbl = woodInfo.AddImageUsingURLS();
@@ -336,15 +383,140 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 infoDisplayed = woodInfo.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
             }
-        }
-                
-                arrayTest = Information.getArray();
-               // checker to see if the array has been filled with digital   
-                if(arrayTest == null){
-                    System.out.println("The array is empty: Values havent been taken");
+        } else if (infoSelected == 5) {
+           // * anonymous inner class, to set the info.
+            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
+            // * anonymous inner class extends the class of the object being constructed and has a "This." 
+            // * referance to the instance of the object constructed
+
+            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("R");
+                    add("K");
+                    add("I");
+                    add("N");
+                    add("G");
+                    add("F");
+                    add("I");
+                    add(":)");
                 }
+            };
+
+//info = new String[]{"A capacitor stores and releases charge", 
+            //"Electrons are used in batteries", "There are many different electronic signals",
+            //"ADC are used to convert analog signals to digital repersentation", 
+            //"Resistors are like shiedls", "Resistors are measured in ohms",
+            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+            analogComp.setInfo(info);
+
+            if (count < 10 && imgSelectorAnaComp < 53) {
+                //imgSelector = 0;
+                analogComp.setImageUsed(imgSelectorAnaComp);
+                analogComp.setUrls();
+                ImgDisplayedLbl = analogComp.AddImageUsingURLS();
+                imgSelectorAnaComp++;
+                //Information.setCount(count = 0);
+                analogComp.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = analogComp.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+            }
+
+        } else if (infoSelected == 6) {
+                 //digital part
+            //working 
+
+            //add information here 
+            // anonymous inner class, to set the info
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("R");
+                    add("K");
+                    add("I");
+                    add("N");
+                    add("G");
+                    add("F");
+                    add("I");
+                    add(":)");
+                }
+            };
+
+            analogSignals.setInfo(info);
+            //Information.setCount(count = 0);
+            // infoDisplayed = Information.DisplayInfo();
+            if(count < 10 && imgSelectorAnaSignals < 65) {
+                analogSignals.setImageUsed(imgSelectorAnaSignals);
+                analogSignals.setUrls();
+                ImgDisplayedLbl = analogSignals.AddImageUsingURLS();
+                imgSelectorAnaSignals++;
+                //Information.setCount(count = 0);
+                analogSignals.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = analogSignals.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+                // break;
+            }
+
+        }//end of slector if
+         else if (infoSelected == 7) {
+                 //digital part
+            //working 
+
+            //add information here 
+            // anonymous inner class, to set the info
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("R");
+                    add("K");
+                    add("I");
+                    add("N");
+                    add("G");
+                    add("F");
+                    add("I");
+                    add(":)");
+                }
+            };
+
+            analogDiag.setInfo(info);
+            //Information.setCount(count = 0);
+            // infoDisplayed = Information.DisplayInfo();
+            
+            //not working 
+            if (count < 10 && imgSelectorDiagTools  < 74) {
+                analogDiag.setImageUsed(imgSelectorDiagTools);
+                analogDiag.setUrls();
+                ImgDisplayedLbl = analogDiag.AddImageUsingURLS();
+                imgSelectorDiagTools++;
+                //Information.setCount(count = 0);
+                analogDiag.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = analogDiag.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+                // break;
+            }
+
+        }//end of slector if
+
+        arrayTest = Information.getArray();
+        // checker to see if the array has been filled with digital   
+        if (arrayTest == null) {
+            System.out.println("The array is empty: Values havent been taken");
+        }
              //throwing processException error due to the info selector always being == 0
-             // so the data is never sent to the array for processing 
+        // so the data is never sent to the array for processing 
 //                if (count < 9) {
 //                    count++;
 //                    Information.setCount(count);
@@ -362,7 +534,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 //                
 //                  
 //                  }
-                
+
 //            } 
 //       else if (infoSelected == 3) {
 //        //Wood part
@@ -385,10 +557,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
 //            infoLbl.setText(infoDisplayed);
 //        }
 //    }
-
    //     }// end of outter if
-      
-       System.out.println("index:"+count + "Message:" + infoDisplayed);
+        System.out.println("index:" + count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -442,7 +612,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
         } else if (infoSelected == 4) {
-            if (count > 0 && imgSelectorWood > 30) {
+            if (count > 0 && imgSelectorWood > 33) {
                 count--;
                 imgSelectorWood--;
                 woodInfo.setCount(count);
@@ -453,14 +623,51 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
-        }else{
-            System.out.print("An error occourd");
-        }
+        } else if (infoSelected == 5) {
+            if (count > 0 &&  imgSelectorAnaComp > 42) {
+                count--;
+                imgSelectorAnaComp--;
+                analogComp.setCount(count);
+                analogComp.setImageUsed(imgSelectorAnaComp);
+                analogComp.setUrls();
+                infoDisplayed = analogComp.DisplayInfo();
+                ImgDisplayedLbl = analogComp.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                }
+           }else if (infoSelected == 6) {
+            if (count > 0 && imgSelectorAnaSignals > 54) {
+                count--;
+                imgSelectorAnaSignals--;
+                analogSignals.setCount(count);
+                analogSignals.setImageUsed(imgSelectorAnaSignals);
+                analogSignals.setUrls();
+                infoDisplayed = analogSignals.DisplayInfo();
+                ImgDisplayedLbl = analogSignals.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+           }else if (infoSelected == 7) {
+            if (count > 0 && imgSelectorDiagTools > 64) {
+                count--;
+                imgSelectorDiagTools--;
+                analogDiag.setCount(count);
+                analogDiag.setImageUsed(imgSelectorDiagTools);
+                analogDiag.setUrls();
+                infoDisplayed = analogDiag.DisplayInfo();
+                ImgDisplayedLbl = analogDiag.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+            }
+           }else{
+           System.out.print("An error occourd");
+           }
         
          
           
 
         System.out.println("index:"+count + "Message:" + infoDisplayed);
+            
         
         
     }//GEN-LAST:event_backBtnActionPerformed

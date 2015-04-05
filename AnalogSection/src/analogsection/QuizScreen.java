@@ -25,6 +25,10 @@ public class QuizScreen extends javax.swing.JPanel {
     int counter , random;
     int btntrack;
     protected Random rand;
+    String gamemode;
+    String message;
+    int CompPlays;
+    AILogic myAILogic = new AILogic();
     
         
     /**
@@ -42,6 +46,8 @@ public class QuizScreen extends javax.swing.JPanel {
         btntrack = 0;
         random = 0;
         rand = new Random();
+        CompPlays = 1;
+        message = "";
     }
     
      public void setobjarr(ArrayList<QuestionObj> objArr){
@@ -61,6 +67,7 @@ public class QuizScreen extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         headingLbl = new javax.swing.JLabel();
+        difficultyCB = new javax.swing.JComboBox();
         jTextField1 = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -78,7 +85,22 @@ public class QuizScreen extends javax.swing.JPanel {
         add(headingLbl);
         headingLbl.setBounds(10, 120, 80, 14);
 
+        difficultyCB.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        difficultyCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Easy", "Medium", "Hard" }));
+        difficultyCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                difficultyCBActionPerformed(evt);
+            }
+        });
+        add(difficultyCB);
+        difficultyCB.setBounds(310, 10, 70, 30);
+
         jTextField1.setText("please press start to begin");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         add(jTextField1);
         jTextField1.setBounds(10, 140, 380, 60);
 
@@ -201,6 +223,8 @@ public class QuizScreen extends javax.swing.JPanel {
            counter++;
            if(counter >= 9){
            jButton1.setText("get results");
+            
+             
            }
            }
            else{
@@ -209,14 +233,22 @@ public class QuizScreen extends javax.swing.JPanel {
        playQuiz.checkAnwsers();
        correct = playQuiz.getcorrect();
        incorrect = playQuiz.getIncorrect();
-       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
+       message = myAILogic.getMessage();
+       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect + "and " + message);
         jRadioButton3.setText("");
         jRadioButton2.setText("");
         jRadioButton1.setText("");
-        objArr.clear();
-        counter = 0;
-         JOptionPane.showMessageDialog(null,"array size after clearing" + objArr.size());
        //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
+           
+         if(CompPlays == 1){
+            gamemode = difficultyCB.getSelectedItem().toString().toLowerCase();
+            myAILogic.setGamemode(gamemode);
+            myAILogic.calRight();
+            myAILogic.whatQuestions();
+            CompPlays ++;
+           }
+         
+        
            }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -244,13 +276,28 @@ public class QuizScreen extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
         
+       
+            
+        
+        
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void difficultyCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_difficultyCBActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_difficultyCBActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox difficultyCB;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel headingLbl;
     private javax.swing.JButton jButton1;

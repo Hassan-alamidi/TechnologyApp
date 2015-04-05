@@ -5,6 +5,7 @@
  */
 package analogsection;
 
+import static analogsection.Information.infoType;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
@@ -153,10 +154,13 @@ public class AnalogGUIPanel extends javax.swing.JPanel {
 
     private void DiagnosticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiagnosticBtnActionPerformed
         // TODO add your handling code here:
-        LayoutManager layout = getParent().getLayout();
+         infoType = 7;
+    
+        Information.InfoType(infoType);
+         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "AnalogDiagnosticScreen");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_DiagnosticBtnActionPerformed
 

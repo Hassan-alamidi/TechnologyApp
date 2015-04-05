@@ -80,8 +80,10 @@ public class Information {
        imgSelectString = Integer.toString(imgSelector);
        urls.add("/resources/" + imgSelectString + ".jpg");
       
-
-    //urls = "/resources/" + imgSelector + ".jpg";
+        for (String url : urls) {
+            System.out.println(url);
+        }
+        //urls = "/resources/" + imgSelector + ".jpg";
             
     }
     
@@ -106,7 +108,7 @@ public class Information {
 //        
         
         
-           System.out.println(getClass().getResource(urls.get(imgSelector)));
+           System.out.println(getClass().getResource(urls.get(i)));
             
         
           
@@ -114,7 +116,7 @@ public class Information {
            // use's count which is sent from the panel to select the image
            // from an arraylist of strings
            
-             URL url = getClass().getResource(urls.get(imgSelector));
+             URL url = getClass().getResource(urls.get(i));
 //        
 //           
 //            //Img = new ImageIcon(getClass().getResource(urls));

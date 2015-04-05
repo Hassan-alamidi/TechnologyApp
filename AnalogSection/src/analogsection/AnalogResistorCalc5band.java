@@ -6,6 +6,7 @@
 package analogsection;
 
 import java.awt.LayoutManager;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,7 +102,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
         add(value5Lbl);
         value5Lbl.setBounds(20, 300, 80, 20);
 
-        Value5CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "White", " " }));
+        Value5CB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Grey", "Gold", "Silver", " " }));
         add(Value5CB);
         Value5CB.setBounds(10, 320, 101, 27);
 
@@ -228,7 +229,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-          ResistorCalc5band calc = new ResistorCalc5band(band1, band2, band3, band4,band5);
+           Resistor5bandCalc calc = new  Resistor5bandCalc();
          
          //clears label
          anwserLbl.setText("");
@@ -258,20 +259,15 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          //Assign's the color codes a value
          calc.AssignValues();
          calc.AssignBand2Values();
+         calc.Assignband3Values();
          calc.assignMulitiplier();
          calc.assignToloerance();
          
          //calculate the resistors values
          calc.compute();
          
-        
+        //calulats th toloerance of the resistor 
          calc.CalcToloerance();
-        
-         //get the max resistor value 
-         calc.getMaxValue();
-         
-         //get the min rsistor value
-         
          
          //converts the values to kiloohmz
          calc.convertToKilohm();
@@ -280,12 +276,12 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          valueTotal = calc.getValueResistor();
          
          maxResistorValue = calc.getMaxValue();
-         
+         //get the min rsistor value
          minResistorValue = calc.getMinValue();
          
          anwserLbl.setText(valueTotal);
          
-         System.out.println("Maximum Resistance Value:"+ " "+  maxResistorValue + "\n Minimum Resistance Value:"+ " "+ minResistorValue);
+         JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+  maxResistorValue + "\n Minimum Resistance Value:"+ " "+ minResistorValue);
     }//GEN-LAST:event_addBtnActionPerformed
 
 
