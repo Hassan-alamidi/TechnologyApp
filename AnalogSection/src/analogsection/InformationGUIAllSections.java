@@ -17,21 +17,7 @@ import javax.swing.ImageIcon;
  * @author Stephen 
  */
 
-/*
 
-* When chosing different panels the infolbl has to be reset and the info counter has to be reset so the first slide of info is reset 
-
-
-                                                  ***  What to do ***
-
-* Just add your information into the info array in the next button, which will then send the info to the information class 
-
-* You will get an NullPointerException error when trying to run your section, without the images added to the resource folder
-
-* Also The info text and image in the labels are not being reset when panels are changed, this will have to be fixed. 
-
-
-*/
 public class InformationGUIAllSections extends javax.swing.JPanel {
 
     /**
@@ -51,7 +37,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
     private String infoDisplayed;
     private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,imgSelectorAnaComp,imgSelectorAnaSignals,imgSelectorDiagTools ,imgSelectorDigit,i ;
     protected static int infoSelected;
-    private String[] arrayTest;
     private ArrayList <String> info;
   //  private Image displayedImg;
     private ImageIcon ImgDisplayedLbl;
@@ -260,11 +245,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 }
             };
 
-//info = new String[]{"A capacitor stores and releases charge", 
-            //"Electrons are used in batteries", "There are many different electronic signals",
-            //"ADC are used to convert analog signals to digital repersentation", 
-            //"Resistors are like shiedls", "Resistors are measured in ohms",
-            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+
             analogInfo.setInfo(info);
 
             if (count < 10 && imgSelector < 10) {
@@ -283,10 +264,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 2) {
-                 //digital part
-            //working 
-
-            //add information here 
+              //Sets the infomation 
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
@@ -304,8 +282,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             };
 
             digitalInfo.setInfo(info);
-            //Information.setCount(count = 0);
-            // infoDisplayed = Information.DisplayInfo();
+           
             if (count < 10 && imgSelectorDigital < 21) {
                 digitalInfo.setImageUsed(imgSelectorDigital);
                 digitalInfo.setUrls();
@@ -340,8 +317,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             };
 
             plasticInfo.setInfo(info);
-            //Information.setCount(count = 0);
-            // infoDisplayed = Information.DisplayInfo();
             if (count < 10 && imgSelectorPlastic < 32) {
                 plasticInfo.setImageUsed(imgSelectorPlastic);
                 plasticInfo.setUrls();
@@ -374,8 +349,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 }
             };
             woodInfo.setInfo(info);
-            //Information.setCount(count = 0);
-            // infoDisplayed = Information.DisplayInfo();
             if (count < 10 && imgSelectorWood < 43) {
                 woodInfo.setImageUsed(imgSelectorWood);
                 woodInfo.setUrls();
@@ -409,12 +382,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("Diode is used eract the flow of current");
                 }
             };
-
-//info = new String[]{"A capacitor stores and releases charge", 
-            //"Electrons are used in batteries", "There are many different electronic signals",
-            //"ADC are used to convert analog signals to digital repersentation", 
-            //"Resistors are like shiedls", "Resistors are measured in ohms",
-            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+            
             analogComp.setInfo(info);
 
             if (count < 10 && imgSelectorAnaComp < 53) {
@@ -432,11 +400,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
 
             }
 
-        } else if (infoSelected == 6) {
-                 //digital part
-            //working 
-
-            //add information here 
+        } else if (infoSelected == 6) { 
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
@@ -454,8 +418,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             };
 
             analogSignals.setInfo(info);
-            //Information.setCount(count = 0);
-            // infoDisplayed = Information.DisplayInfo();
             if(count < 10 && imgSelectorAnaSignals < 65) {
                 analogSignals.setImageUsed(imgSelectorAnaSignals);
                 analogSignals.setUrls();
@@ -473,10 +435,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
 
         }//end of slector if
          else if (infoSelected == 7) {
-                 //digital part
-            //working 
-
-            //add information here 
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
@@ -494,8 +452,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             };
 
             analogDiag.setInfo(info);
-            //Information.setCount(count = 0);
-            // infoDisplayed = Information.DisplayInfo();
             
             //not working 
             if (count < 10 && imgSelectorDiagTools  < 74) {
@@ -536,11 +492,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 }
             };
 
-//info = new String[]{"A capacitor stores and releases charge", 
-            //"Electrons are used in batteries", "There are many different electronic signals",
-            //"ADC are used to convert analog signals to digital repersentation", 
-            //"Resistors are like shiedls", "Resistors are measured in ohms",
-            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
              digitalComp.setInfo(info);
 
             if (count < 10 && imgSelectorAnaComp < 53) {
@@ -618,16 +569,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
-
-//        if(imgSelector > 0){
-//                  imgSelector--;
-//                  analogInfo.setImageUsed(imgSelector);
-//                  analogInfo.setUrls();
-//                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
-//                  imageChangeLbl.setIcon(ImgDisplayedLbl);
-//                
-//                  
-//                  }
+          
         } else if (infoSelected == 2) {
             if (count > 0 && imgSelectorDigital > 9) {
                 count--;
@@ -730,9 +672,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 }
         
          
-          
-
-        System.out.println("index:"+count + "Message:" + infoDisplayed);
             
         
         

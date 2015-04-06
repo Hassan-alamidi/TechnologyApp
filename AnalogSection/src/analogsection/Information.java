@@ -109,7 +109,7 @@ public class Information {
             
         }
        selectedImg = new ImageIcon(Img);
-      //  will return the image chosen 
+      // will return the image chosen 
        return selectedImg ;
     }
 
@@ -140,10 +140,7 @@ public class Information {
         return i;
     }
     
-    // test method to return the array to check if the values are beeing set
-    public static String[] getArray(){
-        return statArray;
-    }
+    
             
     
    

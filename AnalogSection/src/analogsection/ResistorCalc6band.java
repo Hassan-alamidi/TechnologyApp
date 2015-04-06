@@ -26,8 +26,7 @@ public class ResistorCalc6band{
     private double maxValue, minValue, toloerance, tolrancPercent, multiplier;
     private double valueResistor;
 
-//    protected ArrayList <String> values;
-//    
+   
     public ResistorCalc6band() {
         band1 = "";
         band3 = "";
@@ -52,9 +51,7 @@ public class ResistorCalc6band{
 
     }
 
-//    public void setValues(ArrayList values){
-//        this.values = values;
-//    }
+
     public void setBand1(String band1) {
         this.band1 = band1;
     }
@@ -78,7 +75,8 @@ public class ResistorCalc6band{
     public void setBand6(String band6) {
         this.band6 = band6;
     }
-
+    
+   //methods to assign values for each of the color bands 
     public void AssignValues() {
 
         switch (band1) {
@@ -290,8 +288,7 @@ public class ResistorCalc6band{
 
     public void compute() {
 
-        //resistorDigits = Integer.toString(digit1+digit2);
-        //resistorColorVals = Integer.parseInt(resistorDigits);
+        //gets the values and stores them without adding the digits
         resistorColorVals = Integer.valueOf(String.valueOf(digit1) + String.valueOf(digit2) + String.valueOf(digit3));
 
         //error checker 
@@ -353,7 +350,9 @@ public class ResistorCalc6band{
         } // number is greater to larger so getting 1.2E7
         //which i use decimal format to be able to format the larger number 
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
-              long number;
+            // number is to larger to be repersented in digital form
+           //so it's store it in a decimal format and then converted to a string  
+            long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));
             conversion = String.valueOf(valueResistor);
             substrK = conversion.substring(0, 2);
@@ -361,6 +360,8 @@ public class ResistorCalc6band{
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
 
         } else if (valueResistor >= 100000000) {
+            // number is to larger to be repersented in digital form
+           //so it's store it in a decimal format and then converted to a string  
             long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));
             conversion = String.valueOf(number);
@@ -405,8 +406,8 @@ public class ResistorCalc6band{
             substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } // number is to larger to be repersented in digital form
+         //so it's store it in a decimal format and then converted to a string  
         else if (maxValue >= 10000000 && maxValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", maxValue));
@@ -461,8 +462,8 @@ public class ResistorCalc6band{
             substrH = conversion.substring(1, 3);
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } // number is to larger to be repersented in digital form
+         //so it's store it in a decimal format and then converted to a string  
         else if (minValue >= 10000000 && minValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
@@ -472,6 +473,8 @@ public class ResistorCalc6band{
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
         } else if (minValue >= 100000000) {
+            // number is to larger to be repersented in digital form
+           //so it's store it in a decimal format and then converted to a string  
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
             conversion = String.valueOf(number);
@@ -486,15 +489,15 @@ public class ResistorCalc6band{
     public String getValueResistor() {
         return convertkilohm;
     }
-
+    //returns the max resistor value in ohms
     public String getMaxValue() {
         return maxConverKilohm;
     }
-
+     //returns the min resistor value in ohms
     public String getMinValue() {
         return minConverKilohm;
     }
-
+    //returns the Temperature Coefficient in celius using ASCII code 
     public String getTempco() {
         final String degrees = "\u00b0";
         return "Temperature Coefficient Value:" + tempco + "ppm/" + degrees +"C";

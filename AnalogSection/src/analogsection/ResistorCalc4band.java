@@ -22,8 +22,7 @@ public class ResistorCalc4band {
     protected double maxValue, minValue, toloerance, tolrancPercent, multiplier;
     protected double valueResistor;
 
-//    protected ArrayList <String> values;
-//    
+
      public ResistorCalc4band(){
          resistorDigits = "";
         conversion = "";
@@ -45,21 +44,11 @@ public class ResistorCalc4band {
         band3 = "";
         band4 = "";
      }
-//    public ResistorCalc4band(String band1,String band2,String band3,String band4){
-//        this.band1 = band1;
-//        this.band2 = band2;
-//        this.band3 = band3;
-//        this.band4 = band4;
-//       
-//        
-//
-//    }
+
 
     
 
-//    public void setValues(ArrayList values){
-//        this.values = values;
-//    }
+    //setters to set the band values 
     public void setBand1(String band1) {
         this.band1 = band1;
     }
@@ -75,7 +64,7 @@ public class ResistorCalc4band {
     public void setBand4(String band4) {
         this.band4 = band4;
     }
-
+     //methods to assign values for each of the color bands 
     public void AssignValues() {
 
         switch (band1) {
@@ -116,40 +105,36 @@ public class ResistorCalc4band {
     public void AssignBand2Values() {
         if (band2.equals("black")) {
             digit2 = 0;
-//            multiplier = 1;
+
         } else if (band2.equals("brown")) {
 
             digit2 = 1;
-//        multiplier = 10;
-//        toloerance = 1;
+
         } else if (band2.equals("red")) {
 
             digit2 = 2;
-//            multiplier = 100;
+
         } else if (band2.equals("orange")) {
 
             digit2 = 3;
-//            multiplier = 1000;
+
         } else if (band2.equals("yellow")) {
 
             digit2 = 4;
-//            multiplier = 10000;
+
 
         } else if (band2.equals("green")) {
 
             digit2 = 5;
-//            multiplier = 100000;
-//            toloerance = 0.5;
+
         } else if (band2.equals("blue")) {
 
             digit2 = 6;
-//            multiplier = 1000000;
-//            toloerance = 0.25;
+
         } else if (band2.equals("violet")) {
 
             digit2 = 7;
-//            multiplier = 10000000;
-//            toloerance = 0.25;
+
         } else if (band1.equals("grey")) {
 
             digit2 = 8;
@@ -351,8 +336,8 @@ public class ResistorCalc4band {
             substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } // number is to larger to be repersented in digital form
+         //so it's store it in a decimal format and then converted to a string  
         else if (maxValue >= 10000000 && maxValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f",maxValue));
@@ -362,6 +347,8 @@ public class ResistorCalc4band {
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
         } else if (maxValue >= 100000000) {
+            // number is to larger to be repersented in digital form
+           //so it's store it in a decimal format and then converted to a string  
             long number;
             number = Long.parseLong(String.format("%.0f",maxValue));
             conversion = String.valueOf(number);
@@ -431,11 +418,11 @@ public class ResistorCalc4band {
     public String getValueResistor() {
         return convertkilohm; 
     }
-
+    //returns the max resistor value in ohms
     public String getMaxValue() {
         return maxConverKilohm;
     }
-
+    //returns the max resistor value in ohms
     public String getMinValue() {
         return minConverKilohm;
     }

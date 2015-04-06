@@ -25,8 +25,8 @@ public class Resistor5bandCalc {
     private double maxValue, minValue, toloerance, tolrancPercent, multiplier;
     private double valueResistor;
 
-//    protected ArrayList <String> values;
-//    
+
+    
      public Resistor5bandCalc(){
         band1 = "";
         band3 = "";
@@ -262,20 +262,20 @@ public class Resistor5bandCalc {
 
     public void compute() {
 
-        //resistorDigits = Integer.toString(digit1+digit2);
-        //resistorColorVals = Integer.parseInt(resistorDigits);
+       
         resistorColorVals = Integer.valueOf(String.valueOf(digit1) + String.valueOf(digit2)+ String.valueOf(digit3));
 
         //error checker 
         System.out.println(resistorColorVals);
 
-        //gives resistors vlaue has to be given in ohms
+       //calculates the resitor value 
         valueResistor = (resistorColorVals * multiplier);
 
     }
 
     public void CalcToloerance() {
         try {
+            //calc's the percent of the toloerance 
             tolrancPercent = (valueResistor * (toloerance / percent));
 
         } catch (ArithmeticException e) {
@@ -457,11 +457,11 @@ public class Resistor5bandCalc {
     public String getValueResistor() {
         return convertkilohm; 
     }
-
+   //returns the max resistor value in ohms
     public String getMaxValue() {
         return  maxConverKilohm;
     }
-
+    //returns the min resistor value in ohms
     public String getMinValue() {
         return minConverKilohm;
     }
