@@ -499,7 +499,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
 
     private void input2tgbtnItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_input2tgbtnItemStateChanged
         // TODO add your handling code here:
-        
+        //if input2tgbtn is selected then set input2 to 1 and changes the logo 
          if(evt.getStateChange() == ItemEvent.SELECTED)
         {
             input2 = 1;
@@ -534,13 +534,16 @@ public class DigitalTruthTables extends javax.swing.JPanel {
        input2tgbtn.setIcon(ImgDisplayedLbl);
            
         } 
+         //sets input2 in LogicGatesim
         logic.setinput2(input2);
+         //gets ImgDisplayedLbl then sets the icon for the output label
         ImgDisplayedLbl = logic.generateoutput();
         Outputlbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_input2tgbtnItemStateChanged
 
     private void input1tgbtnItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_input1tgbtnItemStateChanged
         // TODO add your handling code here:
+        //if input1tgbtn is selected then set input1 to 1 and changes the logo 
          if(evt.getStateChange() == ItemEvent.SELECTED)
         {
             input1 = 1;
@@ -575,8 +578,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
        input1tgbtn.setIcon(ImgDisplayedLbl);
            
         } 
+         //sets input1 in LogicGatesim
         logic.setinput1(input1);
-        
+        //gets ImgDisplayedLbl then sets the icon for the output label
         ImgDisplayedLbl = logic.generateoutput();
         Outputlbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_input1tgbtnItemStateChanged

@@ -83,6 +83,7 @@ public class Quiz {
      return incorrect;
      
      }
+     //sets object array
      public void setobj(ArrayList <QuestionObj> objArr){
          Quiz.statObjArr = objArr;  
      }
