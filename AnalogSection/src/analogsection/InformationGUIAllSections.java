@@ -440,16 +440,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("R");
-                    add("K");
-                    add("I");
-                    add("N");
-                    add("G");
-                    add("F");
-                    add("I");
-                    add(":)");
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -480,16 +480,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("R");
-                    add("K");
-                    add("I");
-                    add("N");
-                    add("G");
-                    add("F");
-                    add("I");
-                    add(":)");
+                   add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -523,16 +523,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("R");
-                    add("K");
-                    add("I");
-                    add("N");
-                    add("G");
-                    add("F");
-                    add("I");
-                    add(":)");
+                   add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -567,16 +567,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("R");
-                    add("K");
-                    add("I");
-                    add("N");
-                    add("G");
-                    add("F");
-                    add("I");
-                    add(":)");
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
