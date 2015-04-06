@@ -283,8 +283,8 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
 
             digitalInfo.setInfo(info);
            
-            if (count < 10 && imgSelectorDigital < 21) {
-                digitalInfo.setImageUsed(imgSelectorDigital);
+            if (count < 10 && imgSelector < 10) {
+                digitalInfo.setImageUsed(imgSelector);
                 digitalInfo.setUrls();
                 ImgDisplayedLbl = digitalInfo.AddImageUsingURLS();
                 imgSelectorDigital++;

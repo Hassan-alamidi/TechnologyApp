@@ -1,23 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-
-/*
-
-
-* images added to resources as the folowing:
-   
-* Analog 0-9
-
-* Digital 10 - 20
-
-* Plastic 21 - 31 
-
-8 Wood 31 - 41 
-*/
 package analogsection;
 
 import java.awt.Image;
@@ -95,15 +76,13 @@ public class Information {
 
             //selects an url from the arraylist and searchs the resoures for it 
              URL url = getClass().getResource(urls.get(i));
-//        
-//           
+        
 //           //reads an image from the url provided 
              Img = ImageIO.read(url);
 //
            }//end of try
       catch (IOException e) {
            // Exception is due to the image not being found 
-            System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
             System.out.println("An error occoured");
             System.out.print(e);
             

@@ -54,9 +54,7 @@ public class Resistor5bandCalc {
 
     
 
-//    public void setValues(ArrayList values){
-//        this.values = values;
-//    }
+   //setters to set the band values
     public void setBand1(String band1) {
         this.band1 = band1;
     }
@@ -77,7 +75,7 @@ public class Resistor5bandCalc {
         this.band5 = band5;
     }
     
-
+   //methods to assign values for each of the color bands 
     public void AssignValues() {
 
         switch (band1) {
