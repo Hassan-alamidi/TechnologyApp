@@ -351,8 +351,10 @@ public class ResistorCalc6band{
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
 
         } // number is greater to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        //which i use decimal format to be able to format the larger number 
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
+              long number;
+            number = Long.parseLong(String.format("%.0f", valueResistor));
             conversion = String.valueOf(valueResistor);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
@@ -406,6 +408,9 @@ public class ResistorCalc6band{
         } // number is to larger so getting 1.2E7
         //which i will have to try to revert to digital repersentation
         else if (maxValue >= 10000000 && maxValue < 100000000) {
+            long number;
+            number = Long.parseLong(String.format("%.0f", maxValue));
+            conversion = String.valueOf(number);
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
@@ -459,6 +464,8 @@ public class ResistorCalc6band{
         } // number is to larger so getting 1.2E7
         //which i will have to try to revert to digital repersentation
         else if (minValue >= 10000000 && minValue < 100000000) {
+            long number;
+            number = Long.parseLong(String.format("%.0f", minValue));
             conversion = String.valueOf(minValue);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);

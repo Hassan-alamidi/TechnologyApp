@@ -39,10 +39,7 @@ public class Information {
     //variables
     private static String infoDisplayed;
     protected ArrayList <String> info;
-   // private array;
-    //private String  urls;
     private ArrayList <String> urls;
-    //private URL fileList;
     private String fileList;
     private ImageIcon selectedImg;
     private int imgSelector, imgSelectorDigital;
@@ -75,51 +72,32 @@ public class Information {
     }
     
     public void setUrls(){
-        //going to use an array to store the file urls
+        //adds the images urls to the arraylist
          
        imgSelectString = Integer.toString(imgSelector);
        urls.add("/resources/" + imgSelectString + ".jpg");
-      
-        
-        //urls = "/resources/" + imgSelector + ".jpg";
             
     }
     
     public ImageIcon AddImageUsingURLS(){
     
-      //System.out.println(getClass().getResource("/resources/" + imgSelector + ".jpg"));
+     
         
-        
+     //buffered image to hold the image    
         BufferedImage Img = null;
      
 
        try{
-//         Image imgIcon = new ImageIcon(getClass().getResource("/resources/" + imgSelector + ".jpg")).getImage();
-//        
-//         URL url = getClass().getResource(urls);
-//         if (url == null){
-//             System.out.println( "Could not find image!" );
-//            }
-//          else{
-//            imgIcon = (new ImageIcon(url).getImage());
-//             } 
-//        
-        
-        
+//    
            System.out.println(getClass().getResource(urls.get(i)));
             
         
-          
-//         // returns null if no resource is found --- which is happing 
-           // use's count which is sent from the panel to select the image
-           // from an arraylist of strings
-           
+
+            //selects an url from the arraylist and searchs the resoures for it 
              URL url = getClass().getResource(urls.get(i));
 //        
 //           
-//            //Img = new ImageIcon(getClass().getResource(urls));
-//            
-//          //  imgSelector is going to be externally modified by the InfoPanel
+//           //reads an image from the url provided 
              Img = ImageIO.read(url);
 //
            }//end of try
@@ -134,20 +112,7 @@ public class Information {
       //  will return the image chosen 
        return selectedImg ;
     }
-//    public void PopulateImageArray(){
-//        for(int y = 0; y < fileList.size(); y++) {
-//            String path = fileList.get(y);
-//            array[y] = path;
-//        }
-//    }
-    
-//    public ImageIcon getImage(){
-//        
-//        selectedImg = new ImageIcon(array);
-//        return selectedImg;
-//    }
-    
-    // methods to add info to the arraylist 
+
 
    
   public void setInfo(ArrayList <String> info){
@@ -155,13 +120,7 @@ public class Information {
     
     }
    
-     
-//    public void addArrayToStaticArray(){
-//     
-//        for(int j = 0; j < info.length; j++ ){
-//             statArray[j] = info[j];        
-//          }   
-//    }
+
     public void setCount(int count){
         i = count;
     }
@@ -172,26 +131,7 @@ public class Information {
 
        return infoDisplayed;
     }
-  // not working yet but this is where
-//    public void compute(){
-//           if (i < 9) {
-//                    i++;
-////                    Information.setCount(count);
-////                    infoDisplayed = Information.DisplayInfo();
-////                    infoLbl.setText(infoDisplayed);
-//                }
-//                
-//                //image selection routine
-//              if(imgSelector < 9){
-//                  imgSelector++;
-////                  analogInfo.setImageUsed(imgSelector);
-////                  analogInfo.setUrls();
-////                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
-////                  imageChangeLbl.setIcon(ImgDisplayedLbl);
-//                
-//                  
-//                  }
-//    }
+
     
     public static int getInfoType(){
         return infoType;

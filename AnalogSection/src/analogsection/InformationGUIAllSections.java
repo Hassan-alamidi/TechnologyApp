@@ -32,7 +32,7 @@ import javax.swing.ImageIcon;
 
 
 */
-public class AnalogInformationGUIPanel extends javax.swing.JPanel {
+public class InformationGUIAllSections extends javax.swing.JPanel {
 
     /**
      * Creates new form HangmanGUIPanel
@@ -46,6 +46,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     Information analogComp;
     Information analogSignals;
     Information analogDiag;
+    Information digitalComp;
+    Information digitalDiag;
     private String infoDisplayed;
     private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,imgSelectorAnaComp,imgSelectorAnaSignals,imgSelectorDiagTools ,imgSelectorDigit,i ;
     protected static int infoSelected;
@@ -53,7 +55,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
     private ArrayList <String> info;
   //  private Image displayedImg;
     private ImageIcon ImgDisplayedLbl;
-    public AnalogInformationGUIPanel() {
+    public InformationGUIAllSections() {
         initComponents();
         this.setSize(400,450);
         imageChangeLbl.setVisible(false);
@@ -64,6 +66,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         analogComp = new Information();
         analogDiag = new Information();
         analogSignals = new Information(); 
+        digitalComp = new Information(); 
+        digitalDiag = new Information(); 
         infoDisplayed = "";
         count = 0;
         imgSelector = 0;
@@ -74,7 +78,8 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
         imgSelectorAnaComp = 43;
         imgSelectorAnaSignals = 54;
         imgSelectorDiagTools = 65;
-        imgSelectorDigit = 87;
+        imgSelectorDigit = 76;
+        digitalComp = new Information();
         
         
     
@@ -249,9 +254,9 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                     add("Resistors are like shiedls");
                     add("Resistors are measured in ohms");
                     add("breadbords are used for creating circuits");
-                    add("fgtd");
-                    add("ggffg");
-                    add("gfddrf");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -285,16 +290,16 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("D");
-                    add("I");
-                    add("G");
-                    add("I");
-                    add("T");
-                    add("A");
-                    add("L");
-                    add("wo");
-                    add("rk");
-                    add("ing");
+                   add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -320,17 +325,17 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             //plastic part
             //set info here 
             ArrayList<String> info = new ArrayList<String>() {
-                {
-                    add("D");
-                    add("I");
-                    add("G");
-                    add("I");
-                    add("T");
-                    add("A");
-                    add("L");
-                    add("wo");
-                    add("rk");
-                    add("ing");
+                {   
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -365,7 +370,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                     add("E");
                     add("s");
                     add("here");
-                    add("!1!!!!");
+                    add(":)");
                 }
             };
             woodInfo.setInfo(info);
@@ -392,16 +397,16 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("R");
-                    add("K");
-                    add("I");
-                    add("N");
-                    add("G");
-                    add("F");
-                    add("I");
-                    add(":)");
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are like shiedls");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used eract the flow of current");
                 }
             };
 
@@ -509,55 +514,92 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
             }
 
         }//end of slector if
+         else if (infoSelected == 8) {
+           // * anonymous inner class, to set the info.
+            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
+            // * anonymous inner class extends the class of the object being constructed and has a "This." 
+            // * referance to the instance of the object constructed
 
-        arrayTest = Information.getArray();
-        // checker to see if the array has been filled with digital   
-        if (arrayTest == null) {
-            System.out.println("The array is empty: Values havent been taken");
+            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("R");
+                    add("K");
+                    add("I");
+                    add("N");
+                    add("G");
+                    add("F");
+                    add("I");
+                    add(":)");
+                }
+            };
+
+//info = new String[]{"A capacitor stores and releases charge", 
+            //"Electrons are used in batteries", "There are many different electronic signals",
+            //"ADC are used to convert analog signals to digital repersentation", 
+            //"Resistors are like shiedls", "Resistors are measured in ohms",
+            //"breadbords are used for creating circuits", "fgtd", "ggffg", "gfddrf"};
+             digitalComp.setInfo(info);
+
+            if (count < 10 && imgSelectorAnaComp < 53) {
+                //imgSelector = 0;
+                digitalComp.setImageUsed(imgSelectorAnaComp);
+                digitalComp.setUrls();
+                ImgDisplayedLbl = digitalComp.AddImageUsingURLS();
+                imgSelectorAnaComp++;
+                //Information.setCount(count = 0);
+                digitalComp.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = digitalComp.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+            }
+
+        } else if (infoSelected == 9) {
+           // * anonymous inner class, to set the info.
+            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
+            // * anonymous inner class extends the class of the object being constructed and has a "This." 
+            // * referance to the instance of the object constructed
+
+            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            ArrayList<String> info = new ArrayList<String>() {
+                {
+                    add("W");
+                    add("O");
+                    add("R");
+                    add("K");
+                    add("I");
+                    add("N");
+                    add("G");
+                    add("F");
+                    add("I");
+                    add(":)");
+                }
+            };
+
+
+            digitalDiag.setInfo(info);
+
+            if (count < 10 && imgSelectorAnaComp < 53) {
+                //imgSelector = 0;
+                digitalDiag.setImageUsed(imgSelectorAnaComp);
+                digitalDiag.setUrls();
+                ImgDisplayedLbl = digitalDiag.AddImageUsingURLS();
+                imgSelectorAnaComp++;
+                //Information.setCount(count = 0);
+                digitalDiag.setCount(count);
+                count++;
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                infoDisplayed = digitalDiag.DisplayInfo();
+                infoLbl.setText(infoDisplayed);
+
+            }
+
         }
-             //throwing processException error due to the info selector always being == 0
-        // so the data is never sent to the array for processing 
-//                if (count < 9) {
-//                    count++;
-//                    Information.setCount(count);
-//                    infoDisplayed = Information.DisplayInfo();
-//                    infoLbl.setText(infoDisplayed);
-//                }
-//                
-//                //image selection routine
-//              if(imgSelector < 9){
-//                  imgSelector++;
-//                  analogInfo.setImageUsed(imgSelector);
-//                  analogInfo.setUrls();
-//                  ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
-//                  imageChangeLbl.setIcon(ImgDisplayedLbl);
-//                
-//                  
-//                  }
-
-//            } 
-//       else if (infoSelected == 3) {
-//        //Wood part
-//       // analogInfo
-//
-//        if (count < 9) {
-//            count++;
-//            Information.setCount(count);
-//            infoDisplayed = Information.DisplayInfo();
-//            infoLbl.setText(infoDisplayed);
-//        }
-//    } else {
-//        //plastic info part
-//        //analogInfo
-//
-//        if (count < 9) {
-//            count++;
-//            Information.setCount(count);
-//            infoDisplayed = Information.DisplayInfo();
-//            infoLbl.setText(infoDisplayed);
-//        }
-//    }
-   //     }// end of outter if
+            
         System.out.println("index:" + count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
@@ -648,7 +690,7 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
            }else if (infoSelected == 7) {
-            if (count > 0 && imgSelectorDiagTools > 64) {
+            if (count > 0 && imgSelectorDiagTools > 65) {
                 count--;
                 imgSelectorDiagTools--;
                 analogDiag.setCount(count);
@@ -659,9 +701,33 @@ public class AnalogInformationGUIPanel extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
             }
+           }else if (infoSelected == 8) {
+            if (count > 0 &&  imgSelectorAnaComp > 42) {
+                count--;
+                imgSelectorAnaComp--;
+                digitalComp.setCount(count);
+                digitalComp.setImageUsed(imgSelectorAnaComp);
+                digitalComp.setUrls();
+                infoDisplayed = digitalComp.DisplayInfo();
+                ImgDisplayedLbl = digitalComp.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                }
+           }else if (infoSelected == 9) {
+           if (count > 0 &&  imgSelectorAnaComp > 42) {
+                count--;
+                imgSelectorAnaComp--;
+                digitalDiag.setCount(count);
+                digitalDiag.setImageUsed(imgSelectorAnaComp);
+                digitalDiag.setUrls();
+                infoDisplayed = digitalDiag.DisplayInfo();
+                ImgDisplayedLbl = digitalDiag.AddImageUsingURLS();
+                infoLbl.setText(infoDisplayed);
+                imageChangeLbl.setIcon(ImgDisplayedLbl);
+                }
            }else{
-           System.out.print("An error occourd");
-           }
+                 System.out.print("An error occourd");
+                }
         
          
           

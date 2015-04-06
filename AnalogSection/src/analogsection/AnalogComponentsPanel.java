@@ -5,7 +5,7 @@
  */
 package analogsection;
 
-import static analogsection.AnalogInformationGUIPanel.infoSelected;
+import static analogsection.InformationGUIAllSections.infoSelected;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;

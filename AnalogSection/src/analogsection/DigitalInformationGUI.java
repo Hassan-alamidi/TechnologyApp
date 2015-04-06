@@ -115,18 +115,15 @@ public class DigitalInformationGUI extends javax.swing.JPanel {
 
     private void ComponentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComponentbtnActionPerformed
         // TODO add your handling code here:
-        infoType = 2;
-        int count = 0;
-        //it retrives an array from the information class
-        //and populates it with analog general questions
-//        info = new String[]{"A capacitor stores and releases charge","Electrons are used in batteries","There are many different electronic signals","ADC are used to convert analog signals to digital repersentation","Resistors are like shiedls","Resistors are measured in ohms","breadbords are used for creating circuits","fgtd","ggffg","gfddrf"};
-//        Information.setInfo(info);
+        infoType = 8;
+        
+    
         Information.InfoType(infoType);
         
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "DigitalComponents");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_ComponentbtnActionPerformed
 
@@ -143,8 +140,6 @@ public class DigitalInformationGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
        
          infoType = 2;
-         int count;
-         count = 0;
          //it retrives an array from the information class
         //and populates it with analog general questions
       
@@ -160,10 +155,15 @@ public class DigitalInformationGUI extends javax.swing.JPanel {
 
     private void DiagnosticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiagnosticBtnActionPerformed
         // TODO add your handling code here:
+        infoType = 9;
+        
+    
+        Information.InfoType(infoType);
+        
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "DigitalDiagScreen");
+            cl.show(getParent(), "AnalogInfoScreen");
         }
     }//GEN-LAST:event_DiagnosticBtnActionPerformed
 

@@ -12,7 +12,7 @@ package analogsection;
 
 /* This class will inherit from the 4bandclass and just override, some of the methods 
 
- * to add functionallity for the 5 band calc, this will be done for the man project so that 
+ * to add functionallity for the 5 band calc, this will be done for the main project so that 
 
  * It will save lines of code and also will incorperate a key feature of java which is inheritance 
 
