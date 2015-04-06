@@ -327,7 +327,7 @@ public class Resistor5bandCalc {
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));
-            conversion = String.valueOf(valueResistor);
+            conversion = String.valueOf(number);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
@@ -382,7 +382,7 @@ public class Resistor5bandCalc {
         else if (maxValue >= 10000000 && maxValue < 100000000) {
              long number;
             number = Long.parseLong(String.format("%.0f", maxValue));
-            conversion = String.valueOf(maxValue);
+            conversion = String.valueOf(number);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
@@ -437,7 +437,7 @@ public class Resistor5bandCalc {
         else if (minValue >= 10000000 && minValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
-            conversion = String.valueOf(minValue);
+            conversion = String.valueOf(number);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";

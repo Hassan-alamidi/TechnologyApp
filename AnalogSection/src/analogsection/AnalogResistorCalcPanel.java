@@ -244,14 +244,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
          calc.setBand3(band3);
          calc.setBand4(band4);
          
-//         //add values to arraylist 
-//         values.add(band1);
-//         values.add(band2);
-//         values.add(band3);
-//         values.add(band4);
-//         
-//         //send the arraylist to the instaibale class 
-//         calc.setValues(values);
+
          
          //Assign's the color codes a value
          calc.AssignValues();

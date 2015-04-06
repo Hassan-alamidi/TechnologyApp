@@ -466,7 +466,7 @@ public class ResistorCalc6band{
         else if (minValue >= 10000000 && minValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
-            conversion = String.valueOf(minValue);
+            conversion = String.valueOf(number);
             substrK = conversion.substring(0, 2);
             substrH = conversion.substring(3, 5);
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";
