@@ -83,7 +83,7 @@ public class QuizScreen extends javax.swing.JPanel {
 
         headingLbl.setText("Question:");
         add(headingLbl);
-        headingLbl.setBounds(10, 120, 80, 16);
+        headingLbl.setBounds(10, 120, 80, 14);
 
         jTextField1.setText("please press start to begin");
         add(jTextField1);
@@ -91,19 +91,19 @@ public class QuizScreen extends javax.swing.JPanel {
 
         buttonGroup1.add(jRadioButton1);
         add(jRadioButton1);
-        jRadioButton1.setBounds(140, 240, 170, 23);
+        jRadioButton1.setBounds(110, 240, 210, 21);
 
         buttonGroup1.add(jRadioButton2);
         add(jRadioButton2);
-        jRadioButton2.setBounds(140, 290, 180, 23);
+        jRadioButton2.setBounds(110, 290, 210, 21);
 
         buttonGroup1.add(jRadioButton3);
         add(jRadioButton3);
-        jRadioButton3.setBounds(140, 340, 180, 23);
+        jRadioButton3.setBounds(110, 340, 210, 21);
 
         jLabel1.setText("Chose one of the following anwser's then press next to submit:");
         add(jLabel1);
-        jLabel1.setBounds(20, 210, 320, 16);
+        jLabel1.setBounds(20, 210, 320, 14);
 
         jButton2.setText("Start");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class QuizScreen extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(110, 380, 150, 40);
+        jButton2.setBounds(110, 390, 150, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 102, 255));
         jButton1.setText("submit");
