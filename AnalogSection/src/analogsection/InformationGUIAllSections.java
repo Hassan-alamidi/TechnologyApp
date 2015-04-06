@@ -212,7 +212,20 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "AnalogMainScreen");
         }
+      }else if(Information.getInfoType() == 8){
+           LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "digital");
+        }
+      }else if(Information.getInfoType() == 9){
+           LayoutManager layout = getParent().getLayout();
+        if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "AnalogMainScreen");
+        }
       }
+        
        
     }//GEN-LAST:event_exitBtnActionPerformed
 
