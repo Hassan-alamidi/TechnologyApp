@@ -102,7 +102,8 @@ public class AnalogInfoMainScreen extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      LayoutManager layout = getParent().getLayout();
+        
+        LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "AnalogMainScreen");

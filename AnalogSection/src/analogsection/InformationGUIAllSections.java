@@ -330,8 +330,8 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             };
 
             plasticInfo.setInfo(info);
-            if (count < 10 && imgSelectorPlastic < 32) {
-                plasticInfo.setImageUsed(imgSelectorPlastic);
+            if (count < 10 && imgSelector < 32) {
+                plasticInfo.setImageUsed(imgSelector);
                 plasticInfo.setUrls();
                 ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
                 imgSelectorPlastic++;
