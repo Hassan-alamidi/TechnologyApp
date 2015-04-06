@@ -19,10 +19,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Stephen 
+ * @author Hassan
  */
 public class DigitalTruthTables extends javax.swing.JPanel {
-    
+    //declare variables
     protected int gate;
     protected ImageIcon ImgDisplayedLbl;
     protected BufferedImage Img;
@@ -31,9 +31,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
     protected int input2;
     LogicGateSim logic = new LogicGateSim();
   
-    /**
-     * Creates new form HangmanGUIPanel
-     */
+   //initilizing 
     public DigitalTruthTables() {
         initComponents();
         this.setSize(400,450);
@@ -501,6 +499,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
 
     private void input2tgbtnItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_input2tgbtnItemStateChanged
         // TODO add your handling code here:
+        
          if(evt.getStateChange() == ItemEvent.SELECTED)
         {
             input2 = 1;
