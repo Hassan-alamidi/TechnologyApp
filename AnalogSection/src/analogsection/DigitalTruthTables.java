@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
  * @author Stephen 
  */
 public class DigitalTruthTables extends javax.swing.JPanel {
+    
     protected int gate;
     protected ImageIcon ImgDisplayedLbl;
     protected BufferedImage Img;
@@ -252,7 +253,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         notbtn.setVisible(true);
         xorbtn.setVisible(true);
         xnorbtn.setVisible(true);
-        gatelbl.setVisible(false);
+        gatelbl.setIcon(null);
         input1 = 0;
         input2 = 0;
        //return to previous menu

@@ -60,7 +60,7 @@ public class Quiz {
             answer = userAnswer[counter];
             //stores the correct answer in temp2
             temp2 = statObjArr.get(counter).getrad();
-            JOptionPane.showMessageDialog(null,"test temp 2 = " + temp2+ " temp =" + answer + " userans = " + userAnswer[counter] + "chosenquestion =" + chosenquestions[counter]);
+            //this is a test JOptionPane.showMessageDialog(null,"test temp 2 = " + temp2+ " temp =" + answer + " userans = " + userAnswer[counter] + "chosenquestion =" + chosenquestions[counter]);
         //if answer is equal to temp2 then the value of correct will be increased by one if they are not equal then the value in incorrect will increase by one
         if(answer.equalsIgnoreCase(temp2)){
         correct++;

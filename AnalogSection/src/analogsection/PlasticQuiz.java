@@ -92,7 +92,7 @@ public class PlasticQuiz extends Quiz {
                 
                
                 //if value of tempbin is negitive the question will be put into the question list to ask user. if value is positive question will be chosen again
-                JOptionPane.showMessageDialog(null,"test" + tempbin + " " +  Arrays.toString(chosenquestions) + Arrays.toString(binarysort) + " " + temp);
+                //this is a test JOptionPane.showMessageDialog(null,"test" + tempbin + " " +  Arrays.toString(chosenquestions) + Arrays.toString(binarysort) + " " + temp);
                 if(tempbin < 0){
                     //this adds the first values
                    
@@ -131,7 +131,7 @@ public class PlasticQuiz extends Quiz {
             } // end of loop  
             //returns value to ask user questions
         //return randomizedQuestion;
-        JOptionPane.showMessageDialog(null,objArr.get(0).getquestion() + " "+ objArr.get(1).getquestion() + " " + objArr.get(2).getquestion() + " array=" + randomizedQuestion[0] + " " + randomizedQuestion[1] + " " + randomizedQuestion[9]);
+       //this is a test JOptionPane.showMessageDialog(null,objArr.get(0).getquestion() + " "+ objArr.get(1).getquestion() + " " + objArr.get(2).getquestion() + " array=" + randomizedQuestion[0] + " " + randomizedQuestion[1] + " " + randomizedQuestion[9]);
        //quizgui.setarr(objArr);
          //quizgui.setarr(randomizedQuestion);
          quizgui.setobjarr(objArr);
