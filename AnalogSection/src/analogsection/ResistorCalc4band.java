@@ -18,13 +18,12 @@ public class ResistorCalc4band {
     //variables 
 
     protected String band1, band2, band3, band4, resistorDigits, conversion, substrK, substrH, convertkilohm,maxConverKilohm,minConverKilohm;
-    private int digit1, digit2, percent, resistorColorVals;
+    protected int digit1, digit2, percent, resistorColorVals;
     protected double maxValue, minValue, toloerance, tolrancPercent, multiplier;
     protected double valueResistor;
 
-
-     public ResistorCalc4band(){
-         resistorDigits = "";
+    public ResistorCalc4band(){
+        resistorDigits = "";
         conversion = "";
         substrK = "";
         substrH = "";
@@ -44,6 +43,30 @@ public class ResistorCalc4band {
         band3 = "";
         band4 = "";
      }
+    
+    //constructor which is invoked bu the subclasses 
+
+    /* public ResistorCalc4band(){
+        resistorDigits = "";
+        conversion = "";
+        substrK = "";
+        substrH = "";
+        convertkilohm = "";
+        digit1 = 0;
+        digit2 = 0;
+        percent = 100;
+        resistorColorVals = 0;
+        maxValue = 0.0;
+        minValue = 0.0;
+        toloerance = 0.0;
+        tolrancPercent = 0.0;
+        multiplier = 0.0;
+        valueResistor = 0.0; 
+        band1 = "";
+        band2 = "";
+        band3 = "";
+        band4 = "";
+     }*/
 
 
     
@@ -249,18 +272,19 @@ public class ResistorCalc4band {
     public void convertToKilohm() {
         if(valueResistor  < 100){
             conversion = String.valueOf(valueResistor);
-            substrK = conversion.substring(0, 2);
-            substrH = conversion.substring(4, 5);
+            substrK = conversion.substring(0, 1);
+            substrH = conversion.substring(2, 3);
             convertkilohm = substrK + "." + substrH + "" + "ohms";
         }else if(valueResistor  > 99 && valueResistor < 1000) {
             conversion = String.valueOf(valueResistor);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 3);
-            convertkilohm = substrK + "." + substrH + "" + "ohms";
-        } else if (valueResistor > 999 && valueResistor < 10000) {
+           // substrK = conversion.substring(0, 1);
+           // substrH = conversion.substring(1, 3);
+          //  convertkilohm = substrK + "." + substrH + "" + "ohms";
+             convertkilohm =  conversion + "ohms";
+        }else if (valueResistor > 999 && valueResistor < 10000) {
             conversion = String.valueOf(valueResistor);
             substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 2);
+            substrH = conversion.substring(1, 3);
             convertkilohm = substrK + "." + substrH + "K" + "ohms";
 
         } else if (valueResistor > 9999 && valueResistor < 100000) {
@@ -304,8 +328,8 @@ public class ResistorCalc4band {
         // converts maximun resistor value to kilohmz
          if(maxValue < 100){
             conversion = String.valueOf(maxValue);
-            substrK = conversion.substring(0, 2);
-            substrH = conversion.substring(4, 5);
+            substrK = conversion.substring(0, 1);
+            substrH = conversion.substring(2, 3);
             maxConverKilohm = substrK + "." + substrH + "" + "ohms";
         }else if(maxValue > 99 && maxValue < 1000) {
             conversion = String.valueOf(maxValue);
@@ -315,7 +339,7 @@ public class ResistorCalc4band {
         } else if (maxValue > 999 && maxValue < 10000) {
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 2);
+            substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "K" + "ohms";
 
         } else if (maxValue > 9999 && maxValue < 100000) {
@@ -357,12 +381,12 @@ public class ResistorCalc4band {
             maxConverKilohm= substrK + "." + substrH + "M" + "ohms";
 
         }
-
+        // error first if index out of range 
         //converts the minium resistor value to kiloohmz
          if(minValue  < 100){
             conversion = String.valueOf(minValue);
-            substrK = conversion.substring(0, 2);
-            substrH = conversion.substring(4, 5);
+            substrK = conversion.substring(0, 1);
+            substrH = conversion.substring(2, 3);
             minConverKilohm = substrK + "." + substrH + "" + "ohms";
         }else if (minValue > 99 && minValue < 1000) {
             conversion = String.valueOf(minValue);
@@ -372,7 +396,7 @@ public class ResistorCalc4band {
         } else if (minValue > 999 && minValue < 10000) {
             conversion = String.valueOf(minValue);
             substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 2);
+            substrH = conversion.substring(1, 3);
             minConverKilohm = substrK + "." + substrH + "K" + "ohms";
 
         } else if (minValue > 9999 && minValue < 100000) {
@@ -428,6 +452,9 @@ public class ResistorCalc4band {
     }
     
     
-    
+    /*
+    * Need to implement file I/O 
+    * Also have to implememt polymorhism 
+    */
     
 }

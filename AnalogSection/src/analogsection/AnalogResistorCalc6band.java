@@ -235,8 +235,8 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
     private void claculateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claculateBtnActionPerformed
         // TODO add your handling code here:
           // new instances of resistor4bandcalc 
-         ResistorCalc6band calc = new ResistorCalc6band();
-         
+       //  ResistorCalc6band calc = new ResistorCalc6band();
+        resistorBand6Calc calc = new resistorBand6Calc(band1,band2, band3, band4, band5);
          //clears label
          anwserLbl.setText("");
          
@@ -267,6 +267,7 @@ public class AnalogResistorCalc6band extends javax.swing.JPanel {
          //Assign's the color codes a value
          calc.AssignValues();
          calc.AssignBand2Values();
+         calc.AssignBand3();
          calc.assignMulitiplier();
          calc.assignToloerance();
          calc.assignTempcoValue();

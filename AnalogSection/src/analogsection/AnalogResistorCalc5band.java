@@ -229,8 +229,10 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-           Resistor5bandCalc calc = new  Resistor5bandCalc();
+        //class without inheritance   
+        // Resistor5bandCalc calc = new  Resistor5bandCalc();
          
+        ResistorCalc5band calc = new ResistorCalc5band(band1, band2, band3, band4, band5);
          //clears label
          anwserLbl.setText("");
          
@@ -259,7 +261,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          //Assign's the color codes a value
          calc.AssignValues();
          calc.AssignBand2Values();
-         calc.Assignband3Values();
+         calc.AssignBand3();
          calc.assignMulitiplier();
          calc.assignToloerance();
          
@@ -283,7 +285,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          
          JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+  maxResistorValue + "\n Minimum Resistance Value:"+ " "+ minResistorValue);
     }//GEN-LAST:event_addBtnActionPerformed
-
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Color1CB;
