@@ -60,7 +60,6 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         DigitalSectionGUI screen12Card = new DigitalSectionGUI();
         DigitalInformationGUI screen13Card = new DigitalInformationGUI();
         DigitalDiagPanelGUI screen14Card = new DigitalDiagPanelGUI();
-        DigitalQuizScreen screen15Card = new DigitalQuizScreen();
         DigitalHangMan screen16Card = new DigitalHangMan();
         DigitalCompnents screen17Card = new DigitalCompnents();
         DigitalTruthTables screen18Card = new DigitalTruthTables();
@@ -104,7 +103,6 @@ public class CardLayoutHolder extends javax.swing.JFrame {
          cardsContainer.add(screen12Card, "DigitalSectionScreen");
         cardsContainer.add(screen13Card, "DigitalInformationScreen");
         cardsContainer.add(screen14Card, "DigitalDiagScreen");
-        cardsContainer.add(screen15Card, "DigitalQuiz");
         cardsContainer.add(screen16Card, "DigitalHangMan");
         cardsContainer.add(screen17Card, "DigitalComponents");
         cardsContainer.add(screen18Card, "DigitalTruthTables");

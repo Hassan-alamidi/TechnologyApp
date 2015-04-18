@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package analogsection;
-
 import java.awt.LayoutManager;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,6 +22,7 @@ import javax.swing.JOptionPane;
  * @author Hassan
  */
 public class QuizScreen extends javax.swing.JPanel {
+    //declare variables
      protected String answer, question, userAns, sentance, name; 
     protected String[] userAnswer;
     private static String[] randomizedQuestion;
@@ -45,6 +45,7 @@ public class QuizScreen extends javax.swing.JPanel {
     public QuizScreen() {
         initComponents();
         this.setSize(400,450);
+        //initialize variables
          obj = new QuestionObj();
         objArr = new ArrayList<>();
         
@@ -56,11 +57,12 @@ public class QuizScreen extends javax.swing.JPanel {
         rand = new Random();
         CompPlays = 1;
         message = "";
-       jButton1.setVisible(false);
+        //set unneeded screen components to invisible
+       Submitbtn.setVisible(false);
         Savebtn.setVisible(false);
         Nametf.setVisible(false);
     }
-    
+    //set object array
      public void setobjarr(ArrayList<QuestionObj> objArr){
         QuizScreen.objArr = objArr;
        
@@ -84,9 +86,9 @@ public class QuizScreen extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        Startbtn = new javax.swing.JButton();
         Savebtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Submitbtn = new javax.swing.JButton();
         scorebtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         Nametf = new javax.swing.JTextField();
@@ -130,14 +132,14 @@ public class QuizScreen extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(10, 210, 380, 14);
 
-        jButton2.setText("Start");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Startbtn.setText("Start");
+        Startbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                StartbtnActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(20, 390, 150, 40);
+        add(Startbtn);
+        Startbtn.setBounds(20, 390, 150, 40);
 
         Savebtn.setText("Save");
         Savebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -148,15 +150,15 @@ public class QuizScreen extends javax.swing.JPanel {
         add(Savebtn);
         Savebtn.setBounds(110, 390, 150, 40);
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setText("submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Submitbtn.setBackground(new java.awt.Color(0, 102, 255));
+        Submitbtn.setText("submit");
+        Submitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SubmitbtnActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(110, 390, 150, 40);
+        add(Submitbtn);
+        Submitbtn.setBounds(110, 390, 150, 40);
 
         scorebtn.setText("View previous score");
         scorebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +208,7 @@ public class QuizScreen extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SubmitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbtnActionPerformed
         // TODO add your handling code here:
           Quiz playQuiz = new Quiz();
            int i =0;
@@ -233,57 +235,77 @@ public class QuizScreen extends javax.swing.JPanel {
                    jLabel3.setText("please select a radio buttion " + objArr.get(counter).getquestion());
                     counter = -1;
                  }
-           
+           //if counter is less than 9 then display question and answers depending on if statements nested within this if
            if(counter < 9){
+               //display question in jLabel3 stored in index of array depening on counter + 1
            jLabel3.setText(objArr.get(counter + 1).getquestion());
+            //if the correct answer is equal to "a" then the assigned radio button is jRadioButton1 and the incorrect answers get the remaining radiobutton
         if(objArr.get(counter + 1).getrad().equals("a")){
         jRadioButton1.setText(objArr.get(counter + 1).getanswer());
         jRadioButton2.setText(objArr.get(counter + 1).getincorrect1());
         jRadioButton3.setText(objArr.get(counter + 1).getincorrect2());
         }
+         //else if the correct answer is equal to "b" then the assigned radio button is jRadioButton2 and the incorrect answers get the remaining radiobutton
         else if(objArr.get(counter + 1).getrad().equals("b")){
         jRadioButton2.setText(objArr.get(counter + 1).getanswer());
         jRadioButton1.setText(objArr.get(counter + 1).getincorrect1());
         jRadioButton3.setText(objArr.get(counter + 1).getincorrect2());
         }
+         //else if the correct answer is equal to "c" then the assigned radio button is jRadioButton3 and the incorrect answers get the remaining radiobutton
         else if(objArr.get(counter + 1).getrad().equals("c")){
          jRadioButton3.setText(objArr.get(counter + 1).getanswer());
         jRadioButton2.setText(objArr.get(counter + 1).getincorrect1());
         jRadioButton1.setText(objArr.get(counter + 1).getincorrect2());
         }
+        //else display error
         else{
         JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
+       
            }
+            //if counter is equal to 9 change button text to get result
             if(counter == 9){
-           jButton1.setText("get results");
+           Submitbtn.setText("get results");
             
              
            }
+           //increase counter by one at the end of if state
            counter++;
           
            }
+           //if counter is more than 9 the else runs
            else{
-       playQuiz.setAnswer(userAnswer);
-       playQuiz.setobj(objArr);
-       playQuiz.checkAnwsers();
-       correct = playQuiz.getcorrect();
-       incorrect = playQuiz.getIncorrect();
-       message = myAILogic.getMessage();
-      
-       jLabel3.setText("The number of correct anwsers is:" + " "+correct );
-       jLabel2.setText("The number of incorrect question is:" + " "+ incorrect);
-        JOptionPane.showMessageDialog(null,message);
-       jRadioButton3.setVisible(false);
-        jRadioButton2.setVisible(false);
-        jRadioButton1.setVisible(false);
-        Nametf.setVisible(true);
-        Savebtn.setVisible(true);
-        jLabel1.setText("To save your score please enter your name and press save");
+               //set answers to be compared in Quiz class
+                playQuiz.setAnswer(userAnswer);
+                //set object to be compared in Quiz class
+                playQuiz.setobj(objArr);
+                //runs checkAnswer to compare object array against userAnswer
+                playQuiz.checkAnwsers();
+                //get the amount of correct answers user inputted
+                correct = playQuiz.getcorrect();
+                //get the amount of incorrect answers the user inputted
+                incorrect = playQuiz.getIncorrect();
+                //gets message from AILogic
+                message = myAILogic.getMessage();
+                //displays the values recieved from the quiz class
+                jLabel3.setText("The number of correct anwsers is:" + " "+correct );
+                jLabel2.setText("The number of incorrect question is:" + " "+ incorrect);
+                //displays message recieved from AILogic
+                JOptionPane.showMessageDialog(null,message);
+                //sets all radio buttons to invisible
+                jRadioButton3.setVisible(false);
+                jRadioButton2.setVisible(false);
+                jRadioButton1.setVisible(false);
+                //sets Nametf to visible
+                Nametf.setVisible(true);
+                //sets Savebtn to visible
+                Savebtn.setVisible(true);
+                //changes text in jLabel1
+                jLabel1.setText("To save your score please enter your name and press save");
        //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
            
         
-        
+        //end of else
            }
             if(CompPlays == 1){
             gamemode = levelCB.getSelectedItem().toString().toLowerCase();
@@ -294,31 +316,40 @@ public class QuizScreen extends javax.swing.JPanel {
            }
          
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SubmitbtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void StartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartbtnActionPerformed
         // TODO add your handling code here:
-         jButton2.setVisible(false);
+        //this code sets up the quiz
+        //sets unneeded buttons to invisible
+         Startbtn.setVisible(false);
          scorebtn.setVisible(false);
-         jButton1.setVisible(true);
+         //set needed button to visible
+         Submitbtn.setVisible(true);
+         //displays the first question in jLabel3
         jLabel3.setText(objArr.get(counter).getquestion());
+        //this check what button the correct answer is set to in the array then displayes them in their assigned jRadioButton
+        //if the correct answer is equal to "a" then the assigned radio button is jRadioButton1 and the incorrect answers get the remaining radiobutton
         if(objArr.get(counter).getrad().equals("a")){
         jRadioButton1.setText(objArr.get(counter).getanswer());
         jRadioButton2.setText(objArr.get(counter).getincorrect1());
         jRadioButton3.setText(objArr.get(counter).getincorrect2());
         }
+         //else if the correct answer is equal to "b" then the assigned radio button is jRadioButton2 and the incorrect answers get the remaining radiobutton
         else if(objArr.get(counter).getrad().equals("b")){
         jRadioButton2.setText(objArr.get(counter).getanswer());
         jRadioButton1.setText(objArr.get(counter).getincorrect1());
         jRadioButton3.setText(objArr.get(counter).getincorrect2());
         }
+         //else if the correct answer is equal to "c" then the assigned radio button is jRadioButton3 and the incorrect answers get the remaining radiobutton
         else if(objArr.get(counter).getrad().equals("c")){
          jRadioButton3.setText(objArr.get(counter).getanswer());
         jRadioButton2.setText(objArr.get(counter).getincorrect1());
         jRadioButton1.setText(objArr.get(counter).getincorrect2());
         }
+        //else display error
         else{
-        JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
+        JOptionPane.showMessageDialog(null, "Error something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
         
         
@@ -327,7 +358,7 @@ public class QuizScreen extends javax.swing.JPanel {
         
         
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_StartbtnActionPerformed
 
     private void difficultyCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_difficultyCBActionPerformed
         // TODO add your handling code here:
@@ -397,12 +428,12 @@ public class QuizScreen extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Nametf;
     private javax.swing.JButton Savebtn;
+    private javax.swing.JButton Startbtn;
+    private javax.swing.JButton Submitbtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel headingLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

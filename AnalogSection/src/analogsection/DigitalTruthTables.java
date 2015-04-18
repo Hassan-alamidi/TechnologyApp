@@ -242,9 +242,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         // TODO add your handling code here:
         //reset values 
         input1tgbtn.setVisible(false);
-       input2tgbtn.setVisible(false);
-       Outputlbl.setVisible(false);
-       andbtn.setVisible(true);
+        input2tgbtn.setVisible(false);
+        Outputlbl.setVisible(false);
+        andbtn.setVisible(true);
         orbtn.setVisible(true);
         nandbtn.setVisible(true);
         norbtn.setVisible(true);
@@ -289,18 +289,26 @@ public class DigitalTruthTables extends javax.swing.JPanel {
        input2tgbtn.setVisible(true);
        Outputlbl.setVisible(true);
        //get and display image
+       //try catch in case of error
        try{
-       url = getClass().getResource("/resources/andgate.gif");
-       Img = ImageIO.read(url);
+           //get the image url and store in url
+           url = getClass().getResource("/resources/andgate.gif");
+           //convert url to imageIO and store in img
+           Img = ImageIO.read(url);
        }
+       //catch
        catch(IOException e)
-               {
+        {
+            //resource not found
             System.out.println(getClass().getResource("/resources/andgate.gif"));
-            System.out.println("An error occoured");
+            System.out.println("An error occoured image not found");
             System.out.print(e);
        }
+       //setgate in LogicGateSim class
        logic.setgate(gate);
+       //store img in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //set icon for gatelbl
        gatelbl.setIcon(ImgDisplayedLbl);
      
     }//GEN-LAST:event_andbtnActionPerformed
@@ -319,22 +327,28 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         gate = 2;
         //show all toggle buttons
         input1tgbtn.setVisible(true);
-       input2tgbtn.setVisible(true);
-       Outputlbl.setVisible(true);
+        input2tgbtn.setVisible(true);
+        Outputlbl.setVisible(true);
        
        //get and display image
        try{
-       url = getClass().getResource("/resources/nand.png");
-       Img = ImageIO.read(url);
+           //get image url and store in url
+           url = getClass().getResource("/resources/nand.png");
+           //convert url to ImageIO and store in img
+           Img = ImageIO.read(url);
        }
        catch(IOException e)
-               {
+       {
+           //display error if image not found
             System.out.println(getClass().getResource("/resources/nand.png"));
-            System.out.println("An error occoured");
+            System.out.println("An error occoured image not found");
             System.out.print(e);
        }
+       //setgate in LogicGateSim
        logic.setgate(gate);
+       //store img in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //set icon for gatelbl
        gatelbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_nandbtnActionPerformed
 
@@ -352,21 +366,27 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         gate = 3;
         //show all toggle buttons
         input1tgbtn.setVisible(true);
-       input2tgbtn.setVisible(true);
-       Outputlbl.setVisible(true);
+        input2tgbtn.setVisible(true);
+        Outputlbl.setVisible(true);
         //get and display image
        try{
-       url = getClass().getResource("/resources/orgate.png");
-       Img = ImageIO.read(url);
+           //get image url and store in url
+           url = getClass().getResource("/resources/orgate.png");
+           //convert url to ImageIO and store in img
+           Img = ImageIO.read(url);
        }
        catch(IOException e)
-               {
+        {
+            //display error is image not found
             System.out.println(getClass().getResource("/resources/orgate.png"));
             System.out.println("An error occoured");
             System.out.print(e);
        }
-      logic.setgate(gate);
+       //set gate in LogicGateSim class
+       logic.setgate(gate);
+       //store img in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //sets gatelbl's icon to ImgDisplayedlbl
        gatelbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_orbtnActionPerformed
 
@@ -384,21 +404,27 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         gate = 4;
         //show all toggle buttons
         input1tgbtn.setVisible(true);
-       input2tgbtn.setVisible(true);
-       Outputlbl.setVisible(true);
+        input2tgbtn.setVisible(true);
+        Outputlbl.setVisible(true);
         //get and display image
        try{
-       url = getClass().getResource("/resources/nor.jpg");
-       Img = ImageIO.read(url);
+          //gets image url and stores it in url
+           url = getClass().getResource("/resources/nor.jpg");
+           //converts url to ImageIO and stores it in img
+           Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
+                   //display error if no image found
             System.out.println(getClass().getResource("/resources/nor.jpg"));
-            System.out.println("An error occoured");
+            System.out.println("An error occoured, image not found");
             System.out.print(e);
        }
+       //set gate in LogicGateSim class
        logic.setgate(gate);
+       //store img in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //sets gatelbl's icon to ImageDisplayedLbl
        gatelbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_norbtnActionPerformed
 
@@ -416,21 +442,27 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         gate = 5;
         //show all toggle buttons
         input1tgbtn.setVisible(true);
-       input2tgbtn.setVisible(true);
-       Outputlbl.setVisible(true);
+        input2tgbtn.setVisible(true);
+        Outputlbl.setVisible(true);
         //get and display image
        try{
-       url = getClass().getResource("/resources/xor.png");
-       Img = ImageIO.read(url);
+           //gets image url and stores it in url
+            url = getClass().getResource("/resources/xor.png");
+            //gets reads url and stores it in img
+            Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
+                   //display error
             System.out.println(getClass().getResource("/resources/xor.png"));
-            System.out.println("An error occoured");
+            System.out.println("An error occoured, image not found");
             System.out.print(e);
        }
-      logic.setgate(gate);
+       //sets gate in LogicGateSim
+       logic.setgate(gate);
+       //converts img to ImageIcon and stores it in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //sets gatelbl's icon to ImgDisplayedLbl
        gatelbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_xorbtnActionPerformed
 
@@ -451,17 +483,23 @@ public class DigitalTruthTables extends javax.swing.JPanel {
        Outputlbl.setVisible(true);
         //get and display image
        try{
-       url = getClass().getResource("/resources/not.png");
-       Img = ImageIO.read(url);
+           //gets image url and stores it in url
+            url = getClass().getResource("/resources/not.png");
+            //reads image from url and stores it in img
+            Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
+                   //display error
             System.out.println(getClass().getResource("/resources/not.png"));
-            System.out.println("An error occoured");
+            System.out.println("An error occoured, image not found");
             System.out.print(e);
        }
+       //sets gate in LogicGateSim
        logic.setgate(gate);
+       //converts img to ImageIcon and stores it in ImgDisplayedLbl
        ImgDisplayedLbl = new ImageIcon(Img);
+       //sets gatelbl's icon to ImgDisplayedLbl
        gatelbl.setIcon(ImgDisplayedLbl);
     }//GEN-LAST:event_notbtnActionPerformed
 
@@ -479,12 +517,13 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         gate = 7;
         //show all toggle buttons
         input1tgbtn.setVisible(true);
-       input2tgbtn.setVisible(true);
-       Outputlbl.setVisible(true);
+        input2tgbtn.setVisible(true);
+        Outputlbl.setVisible(true);
         //get and display image
        try{
-       url = getClass().getResource("/resources/xnor.png");
-       Img = ImageIO.read(url);
+           //gets image url and stores it in url then reads image from url and stores it in img
+            url = getClass().getResource("/resources/xnor.png");
+            Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
@@ -492,6 +531,7 @@ public class DigitalTruthTables extends javax.swing.JPanel {
             System.out.println("An error occoured");
             System.out.print(e);
        }
+        //sets gate in LogicGateSim after that img is converted to ImageIcon and stores it in ImgDisplayedLbl and sets gatelbl's icon to ImgDisplayedLbl
        logic.setgate(gate);
        ImgDisplayedLbl = new ImageIcon(Img);
        gatelbl.setIcon(ImgDisplayedLbl);
@@ -504,8 +544,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         {
             input2 = 1;
              try{
-       url = getClass().getResource("/resources/plus.png");
-       Img = ImageIO.read(url);
+                 //gets image url and stores it in url then reads image from url and stores it in img
+                url = getClass().getResource("/resources/plus.png");
+                Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
@@ -521,8 +562,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         {
             input2 = 0;
               try{
-       url = getClass().getResource("/resources/minus.png");
-       Img = ImageIO.read(url);
+                  //gets image url and stores it in url then reads image from url and stores it in img
+                  url = getClass().getResource("/resources/minus.png");
+                  Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
@@ -548,8 +590,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         {
             input1 = 1;
               try{
-       url = getClass().getResource("/resources/plus.png");
-       Img = ImageIO.read(url);
+                  //gets image url and stores it in url then reads image from url and stores it in img
+                  url = getClass().getResource("/resources/plus.png");
+                  Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
@@ -565,8 +608,9 @@ public class DigitalTruthTables extends javax.swing.JPanel {
         {
             input1 = 0;
               try{
-       url = getClass().getResource("/resources/minus.png");
-       Img = ImageIO.read(url);
+                  //gets image url and stores it in url then reads image from url and stores it in img
+                    url = getClass().getResource("/resources/minus.png");
+                    Img = ImageIO.read(url);
        }
        catch(IOException e)
                {
