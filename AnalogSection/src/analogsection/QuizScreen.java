@@ -6,8 +6,16 @@
 package analogsection;
 
 import java.awt.LayoutManager;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +23,7 @@ import javax.swing.JOptionPane;
  * @author Hassan
  */
 public class QuizScreen extends javax.swing.JPanel {
-     protected String answer, question, userAns, sentance; 
+     protected String answer, question, userAns, sentance, name; 
     protected String[] userAnswer;
     private static String[] randomizedQuestion;
     protected int correct, incorrect;
@@ -48,6 +56,9 @@ public class QuizScreen extends javax.swing.JPanel {
         rand = new Random();
         CompPlays = 1;
         message = "";
+       jButton1.setVisible(false);
+        Savebtn.setVisible(false);
+        Nametf.setVisible(false);
     }
     
      public void setobjarr(ArrayList<QuestionObj> objArr){
@@ -67,14 +78,18 @@ public class QuizScreen extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         headingLbl = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        Savebtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        scorebtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
+        Nametf = new javax.swing.JTextField();
         titleLbl = new javax.swing.JLabel();
         levelCB = new javax.swing.JComboBox();
         backgroundLbl = new javax.swing.JLabel();
@@ -85,11 +100,20 @@ public class QuizScreen extends javax.swing.JPanel {
         add(headingLbl);
         headingLbl.setBounds(10, 120, 80, 14);
 
-        jTextField1.setText("please press start to begin");
-        add(jTextField1);
-        jTextField1.setBounds(10, 140, 380, 60);
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        add(jLabel3);
+        jLabel3.setBounds(10, 150, 370, 20);
+
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        add(jLabel2);
+        jLabel2.setBounds(10, 164, 370, 20);
 
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
         add(jRadioButton1);
         jRadioButton1.setBounds(110, 240, 210, 21);
 
@@ -101,9 +125,10 @@ public class QuizScreen extends javax.swing.JPanel {
         add(jRadioButton3);
         jRadioButton3.setBounds(110, 340, 210, 21);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Chose one of the following anwser's then press next to submit:");
         add(jLabel1);
-        jLabel1.setBounds(20, 210, 320, 14);
+        jLabel1.setBounds(10, 210, 380, 14);
 
         jButton2.setText("Start");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +137,16 @@ public class QuizScreen extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(110, 390, 150, 40);
+        jButton2.setBounds(20, 390, 150, 40);
+
+        Savebtn.setText("Save");
+        Savebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SavebtnActionPerformed(evt);
+            }
+        });
+        add(Savebtn);
+        Savebtn.setBounds(110, 390, 150, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 102, 255));
         jButton1.setText("submit");
@@ -123,6 +157,15 @@ public class QuizScreen extends javax.swing.JPanel {
         });
         add(jButton1);
         jButton1.setBounds(110, 390, 150, 40);
+
+        scorebtn.setText("View previous score");
+        scorebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scorebtnActionPerformed(evt);
+            }
+        });
+        add(scorebtn);
+        scorebtn.setBounds(220, 390, 150, 40);
 
         exitBtn .setOpaque(false);
         exitBtn .setContentAreaFilled(false);
@@ -135,11 +178,15 @@ public class QuizScreen extends javax.swing.JPanel {
         add(exitBtn);
         exitBtn.setBounds(0, 0, 70, 40);
 
+        Nametf.setText("Enter name here");
+        add(Nametf);
+        Nametf.setBounds(110, 260, 210, 30);
+
         titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
         titleLbl.setForeground(new java.awt.Color(255, 255, 255));
-        titleLbl.setText("Analog Quiz");
+        titleLbl.setText("Test you knowledge");
         add(titleLbl);
-        titleLbl.setBounds(140, 0, 200, 40);
+        titleLbl.setBounds(90, 0, 200, 40);
 
         levelCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Easy", "Medium", "Hard" }));
         add(levelCB);
@@ -183,12 +230,12 @@ public class QuizScreen extends javax.swing.JPanel {
            userAnswer[counter] = "c";
            }
             else{
-                   jTextField1.setText("please select a radio buttion " + objArr.get(counter).getquestion());
+                   jLabel3.setText("please select a radio buttion " + objArr.get(counter).getquestion());
                     counter = -1;
                  }
            
            if(counter < 9){
-           jTextField1.setText(objArr.get(counter + 1).getquestion());
+           jLabel3.setText(objArr.get(counter + 1).getquestion());
         if(objArr.get(counter + 1).getrad().equals("a")){
         jRadioButton1.setText(objArr.get(counter + 1).getanswer());
         jRadioButton2.setText(objArr.get(counter + 1).getincorrect1());
@@ -208,13 +255,13 @@ public class QuizScreen extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "something has gone wrong one of the devlopers has assigned the answer to an invalid value");
         }
            }
-           
-           counter++;
-           if(counter >= 9){
+            if(counter == 9){
            jButton1.setText("get results");
             
              
            }
+           counter++;
+          
            }
            else{
        playQuiz.setAnswer(userAnswer);
@@ -224,11 +271,15 @@ public class QuizScreen extends javax.swing.JPanel {
        incorrect = playQuiz.getIncorrect();
        message = myAILogic.getMessage();
       
-       jTextField1.setText("The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect + "and " );
+       jLabel3.setText("The number of correct anwsers is:" + " "+correct );
+       jLabel2.setText("The number of incorrect question is:" + " "+ incorrect);
         JOptionPane.showMessageDialog(null,message);
-       jRadioButton3.setText("");
-        jRadioButton2.setText("");
-        jRadioButton1.setText("");
+       jRadioButton3.setVisible(false);
+        jRadioButton2.setVisible(false);
+        jRadioButton1.setVisible(false);
+        Nametf.setVisible(true);
+        Savebtn.setVisible(true);
+        jLabel1.setText("To save your score please enter your name and press save");
        //JOptionPane.showMessageDialog(null,"The number of correct anwsers is:" + " "+correct + " " + "The number of incorrect question is:" + " "+ incorrect);
            
         
@@ -247,8 +298,10 @@ public class QuizScreen extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jButton2.setVisible(false);
-        jTextField1.setText(objArr.get(counter).getquestion());
+         jButton2.setVisible(false);
+         scorebtn.setVisible(false);
+         jButton1.setVisible(true);
+        jLabel3.setText(objArr.get(counter).getquestion());
         if(objArr.get(counter).getrad().equals("a")){
         jRadioButton1.setText(objArr.get(counter).getanswer());
         jRadioButton2.setText(objArr.get(counter).getincorrect1());
@@ -285,8 +338,65 @@ public class QuizScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void SavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavebtnActionPerformed
+        // TODO add your handling code here:
+        name = Nametf.getText();
+        UserScoreObj save = new UserScoreObj();
+        save.setName(name);
+        save.setIncorrect(incorrect);
+        save.setcorrect(correct);
+        
+        File outFile;
+        FileOutputStream fStream;
+        ObjectOutputStream oStream;
+        try{
+        outFile = new File("userScore.data");
+        fStream = new FileOutputStream(outFile);
+        oStream = new ObjectOutputStream(fStream);
+        
+        oStream.writeObject(save);
+        JOptionPane.showMessageDialog(null,"your score has been saved");
+        oStream.close();
+        
+        }
+        catch(IOException e){
+        JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_SavebtnActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void scorebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scorebtnActionPerformed
+        // TODO add your handling code here:
+        File inFile;
+        FileInputStream fStream;
+        ObjectInputStream oStream;
+        
+        try{
+        inFile = new File("userScore.data");
+        fStream = new FileInputStream(inFile);
+        oStream = new ObjectInputStream(fStream);
+        UserScoreObj readPrev;
+        
+        readPrev = (UserScoreObj)oStream.readObject();
+        
+        JOptionPane.showMessageDialog(null, "Name:" + readPrev.getName() + "Correct answers: " + readPrev.getCorrect() + "Incorrect answers: " + readPrev.getIncorrect());
+        oStream.close();
+        }
+        catch(IOException e){
+        JOptionPane.showMessageDialog(null, e + "cannot find save file");
+        } catch (ClassNotFoundException ex) {
+             Logger.getLogger(QuizScreen.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null, ex + "cannot find class");
+         }
+    }//GEN-LAST:event_scorebtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Nametf;
+    private javax.swing.JButton Savebtn;
     private javax.swing.JLabel backgroundLbl;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton exitBtn;
@@ -294,11 +404,13 @@ public class QuizScreen extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox levelCB;
+    private javax.swing.JButton scorebtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }
