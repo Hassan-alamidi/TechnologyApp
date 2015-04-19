@@ -324,22 +324,22 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             */
             ArrayList<String> info = new ArrayList<String>() {
                 {   
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("Most plastics are made from crude oil");
+                    add("Plastics are a man-made, waterproof material.");
+                    add("There are 2 types of plastics, Thermosetting and Thermoplastics");
+                    add("Thermoplastics can be moulded and shaped in various ways");
+                    add("Thermosetting plastics are strong and resistant to heat");
+                    add("Thermosetting plastics cannot be reshaped");
+                    add("Thermosetting plastics are used in situations where resistant to heat is important");
+                    add("PvC, Acrylic, Polyethylene and Polypropylene are examples of Thermoplastics.");
+                    add("Polyester Resin, Melamine Formaldehyde and phenol Formaldehyde are examples of Thermosetting plastics.");
+                    add("Plastic takes a very long time to decompose");
                 }
             };
             //sends the info to the information class
             plasticInfo.setInfo(info);
-            if (count < 10 && imgSelector < 32) {
-                plasticInfo.setImageUsed(imgSelector);
+            if (count < 10 && imgSelectorPlastic < 32) {
+                plasticInfo.setImageUsed(imgSelectorPlastic);
                 plasticInfo.setUrls();
                 ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
                 imgSelectorPlastic++;
