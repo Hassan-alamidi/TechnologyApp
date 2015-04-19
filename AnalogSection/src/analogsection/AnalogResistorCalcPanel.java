@@ -18,10 +18,10 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
     /**
      * Creates new form ResistorCalcPanel
      */
-    private String selectedValue,band1,band2,band3,band4,valueTotal,minResistorValue, maxResistorValue;
+    private String selectedValue,band1,band2,band3,band4,valueTotal,minResistorValue, maxResistorValue,fileContents;
     
 
-    
+    ResistorCalc4Band calc;
     public AnalogResistorCalcPanel() {
         initComponents();
         this.setSize(400,450);
@@ -29,7 +29,9 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         band1 ="";
         band2 ="";
         band4 = "";
-       
+        calc = new ResistorCalc4Band();
+        SaveBtn.setEnabled(false);
+        ReadFileBtn.setEnabled(false);
        
     }
 
@@ -60,6 +62,8 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         TitleLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
         typesCB = new javax.swing.JComboBox();
+        ReadFileBtn = new javax.swing.JButton();
+        SaveBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         jMenu1.setText("File");
@@ -103,7 +107,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
             }
         });
         add(addBtn);
-        addBtn.setBounds(20, 410, 180, 30);
+        addBtn.setBounds(0, 410, 100, 30);
 
         anwserLbl.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         anwserLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,7 +124,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
             }
         });
         add(ResetBtn);
-        ResetBtn.setBounds(220, 410, 170, 30);
+        ResetBtn.setBounds(290, 410, 100, 30);
 
         headingLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         headingLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,6 +173,26 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         });
         add(typesCB);
         typesCB.setBounds(290, 0, 110, 30);
+
+        ReadFileBtn.setForeground(new java.awt.Color(0, 102, 255));
+        ReadFileBtn.setText("Read ");
+        ReadFileBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReadFileBtnActionPerformed(evt);
+            }
+        });
+        add(ReadFileBtn);
+        ReadFileBtn.setBounds(190, 410, 100, 29);
+
+        SaveBtn.setForeground(new java.awt.Color(51, 102, 255));
+        SaveBtn.setText("Save");
+        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveBtnActionPerformed(evt);
+            }
+        });
+        add(SaveBtn);
+        SaveBtn.setBounds(100, 410, 75, 29);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/CalcGUI2.png"))); // NOI18N
         add(backgroundLbl);
@@ -228,10 +252,13 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          //selectedValue = typesCB.getSelectedItem().toString();
          // new instances of resistor4bandcalc 
-         ResistorCalc4band calc = new ResistorCalc4band();
+        
          
          //clears label
          anwserLbl.setText("");
+         
+        SaveBtn.setEnabled(true);
+        ReadFileBtn.setEnabled(true);
          
          //get the values selected in the GUI
          band1 = Color1CB.getSelectedItem().toString().toLowerCase();
@@ -262,7 +289,7 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
          calc.getMaxValue();
          
          //get the min rsistor value
-         
+        // calc.SaveToFile();
          
          //converts the values to kiloohmz
          calc.convertToKilohm();
@@ -279,12 +306,28 @@ public class AnalogResistorCalcPanel extends javax.swing.JPanel {
          JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+ maxResistorValue + "\n Minimum Resistance Value:"+ " "+  minResistorValue);
     }//GEN-LAST:event_addBtnActionPerformed
 
+    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+        // saves the calculation to a file
+         calc.SaveToFile();
+         
+        
+    }//GEN-LAST:event_SaveBtnActionPerformed
+
+    private void ReadFileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadFileBtnActionPerformed
+       //reads the calculation from the file
+         fileContents = calc.ReadFromFile();
+         
+         JOptionPane.showMessageDialog(null,"Saved calculations:"+"\n" +fileContents);
+    }//GEN-LAST:event_ReadFileBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Color1CB;
     private javax.swing.JComboBox Color2CB;
     private javax.swing.JComboBox Color3CB;
+    private javax.swing.JButton ReadFileBtn;
     private javax.swing.JButton ResetBtn;
+    private javax.swing.JButton SaveBtn;
     private javax.swing.JLabel TitleLbl;
     private javax.swing.JComboBox ToloeranceCB;
     private javax.swing.JButton addBtn;

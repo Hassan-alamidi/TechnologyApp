@@ -1,8 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
 package analogsection;
 
 /**
@@ -18,35 +16,14 @@ package analogsection;
 
 */
 
-public class ResistorCalc5band extends ResistorCalc4band {
+public class ResistorCalc5band extends ResistorCalc4Band {
     //variables 
     protected String band5;
     protected int digit3;
-   /* private String valueTotal,minResistorValue, maxResistorValue;
-    private String  conversion, substrK, substrH, convertkilohm, resistorDigits;
-    private int digit1, digit2, percent, resistorColorVals;
-    private double  toloerance, tolrancPercent, multiplier,valueResistor,maxValue,minValue; */
-    
-   /* public ResistorCalc5band(){
-        resistorDigits = "";
-        conversion = "";
-        substrK = "";
-        substrH = "";
-        convertkilohm = "";
-        digit1 = 0;
-        digit2 = 0;
-        percent = 100;
-        resistorColorVals = 0;
-        maxValue = 0.0;
-        minValue = 0.0;
-        toloerance = 0.0;
-        tolrancPercent = 0.0;
-        multiplier = 0.0;
-        valueResistor = 0.0; 
-    } */
+
     /*
      * invokes the superclass's constructor,
-     * saves the need for setters
+     * 
     */
     public ResistorCalc5band(String band1, String band2, String band3,String band4, String band5){   
         super();

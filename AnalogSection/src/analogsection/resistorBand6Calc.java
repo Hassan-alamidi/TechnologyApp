@@ -1,33 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package analogsection;
 
 /**
  *
- * @author Stephen 
+ * @author Stephen
  */
 /*
-* This class extends the 5bandCalc,
-* And uses polmorphism to overide and change the functionallity 
-*/
+ * This class is a subclass of 5bandCalc with extends 4BandCalc class,
+ * And uses polmorphism to overide and change the functionallity 
+ */
 public class resistorBand6Calc extends ResistorCalc5band {
+
     protected String band6;
     protected int digit6, tempco;
+
     public resistorBand6Calc(String band1, String band2, String band3, String band4, String band5) {
         super(band1, band2, band3, band4, band5);
+        this.band1 = band1;
+        this.band2 = band2;
+        this.band3 = band3;
+        this.band4 = band4;
+        this.band5 = band5;
+        this.band5 = band5;
         band6 = "";
         digit6 = 0;
     }
-    
+
     //retrives the band value from the user
-    public void setBand6(String band6){
+    public void setBand6(String band6) {
         this.band6 = band6;
     }
-   
-   public void assignTempcoValue() {
+
+    //Assigns the Temperature Coefficient value
+    public void assignTempcoValue() {
 
         switch (band6) {
             case "brown":
@@ -50,9 +55,11 @@ public class resistorBand6Calc extends ResistorCalc5band {
                 break;
         }
     }
-   //returns the Temperature Coefficient in celius using ASCII code 
+
+    //returns the Temperature Coefficient in celius using ASCII code 
+
     public String getTempco() {
         final String degrees = "\u00b0";
-        return "Temperature Coefficient Value:" + tempco + "ppm/" + degrees +"C";
+        return "Temperature Coefficient Value:" + tempco + "ppm/" + degrees + "C";
     }
 }
