@@ -106,11 +106,11 @@ public class QuizScreen extends javax.swing.JPanel {
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
         add(jLabel3);
-        jLabel3.setBounds(10, 150, 370, 20);
+        jLabel3.setBounds(10, 150, 370, 30);
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         add(jLabel2);
-        jLabel2.setBounds(10, 164, 370, 20);
+        jLabel2.setBounds(10, 180, 370, 20);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,15 +119,15 @@ public class QuizScreen extends javax.swing.JPanel {
             }
         });
         add(jRadioButton1);
-        jRadioButton1.setBounds(110, 240, 210, 21);
+        jRadioButton1.setBounds(20, 240, 370, 21);
 
         buttonGroup1.add(jRadioButton2);
         add(jRadioButton2);
-        jRadioButton2.setBounds(110, 290, 210, 21);
+        jRadioButton2.setBounds(20, 290, 370, 21);
 
         buttonGroup1.add(jRadioButton3);
         add(jRadioButton3);
-        jRadioButton3.setBounds(110, 340, 210, 21);
+        jRadioButton3.setBounds(20, 340, 370, 21);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Chose one of the following anwser's then press next to submit:");
