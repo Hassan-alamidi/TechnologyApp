@@ -104,7 +104,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
         });
         add(exitBtn);
-        exitBtn.setBounds(220, 390, 150, 40);
+        exitBtn.setBounds(240, 410, 150, 40);
 
         titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
         titleLbl.setText("Information");
@@ -135,7 +135,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         add(imageChangeLbl);
         imageChangeLbl.setBounds(90, 50, 280, 140);
         add(infoLbl);
-        infoLbl.setBounds(10, 266, 380, 120);
+        infoLbl.setBounds(10, 216, 380, 190);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -150,7 +150,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         //Resets the image holder label to have no imageIco when reset
         imageChangeLbl.setIcon(null);
         
-        //resets the text to nothing when the information is exited
+        //resets the info labl to have no text when the GUI is exited 
         infoLbl.setText("");
         
          //resets the info slide counter to 0
@@ -224,24 +224,29 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         
        
     }//GEN-LAST:event_exitBtnActionPerformed
-
+ 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
 
-     
+        //sets the lbl which stores the image to be seen when the button is pressed     
         imageChangeLbl.setVisible(true);
+        
+        //retrives an static value which is sent from the different GUI's when information is selected,
+        // The value is then used to determine which section's information is to be diplayed to the user.
         infoSelected = Information.getInfoType();
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
-            // * anonymous inner class, to set the info.
+            // * anonymous inner class, to populate the info array.
             // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
             // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
+            // * referance to the instance of the object constructed 
             // * Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            
+            // The html tag is used to wrapp the text in so that, 
+            // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
+                    add("<html> Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. <html>");
                     add("Electrons are used in batteries");
                     add("There are many different electronic signals");
                     add("ADC are used to convert analog signals to digital repersentation");
@@ -258,12 +263,11 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             analogInfo.setInfo(info);
 
             if (count < 10 && imgSelector < 10) {
-                //imgSelector = 0;
                 analogInfo.setImageUsed(imgSelector);
                 analogInfo.setUrls();
                 ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
                 imgSelector++;
-                //Information.setCount(count = 0);
+                
                 analogInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
@@ -273,11 +277,13 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 2) {
-              //Sets the infomation 
-            // anonymous inner class, to set the info
+             
+            // anonymous inner class, to populate the info array
+            // The html tag is used to wrapp the text in so that, 
+            // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
+                    add("<html> A capacitor stores and releases charge gngngngngngn </html>");
                     add("Electrons are used in batteries");
                     add("There are many different electronic signals");
                     add("ADC are used to convert analog signals to digital repersentation");
@@ -289,27 +295,33 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("Diode is used direct the flow of current");
                 }
             };
-
+            //sets the info array
             digitalInfo.setInfo(info);
            
+            //checks to see if the info selector, and imag selector are less then 10, 
+            // to avoid them becoming out of bounds.
             if (count < 10 && imgSelector < 10) {
                 digitalInfo.setImageUsed(imgSelector);
                 digitalInfo.setUrls();
                 ImgDisplayedLbl = digitalInfo.AddImageUsingURLS();
                 imgSelectorDigital++;
-                //Information.setCount(count = 0);
                 digitalInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
                 infoDisplayed = digitalInfo.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
             }
 
         } else if (infoSelected == 3) {
-            //plastic part
-            //set info here 
+            /*
+               * Plastic part goes here.
+               * Info to popluate the array , and also be sent to the information class for processing,
+               * for the section goes below.
+               * Also make sure that the image's which correspond to your section are in the, src/Resoures folder,
+               * also make sure that they correspond to the imgSelector value which your section is asinged,
+               * i.e. each section is given 10 images, so platicImgSlector starts at 21 which is the first img, and 21 + 10 is the last image.
+            */
             ArrayList<String> info = new ArrayList<String>() {
                 {   
                     add("A capacitor stores and releases charge");
@@ -324,14 +336,13 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("Diode is used eract the flow of current");
                 }
             };
-
+            //sends the info to the information class
             plasticInfo.setInfo(info);
             if (count < 10 && imgSelector < 32) {
                 plasticInfo.setImageUsed(imgSelector);
                 plasticInfo.setUrls();
                 ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
                 imgSelectorPlastic++;
-                //Information.setCount(count = 0);
                 plasticInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
@@ -341,8 +352,14 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 4) {
-            //wood part
-            //add info here 
+            /*
+               * Wood section goes here.
+               * Info to popluate the array , and also be sent to the information class for processing,
+               * for the section goes below.
+               * Also make sure that the image's which correspond to your section are in the, src/Resoures folder,
+               * also make sure that they correspond to the imgSelector value which your section is asinged,
+               * i.e. each section is given 10 images, so platicImgSlector starts at 32 which is the first img, and 32 + 10 is the last image.
+            */
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("W");
@@ -558,14 +575,18 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
 
             }
 
+        }else{
+            System.out.println("Error occoured, invaild option");
         }
             
         System.out.println("index:" + count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-        
+        //Checks to see which type of section info has been selected, and
+        //terverse's backwards through the images, and info text which has been displayed.
+        //Uses's a series of if statments, to only terverse backwards if the counter, is greater than,
+        // or equal to the last img, and info text. this is to keep the selector from being out of bounds of the arrays 
         if (infoSelected == 1) {
             if (count > 0 && imgSelector > 0) {
                 count--;
