@@ -250,7 +250,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("breadbords are used for creating circuits");
                     add("A.C stands for alternating current ");
                     add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("Diode is used direct the flow of current");
                 }
             };
 
@@ -277,16 +277,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                   add("A capacitor stores and releases charge");
+                    add("A capacitor stores and releases charge");
                     add("Electrons are used in batteries");
                     add("There are many different electronic signals");
                     add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
+                    add("Resistors are used to restrict the flow of current");
                     add("Resistors are measured in ohms");
                     add("breadbords are used for creating circuits");
                     add("A.C stands for alternating current ");
                     add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("Diode is used direct the flow of current");
                 }
             };
 

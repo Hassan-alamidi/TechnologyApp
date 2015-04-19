@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Quiz {
     
     public String [] randomizedQuestion;
-    protected String answer,temp2;
+    protected String answer,correctAnswer;
     private String [] userAnswer;
     protected int correct, incorrect,randQuestion,temp1;
     protected int chosenquestions[];
@@ -36,7 +36,7 @@ public class Quiz {
         // this should be also filled with 20 anwsers
        // also more correct anwser should be addedd to maxinmise the number of coorect anwser's
         correct = 0;
-        temp2 = "";
+        correctAnswer = new String();
         incorrect = 0;
         rand = new Random();
         chosenquestions = new int[10];
@@ -53,34 +53,43 @@ public class Quiz {
     // checks through all of the anwsers 
     // to see if the user choice entered
     // is corrected 
-    public void checkAnwsers(){
+    public void checkAnwsers()
+    {
         //loop checks all 10 questions
-        for(int counter = 0; counter < 10; counter++){
+        for(int counter = 0; counter < 10; counter++)
+        {
             //stores user answer in answer
             answer = userAnswer[counter];
             //stores the correct answer in temp2
-            temp2 = statObjArr.get(counter).getrad();
+            correctAnswer = statObjArr.get(counter).getrad();
             //this is a test JOptionPane.showMessageDialog(null,"test temp 2 = " + temp2+ " temp =" + answer + " userans = " + userAnswer[counter] + "chosenquestion =" + chosenquestions[counter]);
-        //if answer is equal to temp2 then the value of correct will be increased by one if they are not equal then the value in incorrect will increase by one
-        if(answer.equalsIgnoreCase(temp2)){
-        correct++;
+            //if answer is equal to correctAnswer then the value of correct will be increased by one if they are not equal then the value in incorrect will increase by one
+            if(answer.equalsIgnoreCase(correctAnswer))
+            {
+                correct++;
+            }
+            else if(!answer.equalsIgnoreCase(correctAnswer))
+            {
+                incorrect++;
+            }
+            //else display error
+            else
+            {
+                //error checking( this error cheking is not needed because if something goes wrong like no value entered into one of the values the program crashes)
+                JOptionPane.showMessageDialog(null,"something went wrong with corrections");
+            }
         }
-        else if(!answer.equalsIgnoreCase(temp2)){
-        incorrect++;
-        }
-        else{
-            //error checking( this error cheking is not needed because if something goes wrong like no value entered into one of the values the program crashes)
-        JOptionPane.showMessageDialog(null,"something went wrong with corrections");
-        }
-        }
+        //clear bot objArr and static objArr
+        objArr.clear();
+        statObjArr.clear();
     }
     //returns the amount of times the user inputted the correct answer
      public int getcorrect(){
-     return correct;
+        return correct;
      }
      //returns the amount of times the user inputted the incorrect answer
      public int getIncorrect(){
-     return incorrect;
+        return incorrect;
      
      }
      //sets object array

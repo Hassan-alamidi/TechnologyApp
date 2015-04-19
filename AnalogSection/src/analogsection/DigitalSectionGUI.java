@@ -103,9 +103,11 @@ public class DigitalSectionGUI extends javax.swing.JPanel {
 
     private void QuizBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizBtnActionPerformed
         // TODO add your handling code here:
-        
+        //declare and initilize dig
         DigitalQuiz dig = new DigitalQuiz();
+        //call chosse randomRandomQuestion
         dig.choseRandomQuestion();
+        //enter quiz screen
         LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
@@ -136,6 +138,7 @@ public class DigitalSectionGUI extends javax.swing.JPanel {
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
+        //exits application
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
 
