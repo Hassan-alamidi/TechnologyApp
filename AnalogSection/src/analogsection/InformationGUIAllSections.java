@@ -133,7 +133,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
         add(imageChangeLbl);
-        imageChangeLbl.setBounds(90, 50, 280, 140);
+        imageChangeLbl.setBounds(10, 50, 370, 140);
         add(infoLbl);
         infoLbl.setBounds(10, 216, 380, 190);
 
@@ -182,7 +182,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
           LayoutManager layout = getParent().getLayout();
           if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "PlasticMainGUI");
+            cl.show(getParent(), "PlasticMainScreen");
            }
       }else if(Information.getInfoType() == 4){
             LayoutManager layout = getParent().getLayout();
@@ -246,11 +246,11 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("<html> Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. <html>");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
+                    add("<html> Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. Ohm found that, at a constant temperature, the electrical current flowing through a fixed linear resistance is directly proportional to voltage applied across it, and also inversely proportional to the resistance.</html>");
+                    add("<html>The Ohms law Triangle, is an equation which is used to work out the Voltage, Current, and Resistance of an circuit. And then By using ohms law which is Current(I) = Voltage(V) / Resistance(R) in Amperes(A).</html>");
+                    add("<html>Ohms Law Example: Voltage [V = I X R] = 2 * 12ohm = 24V, Current [I = V / R] = 24 / 12ohm = 2A, Resistance [R = V / I] = 24 </html>");
+                    add("<html> Electromagnetism is produced when an electrical current through a simple conductor such as a piece of wire cable. A samll magnetic filed is created around the conductor with the direction of this magnetic field with regards to its North and South, poles being determind by the direction of the current flowing through the conductor. </html>");
+                    add("<html> Magnetic flux, all magnetic's have two regions called magnetic poles with the magnetism </html>");
                     add("Resistors are measured in ohms");
                     add("breadbords are used for creating circuits");
                     add("A.C stands for alternating current ");

@@ -1,2 +1,2 @@
-formula:340x1.0E9=340.00Mohms
- Find tolerance: 3.4E11 *0.25 / 100 = 8.5E8
+formula:43x1000.0=43.00Kohms
+ Find tolerance: 43000.0 *20.0 / 100 = 8600.0
