@@ -8,7 +8,6 @@ package analogsection;
 
 import java.awt.LayoutManager;
 import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;

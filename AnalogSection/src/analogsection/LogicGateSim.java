@@ -56,6 +56,7 @@ public class LogicGateSim{
         switch(gate){
             //if gate is equal to 1 then case 1 is selected which is the and gate
             case 1:
+                //if input1 == 1 and input2 == 1 then display a positive symbol else display minus
                 if(input1 == 1 && input2 == 1)
                 {
                     try{
@@ -65,6 +66,7 @@ public class LogicGateSim{
                     }
                     catch(IOException e)
                     {
+                        //display error if file not found
                         System.out.println(getClass().getResource("/resources/plus.png"));
                         System.out.println("An error occoured");
                         System.out.print(e);

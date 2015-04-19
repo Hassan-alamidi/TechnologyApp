@@ -19,10 +19,12 @@ public class DigitalQuiz extends Quiz {
         private int[] binarysort;
         private int arrcount;
         private Integer a;
+        public int page;
         QuizScreen quizgui = new QuizScreen();
         public DigitalQuiz(){
           //initilize variables
          arrcount = 0;
+         page = 1;
          a = null;
          binarysort = new int[10];
          //this is a 2d array to set up questions correctanswers and two incorrect answers
@@ -32,7 +34,7 @@ public class DigitalQuiz extends Quiz {
          //the next two rows or containers are your chosen incorrect answers these work the same as the previous rows/containers
          //the last row/container is what radio button you want your correct answer to be in this must be either a,b or c other wise you will get an error
          //all containers must contain 20 values
-        QandA = new String[][]{{"what is a resistor used for?","what is a diode used for","what dose A.C stand for","Which of the following statements does NOT describe an advantage of digital technology?","e","f","g","h","a","j","k","l","m","n","o","p","q","r","s","t"},{"restrict the flow of current","to direct the flow of electricty","Alternating current","The values may vary over a continuous range.","e","f","g","h","a","j","k","l","m","n","o","p","q","r","s","t"},{"to connect up components","to connect up components","abstract current","The circuits are less affected by noise.","wrong 5","wrong 6","wrong 7","wrong 8","wrong 9","wrong 10","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 20"},{"to divert current","as a logic chip","alternating cult","The operation can be programmed.","wrong 5","wrong 6","wrong 7","wrong 8","wrong 9","wrong 10","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 29"},{"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"}};
+        QandA = new String[][]{{"what is a resistor used for?","what is a diode used for","what dose A.C stand for","Which of the following statements does NOT describe an advantage of digital technology?","The output of a NOT gate is HIGH when?","What is an analog-to-digital converter?","A simple flip-flop is?","what is the name of the table that shows every possible logical outcome in a digital circuit?","What dose LED stand for?","Which of the following is a source of digital signal?","k","l","m","n","o","p","q","r","s","t"},{"restrict the flow of current","to direct the flow of electricty","Alternating current","The values may vary over a continuous range.","The input is low","It takes analog signals and puts them in digital format","1 bit memory","Truth Table","Light Emitting Diode","A computer","k","l","m","n","o","p","q","r","s","t"},{"to connect up components","to connect up components","abstract current","The circuits are less affected by noise.","The input is High","It makes digital signals","is 2 bit memory","Function Table","Lazer Enhanced Drone","Speaker","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 20"},{"to divert current","as a logic chip","alternating cult","The operation can be programmed.","The input changes from low to high","It stores information on a CD","has nothing to do with memory it is a four state device","ASCII Table","Level Enhancing Detail","Signal Generator","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 29"},{"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"}};
         
         }
     
@@ -137,7 +139,7 @@ public class DigitalQuiz extends Quiz {
         //this is a test JOptionPane.showMessageDialog(null,objArr.get(0).getquestion() + " "+ objArr.get(1).getquestion() + " " + objArr.get(2).getquestion() + " array=" + randomizedQuestion[0] + " " + randomizedQuestion[1] + " " + randomizedQuestion[9]);
        //sets the object array
         quizgui.setobjarr(objArr);
-         
+        quizgui.setpage(page); 
          
     }
  

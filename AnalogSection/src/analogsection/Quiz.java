@@ -79,6 +79,9 @@ public class Quiz {
                 JOptionPane.showMessageDialog(null,"something went wrong with corrections");
             }
         }
+        //clear bot objArr and static objArr
+        objArr.clear();
+        statObjArr.clear();
     }
     //returns the amount of times the user inputted the correct answer
      public int getcorrect(){

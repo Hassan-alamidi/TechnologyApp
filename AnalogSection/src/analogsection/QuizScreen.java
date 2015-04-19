@@ -30,7 +30,8 @@ public class QuizScreen extends javax.swing.JPanel {
     private boolean chckRightorWrong;
     public QuestionObj obj;
     public static ArrayList <QuestionObj> objArr;
-    int counter , random;
+    public int counter , random;
+    public static int page;
     int btntrack;
     protected Random rand;
     String gamemode;
@@ -46,9 +47,8 @@ public class QuizScreen extends javax.swing.JPanel {
         initComponents();
         this.setSize(400,450);
         //initialize variables
-         obj = new QuestionObj();
+        obj = new QuestionObj();
         objArr = new ArrayList<>();
-        
         randomizedQuestion = new String[10];
         counter = 0;
         userAnswer = new String[10];
@@ -67,7 +67,9 @@ public class QuizScreen extends javax.swing.JPanel {
         QuizScreen.objArr = objArr;
        
     }
-   
+   public void setpage(int page){
+       this.page = page;
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -201,10 +203,51 @@ public class QuizScreen extends javax.swing.JPanel {
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
-        LayoutManager layout = getParent().getLayout();
-        if (layout instanceof java.awt.CardLayout) {
+        //deletes all objects in array list
+        objArr.clear();
+        //resets screen incase user decides to return to Quiz
+        Submitbtn.setVisible(false);
+        Savebtn.setVisible(false);
+        Nametf.setVisible(false);
+        jRadioButton3.setVisible(true);
+        jRadioButton2.setVisible(true);
+        jRadioButton1.setVisible(true);
+        Startbtn.setVisible(true);
+        counter = 0;
+        if(page == 1)
+        {
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "DigitalSectionScreen");
+        }
+        }
+        else if(page == 2){
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
             cl.show(getParent(), "AnalogMainScreen");
+        }
+        }
+        else if(page == 3)
+        {
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticMainScreen");
+        }
+        }
+        else if(page == 4)
+        {
+            LayoutManager layout = getParent().getLayout();
+            if (layout instanceof java.awt.CardLayout) {
+            java.awt.CardLayout cl = (java.awt.CardLayout)layout;
+            cl.show(getParent(), "PlasticMainScreen");
+        }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "something has gone when deciding what screen to send user back to");
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
@@ -221,15 +264,15 @@ public class QuizScreen extends javax.swing.JPanel {
             random = rand.nextInt(3);
                
             if(jRadioButton1.isSelected()){
-           userAnswer[counter] = "a";
+                userAnswer[counter] = "a";
           
            }
            else if(jRadioButton2.isSelected()){
-           userAnswer[counter] = "b";
+                userAnswer[counter] = "b";
             
            }
            else if(jRadioButton3.isSelected()){
-           userAnswer[counter] = "c";
+                userAnswer[counter] = "c";
            }
             else{
                    jLabel3.setText("please select a radio buttion " + objArr.get(counter).getquestion());
