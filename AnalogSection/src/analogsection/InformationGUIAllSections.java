@@ -297,17 +297,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("<html>Resistors are used to restrict the flow of current <br>in a given circuit this resistance is measured in Ohms</html>");
                     add("<html>An analog to digital converter<br> recieves an analog signal and converts it to digital format</html>");
                     add("<html>Diode is used direct the flow of current.<br> There are many types of diodes that are more suitable in<br> different situations the most commently known diode would be the<br> LED(Light emmiting Diode) which not only directs the flow of current<br> but in most cases emits a visible light unless the led is<br> infrared then the light my not be seen by the human eye.</html>");
-                    add("<html> A capacitor stores and releases charge gngngngngngn </html>");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are used to restrict the flow of current");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used direct the flow of current");
-
                 }
             };
             //sets the info array
@@ -513,22 +502,16 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             ArrayList<String> info = new ArrayList<String>() {
                 {
 
-                   add("<html>A capacitor is a passive two-terminal electrical component<br> used to store energy electrostatically in an electric field.<br>A capacitor works by storing and releasing charge</html>");
+                    add("<html>A capacitor is a passive two-terminal electrical component<br> used to store energy electrostatically in an electric field.<br>A capacitor works by storing and releasing charge</html>");
                     add("<html>In electronics, a flip-flop or latch is a circuit that has <br>two stable states and can be used to store state information <br>each flip-flop can store up to 1 bit memory.</html>");
                     add("<html>Resistors are used to restrict the flow of current <br>in a given circuit this resistance is measured in Ohms</html>");
                     add("<html>Diode is used direct the flow of current.<br> There are many types of diodes that are more suitable in<br> different situations the most commently known diode would be the<br> LED(Light emmiting Diode) which not only directs the flow of current<br> but in most cases emits a visible light unless the led is<br> infrared then the light my not be seen by the human eye.</html>");
-
                     add("A capacitor stores and releases charge");
                     add("Electrons are used in batteries");
                     add("There are many different electronic signals");
                     add("ADC are used to convert analog signals to digital repersentation");
-
                     add("Resistors are like shiedls");
                     add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
                 }
             };
 
