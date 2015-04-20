@@ -54,8 +54,7 @@ public class Information {
     }
 
     public void setUrls() {
-        //adds the images urls to the arraylist
-
+        //adds the images urls to the arraylist 
         imgSelectString = Integer.toString(imgSelector);
         urls.add("/resources/" + imgSelectString + ".jpg");
 
@@ -65,12 +64,12 @@ public class Information {
 
         //buffered image to hold the image    
         BufferedImage Img = null;
+       
+        //error handler to catch errors which occour while retriving and img from the resources 
+        try { 
 
-        try {
-//    
-            System.out.println(getClass().getResource(urls.get(i)));
-
-            //selects an url from the arraylist and searchs the resoures for it 
+            //selects an url from the arraylist, and searchs the resoures for the img with thet url
+            
             URL url = getClass().getResource(urls.get(i));
 
 //           //reads an image from the url provided 
@@ -78,7 +77,7 @@ public class Information {
 //
         }//end of try
         catch (IOException e) {
-            // Exception is due to the image not being found 
+            // Exception error is caused, due to the image not being found 
             System.out.println("An error occoured");
             System.out.print(e);
 
