@@ -364,18 +364,18 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                * also make sure that they correspond to the imgSelector value which your section is asinged,
                * i.e. each section is given 10 images, so platicImgSlector starts at 32 which is the first img, and 32 + 10 is the last image.
             */
-            ArrayList<String> info = new ArrayList<String>() {
+           ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("W");
-                    add("O");
-                    add("O");
-                    add("D");
-                    add("G");
-                    add("o");
-                    add("E");
-                    add("s");
-                    add("here");
-                    add(":)");
+                    add("<html>Hardwood trees- are desiduous(do lose their leaves in winter) and take a long time to grow </html>");
+                    add("<html>There are two types: native and non-native. Native trees- Oak, Elm Beech and Ash. Non-native trees- Mahogony, Teak and Ebony.</html>");
+                    add("<html>Softwood trees- are Evergreen(dont lose their leaves in the Winter) and have small waxy leaves like needles.</html>");
+                    add("<html>They grow very quickly and are cheaper than Hardwoods. Softwoods tree's: Pine, Cedus, Spruce, Yew, and Red Ceal</html>");
+                    add("<html>Manufactured Wood- Are much cheaper than real wood and comes in big sheets</html>");
+                    add("<html>They have no wood grains and so are sometimes stronger than real wood, they also use up waste wood.</html>");
+                    add("<html>Types of Manufactured wood: MDF- Medium density fibrewood; is made up of wood fibres sticking together</html>");
+                    add("<html>Plywood- Is made up by sticking together layers of wood. Each layer has its grain in the opposite direction</html>");
+                    add("<html>Plywood is very strong</html>");
+                    add("<html>Chipboard- Is made by glueing and compressing together thousands of pieces of wood under heat and pressure</html>");
                 }
             };
             woodInfo.setInfo(info);
@@ -465,9 +465,9 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("<html>Oscilloscopes are used to observe the change of an electrical signal over time.</html>");
-                    add("<html>A multimeter or a multitester, also known as a VOM (Volt-Ohm meter or Volt-Ohm-milliammeter ), is an electronic measuring instrument that combines several measurement functions in one unit.</html>");
+                    add("<html>The observed waveform can be analyzed for such properties as amplitude, frequency, rise time, time interval, distortion and others.</html>");
                     add("<html>A frequency counter is an electronic instrument, or component of one, that is used for measuring frequency. Frequency is defined as the number of events of a particular sort occurring in a set period of time.</html>");
-                    add("<html>A logic probe is a hand-held pen-like test probe used for analyzing and troubleshooting the logical states (Boolean 0 or 1) of a digital circuit.</html>");
+                    add("<html>A multimeter or a multitester, also known as a VOM (Volt-Ohm meter or Volt-Ohm-milliammeter ), is an electronic measuring instrument that combines several measurement functions in one unit. A typical multimeter would include basic features such as the ability to measure voltage, current, and resistance.</html>");
                     add("<html>A pulse generator is either an electronic circuit or a piece of electronic test equipment used to generate rectangular pulses. This article describes the test equipment.</html>");
                     add("<html>A digital pattern generator is a piece of electronic test equipment or software used to generate digital electronics stimuli. Digital electronics stimuli are a specific kind of electrical waveform varying between two conventional voltages that correspond to two logic states (‘low state’ and ‘high state’, ‘0’ and ‘1’).</html>");
                     add("<html>A spectrum analyzer measures the magnitude of an input signal versus frequency within the full frequency range of the instrument. The primary use is to measure the power of the spectrum of known and unknown signals.</html>");
@@ -569,8 +569,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         }else{
             System.out.println("Error occoured, invaild option");
         }
-            
-        System.out.println("index:" + count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
