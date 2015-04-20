@@ -135,11 +135,9 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         add(imageChangeLbl);
         imageChangeLbl.setBounds(10, 50, 370, 140);
         add(infoLbl);
-<<<<<<< HEAD
         infoLbl.setBounds(10, 226, 380, 160);
-=======
         infoLbl.setBounds(10, 216, 380, 190);
->>>>>>> origin/master
+
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
