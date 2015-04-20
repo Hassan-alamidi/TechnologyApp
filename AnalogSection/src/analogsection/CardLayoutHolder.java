@@ -37,11 +37,9 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         AnalogHangmanPanel screen2Card = new AnalogHangmanPanel ();
         QuizScreen screen3Card = new QuizScreen();
         InformationGUIAllSections screen4Card  = new  InformationGUIAllSections();
-        AnalogDiganosticGUIPanel screen5Card = new AnalogDiganosticGUIPanel();
         AnalogResistorCalcPanel screen6Card = new  AnalogResistorCalcPanel();
         AnalogResistorCalc5band screen7Card = new  AnalogResistorCalc5band();
         AnalogResistorCalc6band screen8Card = new AnalogResistorCalc6band();
-        AnalogComponentsPanel screenCompCard = new AnalogComponentsPanel();
         AnalogInfoMainScreen screenInfoCard = new  AnalogInfoMainScreen();
         AnalogWavesScreen screenWavesCard = new AnalogWavesScreen();
         
@@ -53,7 +51,6 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         
         
         // All of the cards(Screens) in the plastic section 
-        PlasticInfoGUI screen9Card = new PlasticInfoGUI();
         PlasticMainGUI screen10Card = new PlasticMainGUI();
         PlasticQuizGUI screen11Card = new PlasticQuizGUI();
         //All of the cards(Screens) in the digital section 
@@ -78,11 +75,9 @@ public class CardLayoutHolder extends javax.swing.JFrame {
         cardsContainer.add(screen2Card, "AnalogHangmanScreen");
         cardsContainer.add(screen3Card, "QuizScreen");
         cardsContainer.add(screen4Card, "AnalogInfoScreen");
-        cardsContainer.add(screen5Card, "AnalogDiagnosticScreen");
         cardsContainer.add(screen6Card, "AnalogCalcScreen");
         cardsContainer.add(screen7Card, "Analog5bandCalcScreen");
         cardsContainer.add(screen8Card, "Analog6bandCalcScreen");
-        cardsContainer.add(screenCompCard, "AnalogCompScreen");
         cardsContainer.add(screenInfoCard, "AnalogInfoMainScreen");
         cardsContainer.add(screenWavesCard, "AnalogWavesScreen"); 
         
@@ -90,7 +85,7 @@ public class CardLayoutHolder extends javax.swing.JFrame {
       
 
         //adds all of the plastic cards to the container: 
-        cardsContainer.add(screen9Card, "PlasticInfoScreen");
+       
         cardsContainer.add(screen10Card, "PlasticMainScreen");
         cardsContainer.add(screen11Card, "PlasticQuizScreen");
         //adds all of the Wood cards(screens) to the contanier:
