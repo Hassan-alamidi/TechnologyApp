@@ -6,8 +6,8 @@ package analogsection;
  * @author Stephen
  */
 /*
- * This class is a subclass of 5bandCalc with extends 4BandCalc class,
- * And uses polmorphism to overide and change the functionallity 
+ * This class is a subclass of 5bandCalc which is derived from the 4BandCalc class,
+ * And adds functionallity tot the class. 
  */
 public class resistorBand6Calc extends ResistorCalc5band {
 

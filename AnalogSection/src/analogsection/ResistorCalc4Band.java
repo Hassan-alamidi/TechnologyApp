@@ -278,16 +278,10 @@ public class ResistorCalc4Band {
     public void convertToKilohm() {
         if(valueResistor  < 100){
             conversion = String.valueOf(valueResistor);
-//            substrK = conversion.substring(0, 1);
-//            substrH = conversion.substring(2, 3);
-//            convertkilohm = substrK + "." + substrH + "" + "ohms";
-              convertkilohm =  conversion + " "+ "ohms";
+            convertkilohm =  conversion + " "+ "ohms";
         }else if(valueResistor  > 99 && valueResistor < 1000) {
             conversion = String.valueOf(valueResistor);
-           // substrK = conversion.substring(0, 1);
-           // substrH = conversion.substring(1, 3);
-          //  convertkilohm = substrK + "." + substrH + "" + "ohms";
-             convertkilohm =  conversion + " " + "ohms";
+            convertkilohm =  conversion + " " + "ohms";
         }else if (valueResistor > 999 && valueResistor < 10000) {
             conversion = String.valueOf(valueResistor);
             substrK = conversion.substring(0, 1);
@@ -312,8 +306,7 @@ public class ResistorCalc4Band {
             substrH = conversion.substring(1, 3);
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is greater to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } //Converts scientfic notation number, into digtial repersentation to be processed
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));
@@ -335,13 +328,9 @@ public class ResistorCalc4Band {
         // converts maximun resistor value to kilohmz
          if(maxValue < 100){
             conversion = String.valueOf(maxValue);
-           // substrK = conversion.substring(0, 1);
-           // substrH = conversion.substring(2, 3);
             maxConverKilohm = conversion + "" + "ohms";
         }else if(maxValue > 99 && maxValue < 1000) {
             conversion = String.valueOf(maxValue);
-           // substrK = conversion.substring(0, 1);
-           // substrH = conversion.substring(1, 3);
             maxConverKilohm = conversion + "" + "ohms";
         } else if (maxValue > 999 && maxValue < 10000) {
             conversion = String.valueOf(maxValue);
@@ -367,8 +356,7 @@ public class ResistorCalc4Band {
             substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger to be repersented in digital form
-         //so it's store it in a decimal format and then converted to a string  
+        }//Converts scientfic notation number, into digtial repersentation to be processed
         else if (maxValue >= 10000000 && maxValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f",maxValue));
@@ -388,17 +376,13 @@ public class ResistorCalc4Band {
             maxConverKilohm= substrK + "." + substrH + "M" + "ohms";
 
         }
-        // error first if index out of range 
+       
         //converts the minium resistor value to kiloohmz
          if(minValue  < 100){
             conversion = String.valueOf(minValue);
-           // substrK = conversion.substring(0, 1);
-           // substrH = conversion.substring(2, 3);
             minConverKilohm = conversion + "" + "ohms";
         }else if (minValue > 99 && minValue < 1000) {
             conversion = String.valueOf(minValue);
-          //  substrK = conversion.substring(0, 1);
-          //  substrH = conversion.substring(1, 3);
             minConverKilohm = conversion + "" + "ohms";
         } else if (minValue > 999 && minValue < 10000) {
             conversion = String.valueOf(minValue);
@@ -424,8 +408,7 @@ public class ResistorCalc4Band {
             substrH = conversion.substring(1, 3);
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } //Converts scientfic notation number, into digtial repersentation to be processed
         else if (minValue >= 10000000 && minValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
@@ -444,6 +427,8 @@ public class ResistorCalc4Band {
 
         }
    }
+    //saves to a file and if not found creates one,
+    //Also error catchs, to find any errors while saving to file
     public void SaveToFile() {
         try {
             FileWriter fw = new FileWriter(f);
@@ -457,6 +442,8 @@ public class ResistorCalc4Band {
         }
 
     }
+    //reads from the file, one saved calculation at a time.
+    //And also error catches to find errors occoured while reading from the file.
     public String ReadFromFile() {
 
         try {

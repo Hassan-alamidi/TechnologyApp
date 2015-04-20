@@ -34,8 +34,8 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
     private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,imgSelectorAnaComp,imgSelectorAnaSignals,imgSelectorDiagTools ,imgSelectorDigit,i ;
     protected static int infoSelected;
     private ArrayList <String> info;
-  //  private Image displayedImg;
     private ImageIcon ImgDisplayedLbl;
+    //constructor to initalise variables
     public InformationGUIAllSections() {
         initComponents();
         this.setSize(400,450);
@@ -143,8 +143,8 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-//        * A series of if statements checking which panel to go back to,
-//        * The imgSelector variable will determine which
+//        * A series of if statements checking which uses,
+//        * The imgSelector variable to determine which
 //        * Screen to terevers back to.
         
         //Resets the image holder label to have no imageIco when reset
@@ -212,7 +212,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
            LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "digital");
+            cl.show(getParent(), "DigitalInformationScreen");
         }
       }else if(Information.getInfoType() == 9){
            LayoutManager layout = getParent().getLayout();
@@ -236,6 +236,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
+            
             // * anonymous inner class, to populate the info array.
             // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
             // * anonymous inner class extends the class of the object being constructed and has a "This." 
@@ -246,22 +247,23 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("<html> Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. Ohm found that, at a constant temperature, the electrical current flowing through a fixed linear resistance is directly proportional to voltage applied across it, and also inversely proportional to the resistance.</html>");
+                    add("<html>Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. Ohm found that, at a constant temperature, the electrical current flowing through a fixed linear resistance is directly proportional to voltage applied across it, and also inversely proportional to the resistance.</html>");
                     add("<html>The Ohms law Triangle, is an equation which is used to work out the Voltage, Current, and Resistance of an circuit. And then By using ohms law which is Current(I) = Voltage(V) / Resistance(R) in Amperes(A).</html>");
                     add("<html>Ohms Law Example: Voltage [V = I X R] = 2 * 12ohm = 24V, Current [I = V / R] = 24 / 12ohm = 2A, Resistance [R = V / I] = 24 </html>");
-                    add("<html> Electromagnetism is produced when an electrical current through a simple conductor such as a piece of wire cable. A samll magnetic filed is created around the conductor with the direction of this magnetic field with regards to its North and South, poles being determind by the direction of the current flowing through the conductor. </html>");
-                    add("<html> Magnetic flux, all magnetic's have two regions called magnetic poles with the magnetism </html>");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used direct the flow of current");
+                    add("<html>Electromagnetism is produced when an electrical current through a simple conductor such as a piece of wire cable. A samll magnetic filed is created around the conductor with the direction of this magnetic field with regards to its North and South, poles being determind by the direction of the current flowing through the conductor. </html>");
+                    add("<html>Magnetic flux, all magnetic's have two regions called magnetic poles with the magnetism both in an around a magnetic circuit producing a definite chain of organised and balanced patteren of invisible lines flux around it. The shape of this magnetic field in some parts than others with the area of the magnet that has the greatest magnetism being called poles. At each end of the magnet is a pole. </html>");
+                    add("<html> We now know that the lines of force or more commonly the magnetic flux around a magnetic material is given the Greek symbol, Phi, ( Φ ) with the unit of flux being the Weber, ( Wb ) after Wilhelm Eduard Weber. But the number of lines of force within a given unit area is called the “Flux Density” and since flux ( Φ ) is measured in ( Wb ) and area ( A ) in metres squared, ( m2 ), flux density is therefore measured in Webers/Metre2 or ( Wb/m2 ) and is given the symbol B.However, when referring to flux density in magnetism, flux density is given the unit of the Tesla after Nikola Tesla so therefore one Wb/m2 is equal to one Tesla, 1Wb/m2 = 1T. Flux density is proportional to the lines of force and inversely proportional to area so we can define Flux Density as: </html>");
+                    add("<html> Magnetism Example: The amount of flux present in a round magnetic bar was measured at 0.013 webers. If the material has a diameter of 12cm, calculate the flux density. The cross sectional area of the magnetic material in m2 is given as: </html>");
+                    add("<html> The magnetic flux is given as 0.013 webers, therefore the flux density can be calculated as shown above. So the flux density is calculated as 1.15 Teslas. </html> ");
+                    add("<html> Hall Effect Sensors consist basically of a thin piece of rectangular p-type semiconductor material such as gallium arsenide (GaAs), indium antimonide (InSb) or indium arsenide (InAs) passing a continuous current through itself. When the device is placed within a magnetic field, the magnetic flux lines exert a force on the semiconductor material which deflects the charge carriers, electrons and holes, to either side of the semiconductor slab. This movement of charge carriers is a result of the magnetic force they experience passing through the semiconductor material </html> ");
+                    add("<html>As these electrons and holes move side wards a potential difference is produced between the two sides of the semiconductor material by the build-up of these charge carriers. Then the movement of electrons through the semiconductor material is affected by the presence of an external magnetic field which is at right angles to it and this effect is greater in a flat rectangular shaped material. The effect of generating a measurable voltage by using a magnetic field is called the Hall Effect after Edwin Hall who discovered it back in the 1870’s with the basic physical principle underlying the Hall effect being Lorentz force. To generate a potential difference across the device the magnetic flux lines must be perpendicular, (90o) to the flow of current and be of the correct polarity, generally a south pole. </html>");
                 }
             };
 
-
+          //set the array 
             analogInfo.setInfo(info);
-
+       //checks to see if the info selector, and img selector are less then 10, 
+      // to avoid them becoming out of bounds.
             if (count < 10 && imgSelector < 10) {
                 analogInfo.setImageUsed(imgSelector);
                 analogInfo.setUrls();
@@ -388,30 +390,25 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
             }
         } else if (infoSelected == 5) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+           //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>Transformers are used to step-up the voltage, or step-down the voltage of AC current. They are used in house's to step-down the voltge of mains to make it suitable for household device's</html>");
+                    add("<html>They are used in house's to step-down the voltge of mains to make it suitable for household device's </html>");
+                    add("<html>A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits.</html>");
+                    add("<html>Resistor values are measured using color codes, each color repersents an value.");
+                    add("<html>To calculate the resistor value, the following formula is used: digit1,digit2 * multiplier = Resistor value. To find the tolerance = Resistor value * (tolerance/100) </html>");
+                    add("<html>Example:digit1 = brown= 1, digit2 = red = 2, multiplier = orange = 1000, tolerance = none = 20%. Resistor Value = 12 * 1000 = 12000, tolerance = 12000 * (20/100) = 2400, Max tolerance = 2400 + 12000 = 14400, Min tolerance = 2400 - 12000 = 9600 </html>");
+                    add("<html>A transistor is a semiconductor device used to amplify and switch electronic signals and electrical power. It is composed of semiconductor material with at least three terminals for connection to an external circuit.</html> ");
+                    add("<html>A diode is a specialized electronic component with two electrodes called the anode and the cathode.</html> ");
+                    add("<html>Light Emitting Diode (LED) </html>");
+                    add("<html>is a two-lead semiconductor light source. It is a pn-junction diode, which emits light when activated.[4] When a suitable voltage is applied to the leads, electrons are able to recombine with electron holes within the device, releasing energy in the form of photons. This effect is called electroluminescence, and the color of the light (corresponding to the energy of the photon) is determined by the energy band gap of the semiconductor.</html> </html>");
                 }
             };
             
             analogComp.setInfo(info);
 
-            if (count < 10 && imgSelectorAnaComp < 53) {
+            if (count < 10 && imgSelectorAnaComp <= 53) {
                 //imgSelector = 0;
                 analogComp.setImageUsed(imgSelectorAnaComp);
                 analogComp.setUrls();
@@ -430,20 +427,22 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>In Electronic Circuits we need to produce many different types, frequencies and shapes of Signal Waveforms such as Square Waves, Rectangular Waves, Triangular Waves, Sawtoothed Waveforms and a variety of pulses and spikes.These types of signal waveform can then be used for either timing signals, clock signals or as trigger pulses. However, before we can begin to look at how the different types of waveforms are produced, we firstly need to understand the basic characteristics that make up Electrical Waveforms.</html>");
+                    add("<html>Technically speaking, Electrical Waveforms are basically visual representations of the variation of a voltage or current over time. In plain English this means that if we plotted these voltage or current variations on a piece of graph paper against a base (x-axis) of time, ( t ) the resulting plot or drawing would represent the shape of a Waveform as shown. There are many different types of electrical waveforms available but generally they can all be broken down into two distinctive groups.</html>");
+                    add("<html>1. Uni-directional Waveforms   –  these electrical waveforms are always positive or negative in nature flowing in one forward direction only as they do not cross the zero axis point. Common uni-directional waveforms include Square-wave timing signals, Clock pulses and Trigger pulses. 2. Bi-directional Waveforms   –  these electrical waveforms are also called alternating waveforms as they alternate from a positive direction to a negative direction constantly crossing the zero axis point. Bi-directional waveforms go through periodic changes in amplitude, with the most common by far being the Sine-wave.</html>");
+                    add("<html>For sine wave waveforms only, we can also express the periodic time of the waveform in either degrees or radians, as one full cycle is equal to 360o ( T = 360o ) or in Radians as 2pi, 2π ( T = 2π ), then we can say that  2π radians = 360o – ( Remember this! ).</html>");
+                    add("<html>Square-wave Waveforms are used extensively in electronic and micro electronic circuits for clock and timing control signals as they are symmetrical waveforms of equal and square duration representing each half of a cycle and nearly all digital logic circuits use square wave waveforms on their input and output gates.</html>");
+                    add("<html>Unlike sine waves which have a smooth rise and fall waveform with rounded corners at their positive and negative peaks, square waves on the other hand have very steep almost vertical up and down sides with a flat top and bottom producing a waveform which matches its description, – “Square” as shown below.</html>");
+                    add("<html>Triangular Waveforms are generally bi-directional non-sinusoidal waveforms that oscillate between a positive and a negative peak value. Although called a triangular waveform, the triangular wave is actually more of a symmetrical linear ramp waveform because it is simply a slow rising and falling voltage signal at a constant frequency or rate. The rate at which the voltage changes between each ramp direction is equal during both halves of the cycle as shown below.</html>");
+                    add("<html>Sawtooth Waveforms are another type of periodic waveform. As its name suggests, the shape of the waveform resembles the teeth of a saw blade. Sawtoothed waveforms can have a mirror image of themselves, by having either a slow-rising but extremely steep decay, or an extremely steep almost vertical rise and a slow-decay </html>");
+                    add("<html>A Pulse is a waveform or signal in its own right. It has very different Mark-to-Space ratio compared to a high frequency square wave clock signal or even a rectangular waveform.The purpose of a “Pulse” and that of a trigger is to produce a very short signal to control the time at which something happens for example, to start a Timer, Counter, Monostable or Flip-flop etc, or as a trigger to switch “ON” Thyristors, Triacs and other power semiconductor devices.</html> ");
+                    add("<html>An analogue to digital converter is used to convert an analog signal to an digital repersentation </html>");
                 }
             };
 
             analogSignals.setInfo(info);
+             //checks to see if the info selector, and imag selector are less than last image and info text, 
+            // to avoid the arrays becoming out of bounds.
             if(count < 10 && imgSelectorAnaSignals < 65) {
                 analogSignals.setImageUsed(imgSelectorAnaSignals);
                 analogSignals.setUrls();
@@ -456,30 +455,30 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoDisplayed = analogSignals.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
             }
 
         }//end of slector if
          else if (infoSelected == 7) {
-            // anonymous inner class, to set the info
+            // anonymous inner class, to populate the info array.
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                   add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>Oscilloscopes are used to observe the change of an electrical signal over time.</html>");
+                    add("<html>A multimeter or a multitester, also known as a VOM (Volt-Ohm meter or Volt-Ohm-milliammeter ), is an electronic measuring instrument that combines several measurement functions in one unit.</html>");
+                    add("<html>A frequency counter is an electronic instrument, or component of one, that is used for measuring frequency. Frequency is defined as the number of events of a particular sort occurring in a set period of time.</html>");
+                    add("<html>A logic probe is a hand-held pen-like test probe used for analyzing and troubleshooting the logical states (Boolean 0 or 1) of a digital circuit.</html>");
+                    add("<html>A pulse generator is either an electronic circuit or a piece of electronic test equipment used to generate rectangular pulses. This article describes the test equipment.</html>");
+                    add("<html>A digital pattern generator is a piece of electronic test equipment or software used to generate digital electronics stimuli. Digital electronics stimuli are a specific kind of electrical waveform varying between two conventional voltages that correspond to two logic states (‘low state’ and ‘high state’, ‘0’ and ‘1’).</html>");
+                    add("<html>A spectrum analyzer measures the magnitude of an input signal versus frequency within the full frequency range of the instrument. The primary use is to measure the power of the spectrum of known and unknown signals.</html>");
+                    add("<html>An ammeter is a measuring instrument used to measure the electric current in a circuit.</html>");
+                    add("<html>RF energy may be challenging to measure for one or more reasons, depending on the nature of the circuit to be measured and the measuring equipment at hand.</html>");
+                    add("<html>A test probe (test lead, test prod, or scope probe) is a physical device used to connect electronic test equipment to a device under test (DUT). </html>");
+                   
                 }
             };
 
             analogDiag.setInfo(info);
             
-            //not working 
+            
             if (count < 10 && imgSelectorDiagTools  < 74) {
                 analogDiag.setImageUsed(imgSelectorDiagTools);
                 analogDiag.setUrls();
@@ -492,20 +491,15 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoDisplayed = analogDiag.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
+            
             }
 
         }//end of slector if
          else if (infoSelected == 8) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+         //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                   add("A capacitor stores and releases charge");
+                    add("A capacitor stores and releases charge");
                     add("Electrons are used in batteries");
                     add("There are many different electronic signals");
                     add("ADC are used to convert analog signals to digital repersentation");
@@ -521,7 +515,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
              digitalComp.setInfo(info);
 
             if (count < 10 && imgSelectorAnaComp < 53) {
-                //imgSelector = 0;
                 digitalComp.setImageUsed(imgSelectorAnaComp);
                 digitalComp.setUrls();
                 ImgDisplayedLbl = digitalComp.AddImageUsingURLS();
@@ -536,12 +529,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 9) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+           //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("A capacitor stores and releases charge");

@@ -34,7 +34,11 @@ public class AnalogQuiz extends Quiz {
          //the next two rows or containers are your chosen incorrect answers these work the same as the previous rows/containers
          //the last row/container is what radio button you want your correct answer to be in this must be either a,b or c other wise you will get an error
          //all containers must contain 20 values
-         QandA = new String[][]{{"what is a resistor used for?","what is a diode used for","what dose A.C stand for","Which of the following statements does NOT describe an advantage of digital technology?","e","f","g","h","a","j","k","l","m","n","o","p","q","r","s","t"},{"restrict the flow of current","to direct the flow of electricty","Alternating current","The values may vary over a continuous range.","e","f","g","h","a","j","k","l","m","n","o","p","q","r","s","t"},{"to connect up components","to connect up components","abstract current","The circuits are less affected by noise.","wrong 5","wrong 6","wrong 7","wrong 8","wrong 9","wrong 10","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 20"},{"to divert current","as a logic chip","alternating cult","The operation can be programmed.","wrong 5","wrong 6","wrong 7","wrong 8","wrong 9","wrong 10","wrong 11","wrong 12","wrong 13","wrong 14","wrong 15","wrong 16","wrong 17","wrong 18","wrong 19","wrong 29"},{"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"}};
+         QandA = new String[][]{{"who is omhs law named after ?","What is Ohms law Triangle ?","Voltage = , I = 3, R = 2. Work out the circuit voltage? ","Which is an correct pole of an magnet?","Does a resistor store electrons?","State omhs law?","What Step-up transformers used for?","What down-up transformers used for?","Resistor values are measured using?","digit1 = brown= 1, digit2 = red = 2, multiplier = orange = 1000, tolerance = none = 20%, calulate the resistor value?","A transistor?","What does LED stand for?","Which is an Analog Signal?","Which isn't an Analog signal?","Oscilloscopes are used for?","A multimeter is ?","logic probe is a ?","Transistor is used in the house for?","Resistor values are measured with?"},
+             {"Georg ohm","equation","Voltage = 5V","South","no"," Current(I) = Voltage(V) / Resistance(R) in Amperes(A)","Higher voltage","Lower voltage","ohms","12000ohms","Is used to amplify signals","Light Emitting Diode","Square","Saw-tooth","to observe the change of an electrical signal","electronic measuring instrument","troubleshooting tool","To Step-down the Mains voltage","color codes","Analog to digital converter"},
+             {"Paul ohm","Necklace","Voltage = 50V","East","yes","Current(I) = Voltage(V)","Lower voltage","Increase Voltage","Farads","50ohms","decrease signals","Light Eats Diodes","Round","circle","To hear the change of an electrical signal","Small vechicle","measuring tool","To step-up the mains voltage","code","Aniode To Diode"},
+             {"John doe ohm","Restruant","Voltage = 12V","West","Resistance(R) = V + I + R","Stop Voltage","Mulitply voltage","Amps","500ohms","Show signals","Lighting Emitting Diode","rectangle","triangle","To smell the change of an electrical signal","Musical instrument","type of drill","Stop the mains voltage","voltage", "Car","Analog To Digitlizer"},
+             {"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"}};
          //question = new String[]{"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"};
         // correctAnswer = new String[]{"b","a","a","c","a","c","b","a","c","c","b","c","b","a","a","b","b","c","a","c"};
         }
@@ -47,8 +51,8 @@ public class AnalogQuiz extends Quiz {
           {
               //initilizes obj
                obj = new QuestionObj();
-               //saves the values of the question going to be asked
-               //values being declared inside loop as they are not needed outside loop there for they will not be there outside of the loop
+              //saves the values of the question going to be asked
+              //values being declared inside loop as they are not needed outside loop there for they will not be there outside of the loop
               int i = 0;
               //randomValue and binarayValue claims its not being used because it cannot see inside the do while loop
               //randomValue stores value revieved from rand.next

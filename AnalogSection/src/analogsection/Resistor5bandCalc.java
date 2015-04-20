@@ -320,8 +320,7 @@ public class Resistor5bandCalc {
             substrH = conversion.substring(1, 3);
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is greater to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        }
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));

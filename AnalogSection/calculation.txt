@@ -1,2 +1,2 @@
-formula:43x1000.0=43.00Kohms
- Find tolerance: 43000.0 *20.0 / 100 = 8600.0
+formula:450x10000.0=4.50Mohms
+ Find tolerance: 4500000.0 *1.0 / 100 = 45000.0
