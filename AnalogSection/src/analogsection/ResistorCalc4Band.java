@@ -60,7 +60,7 @@ public class ResistorCalc4Band {
 
     
 
-    //setters to set the band values 
+    //setters to set the band values,from the user's selected band colors.
     public void setBand1(String band1) {
         this.band1 = band1;
     }
@@ -76,7 +76,7 @@ public class ResistorCalc4Band {
     public void setBand4(String band4) {
         this.band4 = band4;
     }
-     //methods to assign values for each of the color bands 
+     //methods to assign values for each of the color bands or the resistor
     public void AssignValues() {
 
         switch (band1) {
@@ -247,7 +247,7 @@ public class ResistorCalc4Band {
     /*
       * Calculates the total percentage value of tolerance,
       * calc's the max value, and min value of tolorance, from the total percent.
-      * this tells,the total tolerance inwhich the resistor can stand.
+      * this tells,the total tolerance inwhich the resistor can with stand.
     */
     public void CalcToloerance() {
         
