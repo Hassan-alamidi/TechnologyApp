@@ -119,15 +119,15 @@ public class QuizScreen extends javax.swing.JPanel {
             }
         });
         add(jRadioButton1);
-        jRadioButton1.setBounds(20, 240, 370, 21);
+        jRadioButton1.setBounds(20, 231, 370, 30);
 
         buttonGroup1.add(jRadioButton2);
         add(jRadioButton2);
-        jRadioButton2.setBounds(20, 290, 370, 21);
+        jRadioButton2.setBounds(20, 290, 370, 30);
 
         buttonGroup1.add(jRadioButton3);
         add(jRadioButton3);
-        jRadioButton3.setBounds(20, 340, 370, 21);
+        jRadioButton3.setBounds(20, 340, 370, 30);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Chose one of the following anwser's then press next to submit:");
@@ -188,7 +188,7 @@ public class QuizScreen extends javax.swing.JPanel {
 
         titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
         titleLbl.setForeground(new java.awt.Color(255, 255, 255));
-        titleLbl.setText("Test you knowledge");
+        titleLbl.setText("Test your knowledge");
         add(titleLbl);
         titleLbl.setBounds(90, 0, 200, 40);
 
@@ -213,6 +213,7 @@ public class QuizScreen extends javax.swing.JPanel {
         jRadioButton2.setVisible(true);
         jRadioButton1.setVisible(true);
         Startbtn.setVisible(true);
+        scorebtn.setVisible(true);
         counter = 0;
         if(page == 1)
         {
