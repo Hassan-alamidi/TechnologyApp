@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/analogsection/AnalogQuiz.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>36</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/AnalogSection.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/resistorBand6Calc.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/CardLayoutHolder.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/AnalogQuiz.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/ResistorCalc4Band.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/AnalogResistorCalcPanel.java</file>
-            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/Resistor5bandCalc.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/DigitalGeneralInformation.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/AnalogResistorCalc5band.java</file>
-            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/ResistorCalc6band.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/InformationGUIAllSections.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/AnalogResistorCalc6band.java</file>
             <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/Information.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/PlasticMainGUI.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/Resistor5bandCalc.java</file>
+            <file>file:/Users/Sean/Documents/TechnologyApp/AnalogSection/src/analogsection/ResistorCalc5band.java</file>
         </group>
     </open-files>
 </project-private>
