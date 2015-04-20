@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package analogsection;
 
 
@@ -38,8 +34,8 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
     private int count,imgSelector,imgSelectorDigital,imgSelectorPlastic,imgSelectorWood,imgSelectorAnaComp,imgSelectorAnaSignals,imgSelectorDiagTools ,imgSelectorDigit,i ;
     protected static int infoSelected;
     private ArrayList <String> info;
-  //  private Image displayedImg;
     private ImageIcon ImgDisplayedLbl;
+    //constructor to initalise variables
     public InformationGUIAllSections() {
         initComponents();
         this.setSize(400,450);
@@ -108,7 +104,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
         });
         add(exitBtn);
-        exitBtn.setBounds(220, 390, 150, 40);
+        exitBtn.setBounds(240, 410, 150, 40);
 
         titleLbl.setFont(new java.awt.Font("Apple Chancery", 1, 18)); // NOI18N
         titleLbl.setText("Information");
@@ -137,9 +133,13 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         add(nextBtn);
         nextBtn.setBounds(310, 0, 90, 40);
         add(imageChangeLbl);
-        imageChangeLbl.setBounds(90, 50, 280, 140);
+        imageChangeLbl.setBounds(10, 50, 370, 140);
         add(infoLbl);
+<<<<<<< HEAD
         infoLbl.setBounds(10, 226, 380, 160);
+=======
+        infoLbl.setBounds(10, 216, 380, 190);
+>>>>>>> origin/master
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/InformationGUI.png"))); // NOI18N
         add(backgroundLbl);
@@ -147,14 +147,14 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-//        * A series of if statements checking which panel to go back to,
-//        * The imgSelector variable will determine which
+//        * A series of if statements checking which uses,
+//        * The imgSelector variable to determine which
 //        * Screen to terevers back to.
         
         //Resets the image holder label to have no imageIco when reset
         imageChangeLbl.setIcon(null);
         
-        //resets the text to nothing when the information is exited
+        //resets the info labl to have no text when the GUI is exited 
         infoLbl.setText("");
         
          //resets the info slide counter to 0
@@ -186,7 +186,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
           LayoutManager layout = getParent().getLayout();
           if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "PlasticMainGUI");
+            cl.show(getParent(), "PlasticMainScreen");
            }
       }else if(Information.getInfoType() == 4){
             LayoutManager layout = getParent().getLayout();
@@ -216,7 +216,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
            LayoutManager layout = getParent().getLayout();
         if (layout instanceof java.awt.CardLayout) {
             java.awt.CardLayout cl = (java.awt.CardLayout)layout;
-            cl.show(getParent(), "digital");
+            cl.show(getParent(), "DigitalInformationScreen");
         }
       }else if(Information.getInfoType() == 9){
            LayoutManager layout = getParent().getLayout();
@@ -228,46 +228,52 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
         
        
     }//GEN-LAST:event_exitBtnActionPerformed
-
+ 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
 
-     
+        //sets the lbl which stores the image to be seen when the button is pressed     
         imageChangeLbl.setVisible(true);
+        
+        //retrives an static value which is sent from the different GUI's when information is selected,
+        // The value is then used to determine which section's information is to be diplayed to the user.
         infoSelected = Information.getInfoType();
         //error check 
         System.out.println(infoSelected);
         if (infoSelected == 1) {
-            // * anonymous inner class, to set the info.
+            
+            // * anonymous inner class, to populate the info array.
             // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
             // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
+            // * referance to the instance of the object constructed 
             // * Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+            
+            // The html tag is used to wrapp the text in so that, 
+            // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used direct the flow of current");
+                    add("<html>Ohmz law, is the relationship between Voltage, Current and Resistance in any DC circuit, which was discovered by German Georg ohm. Ohm found that, at a constant temperature, the electrical current flowing through a fixed linear resistance is directly proportional to voltage applied across it, and also inversely proportional to the resistance.</html>");
+                    add("<html>The Ohms law Triangle, is an equation which is used to work out the Voltage, Current, and Resistance of an circuit. And then By using ohms law which is Current(I) = Voltage(V) / Resistance(R) in Amperes(A).</html>");
+                    add("<html>Ohms Law Example: Voltage [V = I X R] = 2 * 12ohm = 24V, Current [I = V / R] = 24 / 12ohm = 2A, Resistance [R = V / I] = 24 </html>");
+                    add("<html>Electromagnetism is produced when an electrical current through a simple conductor such as a piece of wire cable. A samll magnetic filed is created around the conductor with the direction of this magnetic field with regards to its North and South, poles being determind by the direction of the current flowing through the conductor. </html>");
+                    add("<html>Magnetic flux, all magnetic's have two regions called magnetic poles with the magnetism both in an around a magnetic circuit producing a definite chain of organised and balanced patteren of invisible lines flux around it. The shape of this magnetic field in some parts than others with the area of the magnet that has the greatest magnetism being called poles. At each end of the magnet is a pole. </html>");
+                    add("<html> We now know that the lines of force or more commonly the magnetic flux around a magnetic material is given the Greek symbol, Phi, ( Φ ) with the unit of flux being the Weber, ( Wb ) after Wilhelm Eduard Weber. But the number of lines of force within a given unit area is called the “Flux Density” and since flux ( Φ ) is measured in ( Wb ) and area ( A ) in metres squared, ( m2 ), flux density is therefore measured in Webers/Metre2 or ( Wb/m2 ) and is given the symbol B.However, when referring to flux density in magnetism, flux density is given the unit of the Tesla after Nikola Tesla so therefore one Wb/m2 is equal to one Tesla, 1Wb/m2 = 1T. Flux density is proportional to the lines of force and inversely proportional to area so we can define Flux Density as: </html>");
+                    add("<html> Magnetism Example: The amount of flux present in a round magnetic bar was measured at 0.013 webers. If the material has a diameter of 12cm, calculate the flux density. The cross sectional area of the magnetic material in m2 is given as: </html>");
+                    add("<html> The magnetic flux is given as 0.013 webers, therefore the flux density can be calculated as shown above. So the flux density is calculated as 1.15 Teslas. </html> ");
+                    add("<html> Hall Effect Sensors consist basically of a thin piece of rectangular p-type semiconductor material such as gallium arsenide (GaAs), indium antimonide (InSb) or indium arsenide (InAs) passing a continuous current through itself. When the device is placed within a magnetic field, the magnetic flux lines exert a force on the semiconductor material which deflects the charge carriers, electrons and holes, to either side of the semiconductor slab. This movement of charge carriers is a result of the magnetic force they experience passing through the semiconductor material </html> ");
+                    add("<html>As these electrons and holes move side wards a potential difference is produced between the two sides of the semiconductor material by the build-up of these charge carriers. Then the movement of electrons through the semiconductor material is affected by the presence of an external magnetic field which is at right angles to it and this effect is greater in a flat rectangular shaped material. The effect of generating a measurable voltage by using a magnetic field is called the Hall Effect after Edwin Hall who discovered it back in the 1870’s with the basic physical principle underlying the Hall effect being Lorentz force. To generate a potential difference across the device the magnetic flux lines must be perpendicular, (90o) to the flow of current and be of the correct polarity, generally a south pole. </html>");
                 }
             };
 
-
+          //set the array 
             analogInfo.setInfo(info);
-
+       //checks to see if the info selector, and img selector are less then 10, 
+      // to avoid them becoming out of bounds.
             if (count < 10 && imgSelector < 10) {
-                //imgSelector = 0;
                 analogInfo.setImageUsed(imgSelector);
                 analogInfo.setUrls();
                 ImgDisplayedLbl = analogInfo.AddImageUsingURLS();
                 imgSelector++;
-                //Information.setCount(count = 0);
+                
                 analogInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
@@ -277,10 +283,13 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 2) {
-              //Sets the infomation 
-            // anonymous inner class, to set the info
+             
+            // anonymous inner class, to populate the info array
+            // The html tag is used to wrapp the text in so that, 
+            // they automatically wrap to the space available 
             ArrayList<String> info = new ArrayList<String>() {
                 {
+<<<<<<< HEAD
                     add("<html>In electronics their are two types of electrical current<br> A.C which stands for alternating current and <br>D.C which stands for direct current. </html>");
                     add("<html>Digital is a type of signal similar to analog but unlike analog<br> the sginal is not measured in continuous signal which represents<br> physical measurements but rather digital signals are<br> discrete time signals generated by digital modulation basicaly boolian values or on and off signals.<br>Digital electronics have many different applications the most common application today would be computers.</html>");
                     add("<html>In an electronical circuit electricty(electrons) must flow through it in order for the circuit to work.<br> The direction of the current is important it was first believed that electrons flowed from the positive termanal to the negitive which is called conventional current but has now been proven wrong as electrons actually flow from the negitive to positive this is called real current(Electron Flow). In 99% of cases this is not important as electronic components are set up to be used with conventinal current but some industres do take real current into account.</html>");
@@ -291,51 +300,68 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                     add("<html>Resistors are used to restrict the flow of current <br>in a given circuit this resistance is measured in Ohms</html>");
                     add("<html>An analog to digital converter<br> recieves an analog signal and converts it to digital format</html>");
                     add("<html>Diode is used direct the flow of current.<br> There are many types of diodes that are more suitable in<br> different situations the most commently known diode would be the<br> LED(Light emmiting Diode) which not only directs the flow of current<br> but in most cases emits a visible light unless the led is<br> infrared then the light my not be seen by the human eye.</html>");
+=======
+                    add("<html> A capacitor stores and releases charge gngngngngngn </html>");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+                    add("Resistors are used to restrict the flow of current");
+                    add("Resistors are measured in ohms");
+                    add("breadbords are used for creating circuits");
+                    add("A.C stands for alternating current ");
+                    add("D.C stands for direct current ");
+                    add("Diode is used direct the flow of current");
+>>>>>>> origin/master
                 }
             };
-
+            //sets the info array
             digitalInfo.setInfo(info);
            
+            //checks to see if the info selector, and imag selector are less then 10, 
+            // to avoid them becoming out of bounds.
             if (count < 10 && imgSelector < 10) {
                 digitalInfo.setImageUsed(imgSelector);
                 digitalInfo.setUrls();
                 ImgDisplayedLbl = digitalInfo.AddImageUsingURLS();
                 imgSelectorDigital++;
-                //Information.setCount(count = 0);
                 digitalInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
                 infoDisplayed = digitalInfo.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
             }
 
         } else if (infoSelected == 3) {
-            //plastic part
-            //set info here 
+            /*
+               * Plastic part goes here.
+               * Info to popluate the array , and also be sent to the information class for processing,
+               * for the section goes below.
+               * Also make sure that the image's which correspond to your section are in the, src/Resoures folder,
+               * also make sure that they correspond to the imgSelector value which your section is asinged,
+               * i.e. each section is given 10 images, so platicImgSlector starts at 21 which is the first img, and 21 + 10 is the last image.
+            */
             ArrayList<String> info = new ArrayList<String>() {
                 {   
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("Most plastics are made from crude oil");
+                    add("Plastics are a man-made, waterproof material.");
+                    add("There are 2 types of plastics, Thermosetting and Thermoplastics");
+                    add("Thermoplastics can be moulded and shaped in various ways");
+                    add("Thermosetting plastics are strong and resistant to heat");
+                    add("Thermosetting plastics cannot be reshaped");
+                    add("Thermosetting plastics are used in situations where resistant to heat is important");
+                    add("PvC, Acrylic, Polyethylene and Polypropylene are examples of Thermoplastics.");
+                    add("Polyester Resin, Melamine Formaldehyde and phenol Formaldehyde are examples of Thermosetting plastics.");
+                    add("Plastic takes a very long time to decompose");
                 }
             };
-
+            //sends the info to the information class
             plasticInfo.setInfo(info);
-            if (count < 10 && imgSelector < 32) {
-                plasticInfo.setImageUsed(imgSelector);
+            if (count < 10 && imgSelectorPlastic < 32) {
+                plasticInfo.setImageUsed(imgSelectorPlastic);
                 plasticInfo.setUrls();
                 ImgDisplayedLbl = plasticInfo.AddImageUsingURLS();
                 imgSelectorPlastic++;
-                //Information.setCount(count = 0);
                 plasticInfo.setCount(count);
                 count++;
                 imageChangeLbl.setIcon(ImgDisplayedLbl);
@@ -345,8 +371,14 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 4) {
-            //wood part
-            //add info here 
+            /*
+               * Wood section goes here.
+               * Info to popluate the array , and also be sent to the information class for processing,
+               * for the section goes below.
+               * Also make sure that the image's which correspond to your section are in the, src/Resoures folder,
+               * also make sure that they correspond to the imgSelector value which your section is asinged,
+               * i.e. each section is given 10 images, so platicImgSlector starts at 32 which is the first img, and 32 + 10 is the last image.
+            */
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("W");
@@ -375,30 +407,25 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoLbl.setText(infoDisplayed);
             }
         } else if (infoSelected == 5) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+           //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>Transformers are used to step-up the voltage, or step-down the voltage of AC current. They are used in house's to step-down the voltge of mains to make it suitable for household device's</html>");
+                    add("<html>They are used in house's to step-down the voltge of mains to make it suitable for household device's </html>");
+                    add("<html>A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits.</html>");
+                    add("<html>Resistor values are measured using color codes, each color repersents an value.");
+                    add("<html>To calculate the resistor value, the following formula is used: digit1,digit2 * multiplier = Resistor value. To find the tolerance = Resistor value * (tolerance/100) </html>");
+                    add("<html>Example:digit1 = brown= 1, digit2 = red = 2, multiplier = orange = 1000, tolerance = none = 20%. Resistor Value = 12 * 1000 = 12000, tolerance = 12000 * (20/100) = 2400, Max tolerance = 2400 + 12000 = 14400, Min tolerance = 2400 - 12000 = 9600 </html>");
+                    add("<html>A transistor is a semiconductor device used to amplify and switch electronic signals and electrical power. It is composed of semiconductor material with at least three terminals for connection to an external circuit.</html> ");
+                    add("<html>A diode is a specialized electronic component with two electrodes called the anode and the cathode.</html> ");
+                    add("<html>Light Emitting Diode (LED) </html>");
+                    add("<html>is a two-lead semiconductor light source. It is a pn-junction diode, which emits light when activated.[4] When a suitable voltage is applied to the leads, electrons are able to recombine with electron holes within the device, releasing energy in the form of photons. This effect is called electroluminescence, and the color of the light (corresponding to the energy of the photon) is determined by the energy band gap of the semiconductor.</html> </html>");
                 }
             };
             
             analogComp.setInfo(info);
 
-            if (count < 10 && imgSelectorAnaComp < 53) {
+            if (count < 10 && imgSelectorAnaComp <= 53) {
                 //imgSelector = 0;
                 analogComp.setImageUsed(imgSelectorAnaComp);
                 analogComp.setUrls();
@@ -417,20 +444,22 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             // anonymous inner class, to set the info
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                    add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>In Electronic Circuits we need to produce many different types, frequencies and shapes of Signal Waveforms such as Square Waves, Rectangular Waves, Triangular Waves, Sawtoothed Waveforms and a variety of pulses and spikes.These types of signal waveform can then be used for either timing signals, clock signals or as trigger pulses. However, before we can begin to look at how the different types of waveforms are produced, we firstly need to understand the basic characteristics that make up Electrical Waveforms.</html>");
+                    add("<html>Technically speaking, Electrical Waveforms are basically visual representations of the variation of a voltage or current over time. In plain English this means that if we plotted these voltage or current variations on a piece of graph paper against a base (x-axis) of time, ( t ) the resulting plot or drawing would represent the shape of a Waveform as shown. There are many different types of electrical waveforms available but generally they can all be broken down into two distinctive groups.</html>");
+                    add("<html>1. Uni-directional Waveforms   –  these electrical waveforms are always positive or negative in nature flowing in one forward direction only as they do not cross the zero axis point. Common uni-directional waveforms include Square-wave timing signals, Clock pulses and Trigger pulses. 2. Bi-directional Waveforms   –  these electrical waveforms are also called alternating waveforms as they alternate from a positive direction to a negative direction constantly crossing the zero axis point. Bi-directional waveforms go through periodic changes in amplitude, with the most common by far being the Sine-wave.</html>");
+                    add("<html>For sine wave waveforms only, we can also express the periodic time of the waveform in either degrees or radians, as one full cycle is equal to 360o ( T = 360o ) or in Radians as 2pi, 2π ( T = 2π ), then we can say that  2π radians = 360o – ( Remember this! ).</html>");
+                    add("<html>Square-wave Waveforms are used extensively in electronic and micro electronic circuits for clock and timing control signals as they are symmetrical waveforms of equal and square duration representing each half of a cycle and nearly all digital logic circuits use square wave waveforms on their input and output gates.</html>");
+                    add("<html>Unlike sine waves which have a smooth rise and fall waveform with rounded corners at their positive and negative peaks, square waves on the other hand have very steep almost vertical up and down sides with a flat top and bottom producing a waveform which matches its description, – “Square” as shown below.</html>");
+                    add("<html>Triangular Waveforms are generally bi-directional non-sinusoidal waveforms that oscillate between a positive and a negative peak value. Although called a triangular waveform, the triangular wave is actually more of a symmetrical linear ramp waveform because it is simply a slow rising and falling voltage signal at a constant frequency or rate. The rate at which the voltage changes between each ramp direction is equal during both halves of the cycle as shown below.</html>");
+                    add("<html>Sawtooth Waveforms are another type of periodic waveform. As its name suggests, the shape of the waveform resembles the teeth of a saw blade. Sawtoothed waveforms can have a mirror image of themselves, by having either a slow-rising but extremely steep decay, or an extremely steep almost vertical rise and a slow-decay </html>");
+                    add("<html>A Pulse is a waveform or signal in its own right. It has very different Mark-to-Space ratio compared to a high frequency square wave clock signal or even a rectangular waveform.The purpose of a “Pulse” and that of a trigger is to produce a very short signal to control the time at which something happens for example, to start a Timer, Counter, Monostable or Flip-flop etc, or as a trigger to switch “ON” Thyristors, Triacs and other power semiconductor devices.</html> ");
+                    add("<html>An analogue to digital converter is used to convert an analog signal to an digital repersentation </html>");
                 }
             };
 
             analogSignals.setInfo(info);
+             //checks to see if the info selector, and imag selector are less than last image and info text, 
+            // to avoid the arrays becoming out of bounds.
             if(count < 10 && imgSelectorAnaSignals < 65) {
                 analogSignals.setImageUsed(imgSelectorAnaSignals);
                 analogSignals.setUrls();
@@ -443,30 +472,30 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoDisplayed = analogSignals.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
             }
 
         }//end of slector if
          else if (infoSelected == 7) {
-            // anonymous inner class, to set the info
+            // anonymous inner class, to populate the info array.
             ArrayList<String> info = new ArrayList<String>() {
                 {
-                   add("A capacitor stores and releases charge");
-                    add("Electrons are used in batteries");
-                    add("There are many different electronic signals");
-                    add("ADC are used to convert analog signals to digital repersentation");
-                    add("Resistors are like shiedls");
-                    add("Resistors are measured in ohms");
-                    add("breadbords are used for creating circuits");
-                    add("A.C stands for alternating current ");
-                    add("D.C stands for direct current ");
-                    add("Diode is used eract the flow of current");
+                    add("<html>Oscilloscopes are used to observe the change of an electrical signal over time.</html>");
+                    add("<html>A multimeter or a multitester, also known as a VOM (Volt-Ohm meter or Volt-Ohm-milliammeter ), is an electronic measuring instrument that combines several measurement functions in one unit.</html>");
+                    add("<html>A frequency counter is an electronic instrument, or component of one, that is used for measuring frequency. Frequency is defined as the number of events of a particular sort occurring in a set period of time.</html>");
+                    add("<html>A logic probe is a hand-held pen-like test probe used for analyzing and troubleshooting the logical states (Boolean 0 or 1) of a digital circuit.</html>");
+                    add("<html>A pulse generator is either an electronic circuit or a piece of electronic test equipment used to generate rectangular pulses. This article describes the test equipment.</html>");
+                    add("<html>A digital pattern generator is a piece of electronic test equipment or software used to generate digital electronics stimuli. Digital electronics stimuli are a specific kind of electrical waveform varying between two conventional voltages that correspond to two logic states (‘low state’ and ‘high state’, ‘0’ and ‘1’).</html>");
+                    add("<html>A spectrum analyzer measures the magnitude of an input signal versus frequency within the full frequency range of the instrument. The primary use is to measure the power of the spectrum of known and unknown signals.</html>");
+                    add("<html>An ammeter is a measuring instrument used to measure the electric current in a circuit.</html>");
+                    add("<html>RF energy may be challenging to measure for one or more reasons, depending on the nature of the circuit to be measured and the measuring equipment at hand.</html>");
+                    add("<html>A test probe (test lead, test prod, or scope probe) is a physical device used to connect electronic test equipment to a device under test (DUT). </html>");
+                   
                 }
             };
 
             analogDiag.setInfo(info);
             
-            //not working 
+            
             if (count < 10 && imgSelectorDiagTools  < 74) {
                 analogDiag.setImageUsed(imgSelectorDiagTools);
                 analogDiag.setUrls();
@@ -479,23 +508,25 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
                 infoDisplayed = analogDiag.DisplayInfo();
                 infoLbl.setText(infoDisplayed);
 
-                // break;
+            
             }
 
         }//end of slector if
          else if (infoSelected == 8) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+         //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
+<<<<<<< HEAD
                    add("<html>A capacitor is a passive two-terminal electrical component<br> used to store energy electrostatically in an electric field.<br>A capacitor works by storing and releasing charge</html>");
                     add("<html>In electronics, a flip-flop or latch is a circuit that has <br>two stable states and can be used to store state information <br>each flip-flop can store up to 1 bit memory.</html>");
                     add("<html>Resistors are used to restrict the flow of current <br>in a given circuit this resistance is measured in Ohms</html>");
                     add("<html>Diode is used direct the flow of current.<br> There are many types of diodes that are more suitable in<br> different situations the most commently known diode would be the<br> LED(Light emmiting Diode) which not only directs the flow of current<br> but in most cases emits a visible light unless the led is<br> infrared then the light my not be seen by the human eye.</html>");
+=======
+                    add("A capacitor stores and releases charge");
+                    add("Electrons are used in batteries");
+                    add("There are many different electronic signals");
+                    add("ADC are used to convert analog signals to digital repersentation");
+>>>>>>> origin/master
                     add("Resistors are like shiedls");
                     add("Resistors are measured in ohms");
                     add("breadbords are used for creating circuits");
@@ -508,7 +539,6 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
              digitalComp.setInfo(info);
 
             if (count < 10 && imgSelectorAnaComp < 53) {
-                //imgSelector = 0;
                 digitalComp.setImageUsed(imgSelectorAnaComp);
                 digitalComp.setUrls();
                 ImgDisplayedLbl = digitalComp.AddImageUsingURLS();
@@ -523,12 +553,7 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
             }
 
         } else if (infoSelected == 9) {
-           // * anonymous inner class, to set the info.
-            // * anonymous inner class creates an extra class file, which can slow the programs startup, by the extra memory needed
-            // * anonymous inner class extends the class of the object being constructed and has a "This." 
-            // * referance to the instance of the object constructed
-
-            // Referance: http://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization
+           //populates the array
             ArrayList<String> info = new ArrayList<String>() {
                 {
                     add("<html>A multimeter is an electronic measuring instrument<br> that combines several measurement functions in one unit</html>");
@@ -562,14 +587,18 @@ public class InformationGUIAllSections extends javax.swing.JPanel {
 
             }
 
+        }else{
+            System.out.println("Error occoured, invaild option");
         }
             
         System.out.println("index:" + count + "Message:" + infoDisplayed);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-        
+        //Checks to see which type of section info has been selected, and
+        //terverse's backwards through the images, and info text which has been displayed.
+        //Uses's a series of if statments, to only terverse backwards if the counter, is greater than,
+        // or equal to the last img, and info text. this is to keep the selector from being out of bounds of the arrays 
         if (infoSelected == 1) {
             if (count > 0 && imgSelector > 0) {
                 count--;

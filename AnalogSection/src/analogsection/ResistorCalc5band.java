@@ -1,8 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
 package analogsection;
 
 /**
@@ -10,43 +8,22 @@ package analogsection;
  * @author stephen
  */
 
-/* This class will inherit from the 4bandclass and just override, some of the methods 
+/* 
 
- * to add functionallity for the 5 band calc, this will be done for the main project so that 
 
- * It will save lines of code and also will incorperate a key feature of java which is inheritance 
+  * This class inherits from the 4bandCalc, any uses polymorphism to overide the functionallity of the class.
+
 
 */
 
-public class ResistorCalc5band extends ResistorCalc4band {
+public class ResistorCalc5band extends ResistorCalc4Band {
     //variables 
     protected String band5;
     protected int digit3;
-   /* private String valueTotal,minResistorValue, maxResistorValue;
-    private String  conversion, substrK, substrH, convertkilohm, resistorDigits;
-    private int digit1, digit2, percent, resistorColorVals;
-    private double  toloerance, tolrancPercent, multiplier,valueResistor,maxValue,minValue; */
-    
-   /* public ResistorCalc5band(){
-        resistorDigits = "";
-        conversion = "";
-        substrK = "";
-        substrH = "";
-        convertkilohm = "";
-        digit1 = 0;
-        digit2 = 0;
-        percent = 100;
-        resistorColorVals = 0;
-        maxValue = 0.0;
-        minValue = 0.0;
-        toloerance = 0.0;
-        tolrancPercent = 0.0;
-        multiplier = 0.0;
-        valueResistor = 0.0; 
-    } */
+
     /*
      * invokes the superclass's constructor,
-     * saves the need for setters
+     * 
     */
     public ResistorCalc5band(String band1, String band2, String band3,String band4, String band5){   
         super();
@@ -181,11 +158,11 @@ public class ResistorCalc5band extends ResistorCalc4band {
         }
     }
     
+  //overides the compute mehtod in the superclass and extends its functionallity.
     @Override
  public void compute() {
 
-        //resistorDigits = Integer.toString(digit1+digit2);
-        //resistorColorVals = Integer.parseInt(resistorDigits);
+       
         resistorColorVals = Integer.valueOf(String.valueOf(digit1) +  String.valueOf(digit2) +  String.valueOf(digit3));
 
         //error checker 

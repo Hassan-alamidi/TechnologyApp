@@ -1,28 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package analogsection;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author Stephen 
+ * @author Stephen
+ * @Date: 6/3/15
+ * @ ResistorCalc4Band.java
  */
 
-public class ResistorCalc4band {
+public class ResistorCalc4Band {
 
-    //variables 
-
+    //variables
     protected String band1, band2, band3, band4, resistorDigits, conversion, substrK, substrH, convertkilohm,maxConverKilohm,minConverKilohm;
     protected int digit1, digit2, percent, resistorColorVals;
     protected double maxValue, minValue, toloerance, tolrancPercent, multiplier;
     protected double valueResistor;
-
-    public ResistorCalc4band(){
+    protected File f;
+    protected String line;
+   //constructor which is invoked by the subclass
+    public ResistorCalc4Band(){
         resistorDigits = "";
         conversion = "";
         substrK = "";
@@ -42,36 +50,17 @@ public class ResistorCalc4band {
         band2 = "";
         band3 = "";
         band4 = "";
+        f = new File("calculation.txt");
      }
     
-    //constructor which is invoked bu the subclasses 
+   
 
-    /* public ResistorCalc4band(){
-        resistorDigits = "";
-        conversion = "";
-        substrK = "";
-        substrH = "";
-        convertkilohm = "";
-        digit1 = 0;
-        digit2 = 0;
-        percent = 100;
-        resistorColorVals = 0;
-        maxValue = 0.0;
-        minValue = 0.0;
-        toloerance = 0.0;
-        tolrancPercent = 0.0;
-        multiplier = 0.0;
-        valueResistor = 0.0; 
-        band1 = "";
-        band2 = "";
-        band3 = "";
-        band4 = "";
-     }*/
+ 
 
 
     
 
-    //setters to set the band values 
+    //setters to set the band values,from the user's selected band colors.
     public void setBand1(String band1) {
         this.band1 = band1;
     }
@@ -87,7 +76,7 @@ public class ResistorCalc4band {
     public void setBand4(String band4) {
         this.band4 = band4;
     }
-     //methods to assign values for each of the color bands 
+     //methods to assign values for each of the color bands or the resistor
     public void AssignValues() {
 
         switch (band1) {
@@ -244,19 +233,25 @@ public class ResistorCalc4band {
 
     public void compute() {
 
-        //resistorDigits = Integer.toString(digit1+digit2);
-        //resistorColorVals = Integer.parseInt(resistorDigits);
+        /*
+         concatenate's the values of the bands,
+         Cast's to, int value for arithmetic processing
+        */
         resistorColorVals = Integer.valueOf(String.valueOf(digit1) + String.valueOf(digit2));
 
-        //error checker 
-        System.out.println(resistorColorVals);
-
-        //gives resistors vlaue has to be given in ohms
+        //Calculates the resistor value
         valueResistor = (resistorColorVals * multiplier);
 
     }
-
+    
+    /*
+      * Calculates the total percentage value of tolerance,
+      * calc's the max value, and min value of tolorance, from the total percent.
+      * this tells,the total tolerance inwhich the resistor can with stand.
+    */
     public void CalcToloerance() {
+        
+       //trys to catch, any Aritmetic errors, and reports which errors occoured 
         try {
             tolrancPercent = (valueResistor * (toloerance / percent));
 
@@ -268,19 +263,25 @@ public class ResistorCalc4band {
         //calcs the minValue, return values in ohms
         minValue = valueResistor - tolrancPercent;
     }
-
+    /*
+      * Converts the resistors value, Max tolerance value, and min tolerance value,
+      * To kilo ohm's,and mega-ohm's by means of the following conversion measurment rules:
+               
+                 * Any value < than 1000 is given in ohms
+                 * Any value >= 1000 is given in kilo-ohm's(k)
+                 * Any value >= 1000000 is given in Mega-ohm's(M)
+    
+      * DecimalFormat is used to, format scientfic notation numbers so as (1.2E7), 
+      * Some that largers numbers can be processed, and converted.
+  
+    */
     public void convertToKilohm() {
         if(valueResistor  < 100){
             conversion = String.valueOf(valueResistor);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(2, 3);
-            convertkilohm = substrK + "." + substrH + "" + "ohms";
+            convertkilohm =  conversion + " "+ "ohms";
         }else if(valueResistor  > 99 && valueResistor < 1000) {
             conversion = String.valueOf(valueResistor);
-           // substrK = conversion.substring(0, 1);
-           // substrH = conversion.substring(1, 3);
-          //  convertkilohm = substrK + "." + substrH + "" + "ohms";
-             convertkilohm =  conversion + "ohms";
+            convertkilohm =  conversion + " " + "ohms";
         }else if (valueResistor > 999 && valueResistor < 10000) {
             conversion = String.valueOf(valueResistor);
             substrK = conversion.substring(0, 1);
@@ -305,8 +306,7 @@ public class ResistorCalc4band {
             substrH = conversion.substring(1, 3);
             convertkilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is greater to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } //Converts scientfic notation number, into digtial repersentation to be processed
         else if (valueResistor >= 10000000 && valueResistor < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", valueResistor));
@@ -328,14 +328,10 @@ public class ResistorCalc4band {
         // converts maximun resistor value to kilohmz
          if(maxValue < 100){
             conversion = String.valueOf(maxValue);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(2, 3);
-            maxConverKilohm = substrK + "." + substrH + "" + "ohms";
+            maxConverKilohm = conversion + "" + "ohms";
         }else if(maxValue > 99 && maxValue < 1000) {
             conversion = String.valueOf(maxValue);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 3);
-            maxConverKilohm = substrK + "." + substrH + "" + "ohms";
+            maxConverKilohm = conversion + "" + "ohms";
         } else if (maxValue > 999 && maxValue < 10000) {
             conversion = String.valueOf(maxValue);
             substrK = conversion.substring(0, 1);
@@ -360,8 +356,7 @@ public class ResistorCalc4band {
             substrH = conversion.substring(1, 3);
             maxConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger to be repersented in digital form
-         //so it's store it in a decimal format and then converted to a string  
+        }//Converts scientfic notation number, into digtial repersentation to be processed
         else if (maxValue >= 10000000 && maxValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f",maxValue));
@@ -381,18 +376,14 @@ public class ResistorCalc4band {
             maxConverKilohm= substrK + "." + substrH + "M" + "ohms";
 
         }
-        // error first if index out of range 
+       
         //converts the minium resistor value to kiloohmz
          if(minValue  < 100){
             conversion = String.valueOf(minValue);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(2, 3);
-            minConverKilohm = substrK + "." + substrH + "" + "ohms";
+            minConverKilohm = conversion + "" + "ohms";
         }else if (minValue > 99 && minValue < 1000) {
             conversion = String.valueOf(minValue);
-            substrK = conversion.substring(0, 1);
-            substrH = conversion.substring(1, 3);
-            minConverKilohm = substrK + "." + substrH + "" + "ohms";
+            minConverKilohm = conversion + "" + "ohms";
         } else if (minValue > 999 && minValue < 10000) {
             conversion = String.valueOf(minValue);
             substrK = conversion.substring(0, 1);
@@ -417,8 +408,7 @@ public class ResistorCalc4band {
             substrH = conversion.substring(1, 3);
             minConverKilohm = substrK + "." + substrH + "M" + "ohms";
 
-        } // number is to larger so getting 1.2E7
-        //which i will have to try to revert to digital repersentation
+        } //Converts scientfic notation number, into digtial repersentation to be processed
         else if (minValue >= 10000000 && minValue < 100000000) {
             long number;
             number = Long.parseLong(String.format("%.0f", minValue));
@@ -437,24 +427,56 @@ public class ResistorCalc4band {
 
         }
    }
+    //saves to a file and if not found creates one,
+    //Also error catchs, to find any errors while saving to file
+    public void SaveToFile() {
+        try {
+            FileWriter fw = new FileWriter(f);
+            BufferedWriter bWriter = new BufferedWriter(fw);
+            bWriter.write("formula:" + resistorColorVals + "x" + multiplier + "=" + convertkilohm +"\n Find tolerance: " + valueResistor +" *" +toloerance +" / "+ percent + " = " + tolrancPercent);
+            bWriter.close();
+        } catch (IOException e) {
+            Logger.getLogger(ResistorCalc4Band.class.getName()).log(Level.SEVERE, null, e);
+            System.out.println("An error occured while trying to write to the file");
+            System.out.println(e.toString());
+        }
+
+    }
+    //reads from the file, one saved calculation at a time.
+    //And also error catches to find errors occoured while reading from the file.
+    public String ReadFromFile() {
+
+        try {
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+
+           
+            line = br.readLine();
+           
+            br.close();
+         
+        } catch (IOException e) {
+            System.out.println("Error occoured while trying to read from the file");
+            System.out.printf(e.toString());
+        }
+
+        return line;
+    }
    
    //returns the resistor value in ohms
     public String getValueResistor() {
         return convertkilohm; 
     }
-    //returns the max resistor value in ohms
+    //returns max value in converted format
     public String getMaxValue() {
         return maxConverKilohm;
     }
-    //returns the max resistor value in ohms
+    //returns the min value in converted format
     public String getMinValue() {
         return minConverKilohm;
     }
     
     
-    /*
-    * Need to implement file I/O 
-    * Also have to implememt polymorhism 
-    */
+   
     
 }

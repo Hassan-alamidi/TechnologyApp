@@ -49,7 +49,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="390" width="150" height="40"/>
+          <AbsoluteConstraints x="240" y="410" width="150" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -95,14 +95,18 @@
     <Component class="javax.swing.JLabel" name="imageChangeLbl">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="50" width="280" height="140"/>
+          <AbsoluteConstraints x="10" y="50" width="370" height="140"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="infoLbl">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
           <AbsoluteConstraints x="10" y="226" width="380" height="160"/>
+=======
+          <AbsoluteConstraints x="10" y="216" width="380" height="190"/>
+>>>>>>> origin/master
         </Constraint>
       </Constraints>
     </Component>

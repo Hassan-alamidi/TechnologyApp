@@ -19,11 +19,12 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
      * Creates new form AnalogResistorCalc5band
      */
     //variables
-    private String selectedValue,band1,band2,band3,band4,band5, maxResistorValue ,valueTotal,minResistorValue ;
-   
+    private String selectedValue,band1,band2,band3,band4,band5, maxResistorValue ,valueTotal,minResistorValue,fileContents;
+    ResistorCalc5band calc; 
     public AnalogResistorCalc5band() {
         initComponents();
         this.setSize(400,450);
+      
     }
 
     /**
@@ -52,6 +53,8 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
         typesCB = new javax.swing.JComboBox();
         TitleLbl = new javax.swing.JLabel();
         exitBtn = new javax.swing.JButton();
+        SaveBtn = new javax.swing.JButton();
+        ReadFileBtn = new javax.swing.JButton();
         backgroundLbl = new javax.swing.JLabel();
 
         setLayout(null);
@@ -115,7 +118,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
             }
         });
         add(addBtn);
-        addBtn.setBounds(0, 420, 180, 30);
+        addBtn.setBounds(0, 420, 100, 30);
 
         ResetBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         ResetBtn.setForeground(new java.awt.Color(0, 102, 255));
@@ -126,7 +129,7 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
             }
         });
         add(ResetBtn);
-        ResetBtn.setBounds(230, 420, 170, 30);
+        ResetBtn.setBounds(290, 420, 110, 30);
 
         headingLbl.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         headingLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,6 +173,26 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
         });
         add(exitBtn);
         exitBtn.setBounds(0, 0, 75, 30);
+
+        SaveBtn.setForeground(new java.awt.Color(0, 102, 255));
+        SaveBtn.setText("Save");
+        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveBtnActionPerformed(evt);
+            }
+        });
+        add(SaveBtn);
+        SaveBtn.setBounds(90, 420, 100, 29);
+
+        ReadFileBtn.setForeground(new java.awt.Color(0, 102, 255));
+        ReadFileBtn.setText("Read Saved");
+        ReadFileBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReadFileBtnActionPerformed(evt);
+            }
+        });
+        add(ReadFileBtn);
+        ReadFileBtn.setBounds(187, 420, 110, 29);
 
         backgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analogsection/Calc5band.png"))); // NOI18N
         add(backgroundLbl);
@@ -228,11 +251,9 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        // TODO add your handling code here:
-        //class without inheritance   
-        // Resistor5bandCalc calc = new  Resistor5bandCalc();
+
          
-        ResistorCalc5band calc = new ResistorCalc5band(band1, band2, band3, band4, band5);
+         calc = new ResistorCalc5band(band1, band2, band3, band4, band5);
          //clears label
          anwserLbl.setText("");
          
@@ -249,14 +270,6 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          calc.setBand4(band4);
          calc.setBand5(band5);
          
-//         //add values to arraylist 
-//         values.add(band1);
-//         values.add(band2);
-//         values.add(band3);
-//         values.add(band4);
-//         
-//         //send the arraylist to the instaibale class 
-//         calc.setValues(values);
          
          //Assign's the color codes a value
          calc.AssignValues();
@@ -268,13 +281,13 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          //calculate the resistors values
          calc.compute();
          
-        //calulats th toloerance of the resistor 
+        //calculates the toloerance of the resistor 
          calc.CalcToloerance();
          
-         //converts the values to kiloohmz
+         //converts the values to kilo-ohm's, and mega-ohm's
          calc.convertToKilohm();
          
-         //retrive the calculations 
+         //retrive's the rsistors converted value
          valueTotal = calc.getValueResistor();
          
          maxResistorValue = calc.getMaxValue();
@@ -285,13 +298,27 @@ public class AnalogResistorCalc5band extends javax.swing.JPanel {
          
          JOptionPane.showMessageDialog(null,"Maximum Resistance Value:"+ " "+  maxResistorValue + "\n Minimum Resistance Value:"+ " "+ minResistorValue);
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+        // TODO add your handling code here:
+         calc.SaveToFile();
+    }//GEN-LAST:event_SaveBtnActionPerformed
+
+    private void ReadFileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadFileBtnActionPerformed
+         //reads the calculation from the file
+         fileContents = calc.ReadFromFile();
+         
+         JOptionPane.showMessageDialog(null,"Saved calculations:"+"\n" +fileContents);
+    }//GEN-LAST:event_ReadFileBtnActionPerformed
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Color1CB;
     private javax.swing.JComboBox Color2CB;
     private javax.swing.JComboBox Color3CB;
+    private javax.swing.JButton ReadFileBtn;
     private javax.swing.JButton ResetBtn;
+    private javax.swing.JButton SaveBtn;
     private javax.swing.JLabel TitleLbl;
     private javax.swing.JComboBox ToloeranceCB;
     private javax.swing.JComboBox Value5CB;
